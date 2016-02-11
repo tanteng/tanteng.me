@@ -41,7 +41,6 @@
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
                   <li><a href="http://www.tantengvip.com">Blog</a></li>
-                  <li><a href="#">Explore</a></li>
                   <li><a href="#">Resume</a></li>
                   <li><a href="#">Contact</a></li>
                 </ul>
@@ -50,14 +49,19 @@
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">Welcome to tanteng.me!</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+            <h1 class="cover-heading">Welcome</h1>
+            <p class="lead">Hello，我是谈腾，来自湖北，欢迎访问tanteng.me! 我是一名WEB开发工程师，主要语言是PHP，我热爱WEB开发，目前在深圳工作。</p>
             <p class="lead">
               <a href="#" class="btn btn-lg btn-default">Learn more</a>
             </p>
           </div>
 
           <div class="mastfoot">
+            <address>
+              <strong>谈腾</strong><br>
+              深圳市南山科技园<br>
+              <a href="mailto:tanteng@gmail.com">tanteng@gmail.com</a>
+            </address>
             <div class="inner">
               <p>本站运行于阿里云CentOS7系统，基于PHP7+Nginx+Mysql环境，后端采用Laravel框架，前端页面使用bootstrap框架</p>
             </div>
