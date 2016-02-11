@@ -2,3 +2,5 @@
 /storge
 .env
 /config/database.php
+/node_modules
+
