@@ -8,7 +8,7 @@
     <meta name="description" content="Welcome to tanteng.me!">
     <meta name="author" content="谈腾">
 
-    <title>Cover Template for Bootstrap</title>
+    <title>tanteng.me</title>
 
     <!-- Bootstrap core CSS -->
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -37,11 +37,11 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
+              <h3 class="masthead-brand">tanteng.me</h3>
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
+                  <li><a href="http://www.tantengvip.com">Blog</a></li>
                   <li><a href="#">Contact</a></li>
                 </ul>
               </nav>
@@ -49,7 +49,7 @@
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">Cover your page.</h1>
+            <h1 class="cover-heading">Welcome to tanteng.me!</h1>
             <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
             <p class="lead">
               <a href="#" class="btn btn-lg btn-default">Learn more</a>
