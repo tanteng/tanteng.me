@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('index.index');
 });
 
+Route::get('/slide',function(){
+    return view('wechat.slide');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
