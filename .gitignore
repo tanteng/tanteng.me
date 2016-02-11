@@ -1,3 +1,4 @@
 /vendor
 /storge
-
+.env
+/config/database.php
