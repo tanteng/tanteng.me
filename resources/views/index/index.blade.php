@@ -41,6 +41,8 @@
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
                   <li><a href="http://www.tantengvip.com">Blog</a></li>
+                  <li><a href="#">Explore</a></li>
+                  <li><a href="#">Resume</a></li>
                   <li><a href="#">Contact</a></li>
                 </ul>
               </nav>
@@ -57,7 +59,7 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+              <p>本站运行于阿里云CentOS7系统，基于PHP7+Nginx+Mysql环境，后端采用Laravel框架，前端页面使用bootstrap框架</p>
             </div>
           </div>
 
