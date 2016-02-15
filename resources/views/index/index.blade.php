@@ -71,7 +71,7 @@
 
                         <p>主要从事PHP后端开发，熟悉ThinkPHP、Laravel、CI等框架，能较好理解MVC架构和面向对象的思想，熟悉jQuery、CSS等前端技术，注重代码的规范和效率，了解MySQL数据库及性能优化。对电商网站业务比较熟悉，有大型网站的开发经验，熟悉redis，memcache的用法，使用过MongoDB，对Python(如Scrapy爬虫)很感兴趣并有所研究。</p>
 
-                        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                        <p><a class="btn btn-default" href="/resume" role="button">个人简历 &raquo;</a></p>
                     </div>
                 </div>
 
