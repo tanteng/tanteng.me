@@ -36,7 +36,7 @@
         <div class="cover-container">
 
             <div class="masthead clearfix inner">
-                <nav class="navbar navbar-inverse">
+                <nav class="navbar navbar-default">
                     <div class="container-fluid">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
@@ -69,9 +69,7 @@
 
                         <h2>谈腾</h2>
 
-                        <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh
-                            ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                            Praesent commodo cursus magna.</p>
+                        <p>主要从事PHP后端开发，熟悉ThinkPHP、Laravel、CI等框架，能较好理解MVC架构和面向对象的思想，熟悉jQuery、CSS等前端技术，注重代码的规范和效率，了解MySQL数据库及性能优化。对电商网站业务比较熟悉，有大型网站的开发经验，熟悉redis，memcache的用法，使用过MongoDB，对Python(如Scrapy爬虫)很感兴趣并有所研究。</p>
 
                         <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                     </div>
