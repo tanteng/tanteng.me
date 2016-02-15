@@ -4,3 +4,4 @@
 /config/database.php
 /node_modules
 
+.idea/
