@@ -34,38 +34,54 @@
 
         <div class="cover-container">
 
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">tanteng.me</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="http://www.tantengvip.com">Blog</a></li>
-                  <li><a href="#">Resume</a></li>
-                </ul>
-              </nav>
-            </div>
+          <div class="masthead clearfix inner">
+            <nav class="navbar navbar-inverse">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/">tanteng.me</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right" id="navbar">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="http://www.tantengvip.com" target="_blank">Blog</a></li>
+                    <li><a href="/resume">Resume</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
           </div>
 
           <div class="inner cover">
-            <h1 class="cover-heading">Welcome</h1>
-            <p class="lead">Hello，我是谈腾，来自湖北，欢迎访问tanteng.me! 我是一名WEB开发工程师，主要语言是PHP，我热爱WEB开发，目前在深圳工作。</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <address>
-              <strong>谈腾</strong><br>
-              深圳市南山科技园<br>
-              <a href="mailto:tanteng@gmail.com">tanteng@gmail.com</a>
-            </address>
-            <div class="inner">
-              <p>本站运行于阿里云CentOS7系统，基于PHP7+Nginx+Mysql环境，后端采用Laravel框架，前端页面使用bootstrap框架</p>
+            <div style="margin: auto; width: 75%;">
+              <div class="row">
+                <div class="col-l55g-4">
+                  <img class="img-circle" src="/assets/images/avatar.jpg" alt="Generic placeholder image" width="140" height="140">
+                  <h2>谈腾</h2>
+                  <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+                  <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                </div><!-- /.col-lg-4 -->
+              </div>
             </div>
-          </div>
 
+            <div class="mastfoot">
+              <div class="inner">
+                <address>
+                  <strong>谈腾</strong><br>
+                  深圳市南山科技园<br>
+                  <a href="mailto:tanteng@gmail.com">tanteng@gmail.com</a>
+                </address>
+              </div>
+            </div>
         </div>
 
       </div>
