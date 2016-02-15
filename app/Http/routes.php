@@ -15,8 +15,12 @@ Route::get('/', function () {
     return view('index.index');
 });
 
-Route::get('/slide',function(){
+Route::get('/slide', function () {
     return view('wechat.slide');
+});
+
+Route::get('/nav', function () {
+    return view('wechat.nav');
 });
 
 /*
