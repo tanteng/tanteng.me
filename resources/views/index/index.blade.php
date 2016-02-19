@@ -67,7 +67,6 @@
                         <img class="img-circle" src="/assets/images/avatar.jpg" alt="avatar" width="140" height="140">
                         <h2>谈腾</h2>
                         <p>主要从事PHP后端开发，熟悉ThinkPHP、Laravel、CI等框架，熟悉jQuery、CSS等前端技术，能较好理解MVC架构和面向对象的思想，注重代码的规范和效率，熟悉MySQL数据库及性能优化。对电商网站业务比较熟悉，有大型网站的开发经验，熟悉redis，memcache的用法，对Python很感兴趣并有所研究。</p>
-                        <p><a class="btn btn-default" href="/resume" role="button">个人简历 &raquo;</a></p>
                     </div>
                 </div>
 
@@ -85,6 +84,7 @@
                         <li><span class="label label-info">Laravel 5.2</span></li>
                         <li><span class="label label-info">Bootstrap 3</span></li>
                     </ul>
+                    <p>粤ICP备 XXXXX</p>
                 </div>
             </div>
 
