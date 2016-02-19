@@ -62,27 +62,28 @@
             </div>
 
             <div class="inner cover">
-                <div style="margin: auto; width: 75%;">
-                    <div class="row">
-                        <img class="img-circle" src="/assets/images/avatar.jpg" alt="Generic placeholder image"
-                             width="140" height="140">
-
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <img class="img-circle" src="/assets/images/avatar.jpg" alt="avatar" width="140" height="140">
                         <h2>谈腾</h2>
-
                         <p>主要从事PHP后端开发，熟悉ThinkPHP、Laravel、CI等框架，熟悉jQuery、CSS等前端技术，能较好理解MVC架构和面向对象的思想，注重代码的规范和效率，熟悉MySQL数据库及性能优化。对电商网站业务比较熟悉，有大型网站的开发经验，熟悉redis，memcache的用法，对Python很感兴趣并有所研究。</p>
-
                         <p><a class="btn btn-default" href="/resume" role="button">个人简历 &raquo;</a></p>
                     </div>
                 </div>
 
                 <div class="mastfoot">
-                    <div class="inner">
-                        <address>
-                            <strong>谈腾</strong><br>
-                            深圳市南山科技园<br>
-                            <a href="mailto:tanteng@gmail.com">tanteng@gmail.com</a>
-                        </address>
-                    </div>
+                    <address>
+                        <strong>谈腾</strong><br>
+                        深圳市南山科技园<br>
+                        <a href="mailto:tanteng@gmail.com">tanteng@gmail.com</a>
+                    </address>
+                    <ul class="list-inline">
+                        <li><span class="label label-info">阿里云CentOS 7</span></li>
+                        <li><span class="label label-info">PHP 7</span></li>
+                        <li><span class="label label-info">Nginx</span></li>
+                        <li><span class="label label-info">Laravel 5.2</span></li>
+                        <li><span class="label label-info">Bootstrap</span></li>
+                    </ul>
                 </div>
             </div>
 
