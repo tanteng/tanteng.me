@@ -75,7 +75,7 @@
                     <address>
                         <strong>谈腾</strong><br>
                         深圳市南山科技园<br>
-                        <a href="mailto:tanteng@gmail.com">tanteng@gmail.com</a>
+                        <a href="mailto:tanteng@gmail.com"><span class="glyphicon glyphicon-envelope"></span> tanteng@gmail.com</a>
                     </address>
                     <ul class="list-inline">
                         <li><span class="label label-info">阿里云CentOS 7</span></li>
