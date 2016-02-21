@@ -77,10 +77,11 @@
                         <li><span class="label label-info">CentOS 7</span></li>
                         <li><span class="label label-info">PHP 7</span></li>
                         <li><span class="label label-info">Nginx</span></li>
+                        <li><span class="label label-info">MariaDB</span></li>
                         <li><span class="label label-info">Laravel 5.2</span></li>
                         <li><span class="label label-info">Bootstrap 3</span></li>
                     </ul>
-                    <p><a href="mailto:tanteng@gmail.com"><span class="glyphicon glyphicon-envelope"></span> tanteng@gmail.com</a> 粤ICP备 XXXXX</p>
+                    <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a> 粤ICP备 XXXXX</p>
                 </div>
             </div>
 
