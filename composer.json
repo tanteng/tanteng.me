@@ -7,7 +7,8 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "zgldh/qiniu-laravel-storage": "^0.3.0"
+        "zgldh/qiniu-laravel-storage": "^0.3.0",
+        "zizaco/entrust": "dev-laravel-5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
