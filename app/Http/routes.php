@@ -39,4 +39,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+    Route::get('/post', ['name' => 'post.show',  'uses' => 'ArticleController@show']);
 });

@@ -49,8 +49,17 @@
                             <a class="navbar-brand" href="/">tanteng.me</a>
                         </div>
 
-                        <div class="collapse navbar-collapse navbar-right" id="navbar">
+                        <div class="collapse navbar-collapse" id="navbar">
                             <ul class="nav navbar-nav">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">About Me</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
                                 <li class="active"><a href="/">Home</a></li>
                                 <li><a href="http://www.tantengvip.com" target="_blank">Blog</a></li>
                                 <li><a href="/resume">Resume</a></li>
