@@ -26,7 +26,7 @@
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
+                                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">About</a></li>
                                         <li><a href="#">About Me</a></li>
