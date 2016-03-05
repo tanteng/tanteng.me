@@ -29,5 +29,6 @@ class TestController extends Controller
 
         //测试hscan的使用
         $testHscan = Redis::hscan('xxx.test', 0);
+        dump($testHscan);
     }
 }
