@@ -23,6 +23,8 @@ Route::get('/nav', function () {
     return view('wechat.nav');
 });
 
+Route::get('/test/hscan', ['uses'=>'TestController@testRedisHscan']);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
