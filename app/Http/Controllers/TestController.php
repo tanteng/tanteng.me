@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
 
 class TestController extends Controller
@@ -36,6 +37,9 @@ class TestController extends Controller
     //Test Closure function
     public function testClosure($t1, $t2)
     {
+        Redis::set('hehe','haha');
+        Cache::put('tanteng', 'tanteng.me', 3);
+        Cache::tags('aaaaaaaa')->put('a', 11, 2);
         $closure = function () use ($t1, $t2) {
             echo $t1 . $t2;
         };
