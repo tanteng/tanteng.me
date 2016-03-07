@@ -24,7 +24,7 @@ Route::get('/nav', function () {
 });
 
 Route::get('/test/hscan', ['uses'=>'TestController@testRedisHscan']);
-
+Route::get('/test/closure/{t1}/{t2}',['uses'=>'TestController@testClosure']);
 /*
 |--------------------------------------------------------------------------
 | Application Routes

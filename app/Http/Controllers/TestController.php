@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redis;
 
 class TestController extends Controller
 {
+    //Test Redis Hscan
     public function testRedisHscan()
     {
         Redis::hmset('xxx.test', [
@@ -30,5 +31,14 @@ class TestController extends Controller
         //测试hscan的使用
         $testHscan = Redis::hscan('xxx.test', 0);
         dump($testHscan);
+    }
+
+    //Test Closure function
+    public function testClosure($t1, $t2)
+    {
+        $closure = function () use ($t1, $t2) {
+            echo $t1 . $t2;
+        };
+        $closure();
     }
 }
