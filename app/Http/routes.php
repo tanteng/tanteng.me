@@ -43,11 +43,11 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/home', 'HomeController@index');
     Route::get('/post', ['name' => 'post.show',  'uses' => 'ArticleController@show']);
 
-    Route::get('admin/login', 'Admin\AuthController@getLogin');
-    Route::post('admin/login', 'Admin\AuthController@postLogin');
-    Route::get('admin/register', 'Admin\AuthController@getRegister');
-    Route::get('admin/logout', 'Admin\AuthController@logout');
-    Route::post('admin/register', 'Admin\AuthController@postRegister');
-    Route::get('admin', 'AdminController@index');
+    Route::get('/admin/login', 'Admin\AuthController@getLogin');
+    Route::post('/admin/login', 'Admin\AuthController@postLogin');
+    Route::get('/admin/register', 'Admin\AuthController@getRegister');
+    Route::get('/admin/logout', 'Admin\AuthController@logout');
+    Route::post('/admin/register', 'Admin\AuthController@postRegister');
+    Route::get('/admin', 'AdminController@index');
 });
 
