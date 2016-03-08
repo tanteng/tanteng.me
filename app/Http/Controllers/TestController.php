@@ -9,12 +9,13 @@
 namespace App\Http\Controllers;
 
 
+use Closure;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
 
 class TestController extends Controller
 {
-    //Test Redis Hscan
+    //测试Redis及Hscan
     public function testRedisHscan()
     {
         Redis::hmset('xxx.test', [
@@ -34,15 +35,20 @@ class TestController extends Controller
         dump($testHscan);
     }
 
-    //Test Closure function
+    //测试闭包传参及use使用外部变量
     public function testClosure($t1, $t2)
     {
-        Redis::set('hehe','haha');
-        Cache::put('tanteng', 'tanteng.me', 3);
-        Cache::tags('aaaaaaaa')->put('a', 11, 2);
-        $closure = function () use ($t1, $t2) {
-            echo $t1 . $t2;
+        $closure = function ($param1, $param2) use ($t1, $t2) {
+            echo $param1.$param2.$t1.$t2;
         };
-        $closure();
+        $this->execClosure('test.closure', $closure);
+    }
+
+    //执行闭包函数
+    protected function execClosure($name, Closure $closure)
+    {
+        echo 'Closure func name:'.$name;
+        echo '<br>';
+        $closure('p1', 'p2');
     }
 }
