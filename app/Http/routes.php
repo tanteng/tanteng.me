@@ -23,8 +23,9 @@ Route::get('/nav', function () {
     return view('wechat.nav');
 });
 
-Route::get('/test/hscan', ['uses'=>'TestController@testRedisHscan']);
-Route::get('/test/closure/{t1}/{t2}',['uses'=>'TestController@testClosure']);
+Route::get('/test/hscan', ['uses' => 'TestController@testRedisHscan']);
+Route::get('/test/closure/{t1}/{t2}', ['uses' => 'TestController@testClosure']);
+Route::get('/test/fib/{n?}', ['uses' => 'TestController@fib']);
 /*
 |--------------------------------------------------------------------------
 | Application Routes
