@@ -90,16 +90,19 @@ class TestController extends Controller
         return $result;
     }
 
+    //测试写入数据到临时文件并保存到其他地方
     public function testFputcsv()
     {
-        $dirName = tempnam('/temp/','AA');
-        echo $dirName;
-        file_put_contents($dirName,['233','23']);
-        $name = rename($dirName,dirname($dirName).'/aaa.jpg');
-        dump($name);
-
-        $fp = fopen(storage_path('app').'/test.csv','w');
-        fputcsv($fp,[232,'fadsfdsa','afdsd']);
+        $tpname = tempnam(sys_get_temp_dir(), 'DATA');
+        echo $tpname;
+        echo '<br>';
+        $fp = fopen($tpname, 'w');
+        for ($i = 0; $i < 1600000; $i++) {
+            fputcsv($fp, ['dd', 'xx', '23', '56', '76', '89', '43', '2', '3', '56']);
+        }
         fclose($fp);
+        $newFile = storage_path('app/test.csv');
+        rename($tpname, $newFile);
+        echo $newFile;
     }
 }
