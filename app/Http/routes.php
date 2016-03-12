@@ -26,6 +26,8 @@ Route::get('/nav', function () {
 Route::get('/test/hscan', ['uses' => 'TestController@testRedisHscan']);
 Route::get('/test/closure/{t1}/{t2}', ['uses' => 'TestController@testClosure']);
 Route::get('/test/fib/{n?}', ['uses' => 'TestController@fib']);
+Route::get('/test/fput', ['uses' => 'TestController@testFputcsv']);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

@@ -58,14 +58,23 @@ class TestController extends Controller
         if ($n > 100) {
             die('Number must <= 100!');
         }
-        for ($i = 0; $i <= $n; $i++) {
-            echo $this->getNum($i) . ' ';
+        $key = 'com.tanteng.me.test.fib.string';
+        $value = Redis::hget($key, $n);
+        if ($value) {
+            echo $value;
+            return;
         }
+        $fib = '';
+        for ($i = 0; $i <= $n; $i++) {
+            $fib = $fib . ' ' . $this->getNum($i);
+        }
+        echo $fib;
+        Redis::hset($key, $n, $fib);
     }
 
     private function getNum($n)
     {
-        $key = 'com.tanteng.me.test.foo';
+        $key = 'com.tanteng.me.test.fib.num';
         $value = Redis::hget($key, $n);
         if ($value) {
             return $value;
@@ -78,5 +87,18 @@ class TestController extends Controller
         Redis::hset($key, $n, $result);
         Redis::expire($key, 1800);
         return $result;
+    }
+
+    public function testFputcsv()
+    {
+        $dirName = tempnam('/temp/','AA');
+        echo $dirName;
+        file_put_contents($dirName,['233','23']);
+        $name = rename($dirName,dirname($dirName).'/aaa.jpg');
+        dump($name);
+
+        $fp = fopen(storage_path('app').'/test.csv','w');
+        fputcsv($fp,[232,'fadsfdsa','afdsd']);
+        fclose($fp);
     }
 }
