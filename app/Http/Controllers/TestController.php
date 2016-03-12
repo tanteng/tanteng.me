@@ -70,6 +70,7 @@ class TestController extends Controller
         }
         echo $fib;
         Redis::hset($key, $n, $fib);
+        Redis::expire($key, 1800);
     }
 
     private function getNum($n)
