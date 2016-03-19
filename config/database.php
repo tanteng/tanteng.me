@@ -75,6 +75,19 @@ return [
             'charset'  => 'utf8',
             'prefix'   => '',
         ],
+        'wordpress' => [
+            'driver'    => 'mysql',
+            'host'      => env('DB_HOST', 'localhost'),
+            'database'  => env('DB_WORDPRESS_DATABASE', 'forge'),
+            'username'  => env('DB_USERNAME', 'forge'),
+            'password'  => env('DB_PASSWORD', ''),
+            'charset'   => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'port'      => env('DB_PORT', 3306),
+            'prefix'    => env('DB_WORDPRESS_PREFIX','ww'),
+            'strict'    => false,
+            'engine'    => null,
+        ],
     ],
     /*
     |--------------------------------------------------------------------------

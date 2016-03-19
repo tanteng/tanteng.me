@@ -12,6 +12,7 @@ namespace App\Http\Controllers;
 use Closure;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
+use App\Models\Wp;
 
 class TestController extends Controller
 {
@@ -104,5 +105,12 @@ class TestController extends Controller
         $newFile = storage_path('app/test.csv');
         rename($tpname, $newFile);
         echo $newFile;
+    }
+
+    //laravel查询wordpress文章
+    public function testWp()
+    {
+        $post = Wp::find(9569);
+        echo $post->post_title;
     }
 }

@@ -27,6 +27,7 @@ Route::get('/test/hscan', ['uses' => 'TestController@testRedisHscan']);
 Route::get('/test/closure/{t1}/{t2}', ['uses' => 'TestController@testClosure']);
 Route::get('/test/fib/{n?}', ['uses' => 'TestController@fib']);
 Route::get('/test/fput', ['uses' => 'TestController@testFputcsv']);
+Route::get('/test/wp', ['uses'=>'TestController@testWp']);
 
 /*
 |--------------------------------------------------------------------------
