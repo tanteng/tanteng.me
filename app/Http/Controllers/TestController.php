@@ -110,10 +110,8 @@ class TestController extends Controller
     //laravel查询wordpress文章
     public function testWp()
     {
-        $post = Wp::find(9569);
+        $post = Wp::find(8772);
         //dd($post);
-        echo $post->post_title;
-        echo '<br>';
-        echo $post->url;
+        dump($post->meta());
     }
 }
