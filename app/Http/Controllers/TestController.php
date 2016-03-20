@@ -111,6 +111,9 @@ class TestController extends Controller
     public function testWp()
     {
         $post = Wp::find(9569);
+        //dd($post);
         echo $post->post_title;
+        echo '<br>';
+        echo $post->url;
     }
 }
