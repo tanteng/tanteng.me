@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "zgldh/qiniu-laravel-storage": "^0.3.0",
         "zizaco/entrust": "dev-laravel-5",
-        "predis/predis":"~1.0.1"
+        "predis/predis":"~1.0.1",
+        "jgrossi/corcel": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
