@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+    <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="description" content="@yield('description')">
     <meta name="author" content="谈腾">
-
-    <title>@yield('title')</title>
-
-    <!-- Bootstrap core CSS -->
+    <link href="//cdn.tanteng.me" rel="dns-prefetch">
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="http://cdn.tanteng.me/assets/styles/cover.css" rel="stylesheet">
+    <link href="//cdn.tanteng.me/assets/styles/cover.css" rel="stylesheet">
+    <link rel="canonical" href="http://www.tanteng.me/" />
     <!--[if lt IE 9]>
-    <script src="/assets/js/ie8-responsive-file-warning.js'"></script><![endif]-->
-    <script src="/assets/js/ie-emulation-modes-warning.js"></script>
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+        <script src="/assets/js/ie8-responsive-file-warning.js'"></script>
+        <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="/assets/js/ie-emulation-modes-warning.js"></script>
 </head>
 <body>
 
