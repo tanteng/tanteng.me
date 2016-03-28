@@ -13,7 +13,7 @@
     <!-- Bootstrap core CSS -->
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="/assets/styles/cover.css" rel="stylesheet">
+    <link href="http://cdn.tanteng.me/assets/styles/cover.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="/assets/js/ie8-responsive-file-warning.js'"></script><![endif]-->
     <script src="/assets/js/ie-emulation-modes-warning.js"></script>
@@ -30,7 +30,7 @@
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="http://cdn.tanteng.me/assets/js/ie10-viewport-bug-workaround.js"></script>
 <script>
     var _hmt = _hmt || [];
     (function() {
