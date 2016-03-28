@@ -15,19 +15,8 @@ Route::get('/', function () {
     return view('index.index');
 });
 
-Route::get('/slide', function () {
-    return view('wechat.slide');
-});
-
-Route::get('/nav', function () {
-    return view('wechat.nav');
-});
-
+Route::get('/blog', ['uses' => 'BlogController@index']);
 Route::get('/test/redis', ['uses' => 'TestController@testRedisHscan']);
-Route::get('/test/closure/{t1}/{t2}', ['uses' => 'TestController@testClosure']);
-Route::get('/test/fib/{n?}', ['uses' => 'TestController@fib']);
-Route::get('/test/fput', ['uses' => 'TestController@testFputcsv']);
-Route::get('/test/wp', ['uses'=>'TestController@testWp']);
 
 /*
 |--------------------------------------------------------------------------
