@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title', 'Blog - tanteng.me')
-@section('description', 'Welcome to tanteng.me!')
+@section('description', '最新小谈博客文章，小谈博客是一个专注WEB开发的技术博客。')
 @section('canonical', 'http://www.tanteng.me/blog')
 @section('content')
 
