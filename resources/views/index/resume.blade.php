@@ -40,7 +40,7 @@
                     <div class="col-md-10 col-md-offset-1">
                         <img class="img-circle" src="http://cdn.tanteng.me/assets/images/avatar.jpg" alt="avatar" width="140" height="140">
                         <h2>谈腾</h2>
-                        <p>我来自湖北黄石，是一名程序员，从事PHP开发，目前在深圳工作。除了折腾网站和代码，喜欢旅行、看书。新浪微博:<a href="http://weibo.com/tanteng" target="_blank">http://weibo.com/tanteng</a></p>
+                        <p>主要从事PHP开发，熟悉Laravel、ThinkPHP、CI等框架，熟悉Linux开发环境，以及MySQL数据库设计及分库分表，掌握前端jQuery和css等，了解服务器及Nginx的基本配置和用法。有大型网站的开发经验，熟悉redis，memcache，对Python很感兴趣并有所研究。</p>
                     </div>
                 </div>
 
