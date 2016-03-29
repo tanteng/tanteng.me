@@ -49,7 +49,7 @@
     </div>
 </div>
 
-<footer class="center-block">
+<footer class="footer">
     <div class="container">
         <p>Powered By:</p>
         <ul class="list-inline">
