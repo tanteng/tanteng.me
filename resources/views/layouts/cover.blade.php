@@ -10,6 +10,7 @@
     <link href="//cdn.tanteng.me" rel="dns-prefetch">
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.tanteng.me/assets/styles/cover.css" rel="stylesheet">
+    <link rel="icon" href="/favicon.ico">
     <link rel="canonical" href="http://www.tanteng.me/" />
     <!--[if lt IE 9]>
         <script src="//cdn.tanteng.me/assets/js/ie8-responsive-file-warning.js'"></script>
