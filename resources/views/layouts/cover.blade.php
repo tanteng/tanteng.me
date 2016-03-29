@@ -13,9 +13,9 @@
     <link rel="icon" href="/favicon.ico">
     <link rel="canonical" href="http://www.tanteng.me/" />
     <!--[if lt IE 9]>
-        <script src="//cdn.tanteng.me/assets/js/ie8-responsive-file-warning.js'"></script>
-        <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="//cdn.tanteng.me/assets/js/ie8-responsive-file-warning.js'"></script>
+    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="/assets/js/ie-emulation-modes-warning.js"></script>
 </head>
