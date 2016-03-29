@@ -11,7 +11,9 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $newPosts = Wp::status('publish')->orderBy('post_date', 'desc')->take(20)->get();
+        $newPosts = Wp::type('post')->status('publish')->orderBy('post_date', 'desc')->take(8)->get();
+        //$newPosts = Wp::find(8634);
+        //dd($newPosts);exit;
         return View('index/blog', compact('newPosts'));
     }
 }

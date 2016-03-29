@@ -1,6 +1,6 @@
 @extends('layouts.cover')
 
-@section('title', 'tanteng.me')
+@section('title', 'Blog - tanteng.me')
 @section('description', 'Welcome to tanteng.me!')
 @section('content')
 <div class="site-wrapper">
@@ -35,7 +35,7 @@
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="active"><a href="/">Home</a></li>
-                                <li><a href="http://blog.tanteng.me">Blog</a></li>
+                                <li><a href="/blog">Blog</a></li>
                                 <li><a href="/resume">Resume</a></li>
                                 <li><a href="/contact">Contact</a></li>
                             </ul>
@@ -46,11 +46,12 @@
 
             <div class="inner cover">
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
-                        <img class="img-circle" src="http://cdn.tanteng.me/assets/images/avatar.jpg" alt="avatar" width="140" height="140">
-                        <h2>谈腾</h2>
-                        <p>主要从事PHP后端开发，熟悉ThinkPHP、Laravel、CI等框架，熟悉jQuery、CSS等前端技术，能较好理解MVC架构和面向对象的思想，注重代码的规范和效率，熟悉MySQL数据库及性能优化。对电商网站业务比较熟悉，有大型网站的开发经验，熟悉redis，memcache的用法，对Python很感兴趣并有所研究。</p>
+                    @foreach($newPosts as $post)
+                    <div class="col-md-4 col-md-offset-1">
+                        <h2><a href="{{ $post->url }}" target="_blank">{{ $post->post_title }}</a></h2>
+                        <span>{{ $post->post_date }}</span>
                     </div>
+                    @endforeach
                 </div>
 
                 <div class="mastfoot">

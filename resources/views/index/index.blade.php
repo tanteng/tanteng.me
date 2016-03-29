@@ -35,7 +35,7 @@
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="active"><a href="/">Home</a></li>
-                                <li><a href="http://blog.tanteng.me">Blog</a></li>
+                                <li><a href="/blog">Blog</a></li>
                                 <li><a href="/resume">Resume</a></li>
                                 <li><a href="/contact">Contact</a></li>
                             </ul>
