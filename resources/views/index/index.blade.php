@@ -24,15 +24,6 @@
                         </div>
 
                         <div class="collapse navbar-collapse" id="navbar">
-                            <ul class="nav navbar-nav">
-                                <li class="dropdown">
-                                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">About</a></li>
-                                        <li><a href="#">About Me</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="active"><a href="/">Home</a></li>
                                 <li><a href="/blog">Blog</a></li>
@@ -49,22 +40,11 @@
                     <div class="col-md-10 col-md-offset-1">
                         <img class="img-circle" src="http://cdn.tanteng.me/assets/images/avatar.jpg" alt="avatar" width="140" height="140">
                         <h2>谈腾</h2>
-                        <p>主要从事PHP后端开发，熟悉ThinkPHP、Laravel、CI等框架，熟悉jQuery、CSS等前端技术，能较好理解MVC架构和面向对象的思想，注重代码的规范和效率，熟悉MySQL数据库及性能优化。对电商网站业务比较熟悉，有大型网站的开发经验，熟悉redis，memcache的用法，对Python很感兴趣并有所研究。</p>
+                        <p>主要从事PHP开发，熟悉Laravel、ThinkPHP、CI等框架，熟悉Linux开发环境，以及MySQL数据库设计及分库分表，掌握前端jQuery和css等，了解服务器及Nginx的基本配置和用法。有大型网站的开发经验，熟悉redis，memcache，对Python很感兴趣并有所研究。</p>
                     </div>
                 </div>
 
                 <div class="mastfoot">
-                    <p>Powered By:</p>
-                    <ul class="list-inline">
-                        <li><span class="label label-info">阿里云ECS</span></li>
-                        <li><span class="label label-info">CentOS 7</span></li>
-                        <li><span class="label label-info">PHP 7</span></li>
-                        <li><span class="label label-info">Nginx</span></li>
-                        <li><span class="label label-info">MariaDB</span></li>
-                        <li><span class="label label-info">Redis 3.0</span></li>
-                        <li><span class="label label-info">Laravel 5.2</span></li>
-                        <li><span class="label label-info">Bootstrap 3</span></li>
-                    </ul>
                     <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a> 鄂ICP备14007278号</p>
                 </div>
             </div>
