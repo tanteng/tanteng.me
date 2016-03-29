@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index.index');
-});
-
+Route::get('/', ['uses' => 'IndexController@index']);
 Route::get('/blog', ['uses' => 'BlogController@index']);
+
+
+
 Route::get('/test/redis', ['uses' => 'TestController@testRedisHscan']);
 
 /*
