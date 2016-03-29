@@ -15,7 +15,7 @@ class BlogController extends Controller
     {
         $newPosts = Cache::store('redis')->get($this->indexPostsKey);
         if (!$newPosts) {
-            $newPosts = Wp::type('post')->status('publish')->orderBy('post_date', 'desc')->take(28)->get();
+            $newPosts = Wp::type('post')->status('publish')->orderBy('post_date', 'desc')->take(16)->get();
             Cache::store('redis')->put($this->indexPostsKey, $newPosts, 30);
         }
         return View('index/blog', compact('newPosts'));

@@ -47,20 +47,26 @@
         </div>
         @endforeach
     </div>
+
+    <div class="row text-center margin-top15">
+        <a class="btn btn-default" href="http://blog.tanteng.me/page/2" role="button">更多</a>
+    </div>
 </div>
 
 <footer class="footer">
     <div class="container">
         <p>Powered By:</p>
         <ul class="list-inline">
-            <li><span class="label label-info">阿里云ECS</span></li>
+            <li><span class="label label-info">阿里云</span></li>
+            <li><span class="label label-info">七牛云</span></li>
             <li><span class="label label-info">CentOS 7</span></li>
             <li><span class="label label-info">PHP 7</span></li>
-            <li><span class="label label-info">Nginx</span></li>
-            <li><span class="label label-info">MariaDB</span></li>
+            <li><span class="label label-info">Nginx 1.8</span></li>
+            <li><span class="label label-info">MariaDB 10.1</span></li>
             <li><span class="label label-info">Redis 3.0</span></li>
             <li><span class="label label-info">Laravel 5.2</span></li>
             <li><span class="label label-info">Bootstrap 3</span></li>
+            <li><span class="label label-info">WordPress</span></li>
         </ul>
         <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a> 鄂ICP备14007278号</p>
     </div>

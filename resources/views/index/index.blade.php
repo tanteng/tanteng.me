@@ -40,12 +40,12 @@
                     <div class="col-md-10 col-md-offset-1">
                         <img class="img-circle" src="http://cdn.tanteng.me/assets/images/avatar.jpg" alt="avatar" width="140" height="140">
                         <h2>谈腾</h2>
-                        <p>我来自湖北黄石，是一名程序员，从事PHP开发，目前在深圳工作。除了折腾网站和代码，喜欢旅行、看书。新浪微博:<a href="http://weibo.com/tanteng" target="_blank">http://weibo.com/tanteng</a></p>
+                        <p>我来自湖北黄石，是一名程序员，从事PHP开发，目前在深圳工作。除了折腾网站和代码，喜欢旅行、看书。<br><br>新浪微博:<a href="http://weibo.com/tanteng" target="_blank">http://weibo.com/tanteng</a></p>
                     </div>
                 </div>
 
                 <div class="mastfoot">
-                    <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a> 鄂ICP备14007278号</p>
+                    <p>鄂ICP备14007278号</p>
                 </div>
             </div>
 

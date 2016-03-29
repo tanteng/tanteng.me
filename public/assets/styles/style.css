@@ -1,8 +1,18 @@
-.footer{
+.margin-top15 {
+    margin-top: 15px;
+}
+
+.footer {
     border-top: 1px solid #e5e5e5;
     color: #767676;
-    margin-top: 100px;
+    margin-top: 20px;
     padding-bottom: 40px;
     padding-top: 40px;
     text-align: center;
+}
+
+@media (min-width: 768px) {
+    .footer {
+        margin-top: 40px;
+    }
 }
