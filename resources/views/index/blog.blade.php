@@ -38,21 +38,19 @@
     </div>
 </nav>
 
-<div class="site-wrapper">
-    <div class="container">
-        <div class="row">
-            @foreach($newPosts as $post)
-            <div class="col-md-4 col-md-offset-1">
-                <h3><a href="{{ $post->url }}" target="_blank">{{ $post->post_title }}</a></h3>
-                <span>{{ $post->post_date }}</span>
-            </div>
-            @endforeach
+<div class="container">
+    <div class="row">
+        @foreach($newPosts as $post)
+        <div class="col-md-4 col-md-offset-1">
+            <h3><a href="{{ $post->url }}" target="_blank">{{ $post->post_title }}</a></h3>
+            <span>{{ $post->post_date }}</span>
         </div>
+        @endforeach
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
+<footer class="center-block">
+    <div class="container">
         <p>Powered By:</p>
         <ul class="list-inline">
             <li><span class="label label-info">阿里云ECS</span></li>
@@ -66,5 +64,5 @@
         </ul>
         <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a> 鄂ICP备14007278号</p>
     </div>
-</div>
+</footer>
 @stop
