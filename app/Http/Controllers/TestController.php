@@ -16,24 +16,14 @@ use App\Models\Wp;
 
 class TestController extends Controller
 {
-    //测试Redis及Hscan
+    //测试Redis
     public function testRedisHscan()
     {
-        Redis::hmset('xxx.test', [
-            'tanteng'=>32,
-            'youxi'=>32,
-            'ruike'=>54,
-            'jimi'=>31,
-            'hayou'=>909,
-            'test'=>11,
-            'hehe'=>87,
-            'tanteng.me'=>90
-        ]);
-        Redis::expire('xxx.test', 1800);
-
-        //测试hscan的使用
-        $testHscan = Redis::hscan('xxx.test', 0);
-        dump($testHscan);
+        $testRedisKey = 'com.tanteng.me.redis.test';
+        Redis::set($testRedisKey, 'test');
+        Redis::expire($testRedisKey, 1800);
+        $value = Redis::get($testRedisKey);
+        dump($value);
     }
 
     //测试闭包传参及use使用外部变量

@@ -74,6 +74,6 @@ return [
     |
     */
 
-    'prefix' => 'tanteng.me',
+    'prefix' => 'tony',
 
 ];
