@@ -16,6 +16,8 @@ class CreateAttachmentTable extends Migration
             $table->increments('id');
             $table->string('key')->unique();
             $table->string('url');
+            $table->string('type');
+            $table->string('size');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateAttachmentTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('attachment');
     }
 }
