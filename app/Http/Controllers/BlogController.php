@@ -13,10 +13,10 @@ class BlogController extends Controller
     private $indexPostsKey = 'com.tanteng.me.blog.index.posts';
     public function index()
     {
-        $newPosts = Cache::store('redis')->get($this->indexPostsKey);
+        $newPosts = Cache::get($this->indexPostsKey);
         if (!$newPosts) {
             $newPosts = Wp::type('post')->status('publish')->orderBy('post_date', 'desc')->take(16)->get();
-            Cache::store('redis')->put($this->indexPostsKey, $newPosts, 30);
+            Cache::put($this->indexPostsKey, $newPosts, 30);
         }
         return View('index/blog', compact('newPosts'));
     }
