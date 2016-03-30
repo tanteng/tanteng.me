@@ -13,6 +13,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('index.index');
+        $navFlag = 'home';
+        return view('index.index', compact('navFlag'));
     }
 }

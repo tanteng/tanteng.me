@@ -17,7 +17,7 @@ use App\Models\Wp;
 class TestController extends Controller
 {
     //测试Redis
-    public function testRedisHscan()
+    public function testRedis()
     {
         $testRedisKey = 'com.tanteng.me.redis.test';
         Redis::set($testRedisKey, 'test');

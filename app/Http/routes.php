@@ -12,11 +12,11 @@
 */
 
 Route::get('/', ['uses' => 'IndexController@index']);
-Route::get('/blog', ['uses' => 'BlogController@index']);
+Route::get('/blog', ['as'=>'index.blog', 'uses' => 'BlogController@index']);
 
 
 
-Route::get('/test/redis', ['uses' => 'TestController@testRedisHscan']);
+Route::get('/test/redis', ['uses' => 'TestController@testRedis']);
 
 /*
 |--------------------------------------------------------------------------
