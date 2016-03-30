@@ -7,7 +7,13 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-4 col-md-offset-1">
+        <ul class="nav nav-pills">
+            <li role="presentation" class="active"><a href="http://blog.tanteng.me">Blog</a></li>
+            <li role="presentation"><a href="http://blog.tanteng.me/category/develop/php/">PHP</a></li>
+            <li role="presentation"><a href="http://blog.tanteng.me/category/develop/database/">数据库</a></li>
+            <li role="presentation"><a href="http://blog.tanteng.me/category/linux/">服务器</a></li>
+        </ul>
+        <div class="col-md-4 col-md-offset-1 margin-top15">
             <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
