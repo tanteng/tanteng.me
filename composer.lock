@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a29e731179f93f4138c48a8dc420cfeb",
-    "content-hash": "0eedbb925e5dd7e195ad6679a2ca8590",
+    "hash": "d46570ceecd117a6583143339aae619e",
+    "content-hash": "01ab2f9e7c256daa2d7c9158c42fd544",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -160,6 +160,64 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "itbdw/laravel-storage-qiniu",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/itbdw/laravel-storage-qiniu.git",
+                "reference": "d812d2d2ecefa36420f2aad02d4e745546e6b14e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/itbdw/laravel-storage-qiniu/d812d2d2ecefa36420f2aad02d4e745546e6b14e.zip",
+                "reference": "d812d2d2ecefa36420f2aad02d4e745546e6b14e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "qiniu/php-sdk": "~7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "itbdw\\QiniuStorage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "zgldh",
+                    "email": "zgldh@hotmail.com",
+                    "role": "Original Developer"
+                },
+                {
+                    "name": "itbdw",
+                    "email": "itbudaoweng@gmail.com",
+                    "homepage": "http://github.com/itbdw",
+                    "role": "Developer"
+                },
+                {
+                    "name": "popfeng",
+                    "email": "popfeng@yeah.net",
+                    "homepage": "http://github.com/popfeng",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A storage library for laravel5 and qiniu sdk",
+            "keywords": [
+                "cloud",
+                "laravel",
+                "laravel5",
+                "qiniu",
+                "sdk",
+                "storage"
+            ],
+            "time": "2015-11-28 04:13:51"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -2200,16 +2258,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v5.2.21",
+            "version": "v5.2.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "a58e77d91c949eed906d3b8c67e0f0ad9246ee96"
+                "reference": "9cab11b6a5df66e6d77459c838f65386f88b4210"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/illuminate/console/a58e77d91c949eed906d3b8c67e0f0ad9246ee96.zip",
-                "reference": "a58e77d91c949eed906d3b8c67e0f0ad9246ee96",
+                "url": "https://packagist.phpcomposer.com/files/illuminate/console/9cab11b6a5df66e6d77459c838f65386f88b4210.zip",
+                "reference": "9cab11b6a5df66e6d77459c838f65386f88b4210",
                 "shasum": ""
             },
             "require": {
@@ -2235,7 +2293,7 @@
                     "Illuminate\\Console\\": ""
                 }
             },
-            "notification-url": "https://packagist.orghttps://packagist.orghttps://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2247,20 +2305,20 @@
             ],
             "description": "The Illuminate Console package.",
             "homepage": "http://laravel.com",
-            "time": "2016-02-22 14:14:58"
+            "time": "2016-03-08 23:27:04"
         },
         {
             "name": "illuminate/container",
-            "version": "v5.2.21",
+            "version": "v5.2.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "ba7a8b3c24535ab102ebe9738a0003846c372b95"
+                "reference": "1e156f8017490f5583ab161030bf839c77c95e54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/illuminate/container/ba7a8b3c24535ab102ebe9738a0003846c372b95.zip",
-                "reference": "ba7a8b3c24535ab102ebe9738a0003846c372b95",
+                "url": "https://packagist.phpcomposer.com/files/illuminate/container/1e156f8017490f5583ab161030bf839c77c95e54.zip",
+                "reference": "1e156f8017490f5583ab161030bf839c77c95e54",
                 "shasum": ""
             },
             "require": {
@@ -2290,20 +2348,20 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "http://laravel.com",
-            "time": "2016-02-22 06:42:06"
+            "time": "2016-03-16 17:19:17"
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.2.21",
+            "version": "v5.2.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "eea3cf7ce90651e067a914d16383b019da45fcb5"
+                "reference": "411b851962c211078ade7664a6976e77a78cd2a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/illuminate/contracts/eea3cf7ce90651e067a914d16383b019da45fcb5.zip",
-                "reference": "eea3cf7ce90651e067a914d16383b019da45fcb5",
+                "url": "https://packagist.phpcomposer.com/files/illuminate/contracts/411b851962c211078ade7664a6976e77a78cd2a5.zip",
+                "reference": "411b851962c211078ade7664a6976e77a78cd2a5",
                 "shasum": ""
             },
             "require": {
@@ -2320,7 +2378,7 @@
                     "Illuminate\\Contracts\\": ""
                 }
             },
-            "notification-url": "https://packagist.orghttps://packagist.orghttps://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2332,20 +2390,20 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "http://laravel.com",
-            "time": "2016-02-22 09:18:57"
+            "time": "2016-03-07 20:37:17"
         },
         {
             "name": "illuminate/database",
-            "version": "v5.2.21",
+            "version": "v5.2.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "8b0068c326652332fd364399f4d8cce894953172"
+                "reference": "1b021f63226e2188711c3f419defa1138c2f605f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/illuminate/database/8b0068c326652332fd364399f4d8cce894953172.zip",
-                "reference": "8b0068c326652332fd364399f4d8cce894953172",
+                "url": "https://packagist.phpcomposer.com/files/illuminate/database/1b021f63226e2188711c3f419defa1138c2f605f.zip",
+                "reference": "1b021f63226e2188711c3f419defa1138c2f605f",
                 "shasum": ""
             },
             "require": {
@@ -2392,7 +2450,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2016-02-24 15:02:47"
+            "time": "2016-03-29 13:26:26"
         },
         {
             "name": "illuminate/support",
@@ -2436,7 +2494,7 @@
                     "helpers.php"
                 ]
             },
-            "notification-url": "https://packagist.orghttps://packagist.orghttps://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],

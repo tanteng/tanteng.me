@@ -82,10 +82,15 @@ return [
 
         'qiniu' => [
             'driver'        => 'qiniu',
-            'domain'        => 'cdn.tanteng.me',   //你的七牛域名
+            'domains' => [
+                'default'   => 'cdn.tanteng.me', //你的七牛域名
+                'https'     => 'cdn.tanteng.me',         //你的HTTPS域名
+                'custom'    => 'cdn.tanteng.me',                //你的自定义域名
+            ],
             'access_key'    => env('QINIU_AK',123),   //AccessKey
             'secret_key'    => env('QINIU_SK',123),   //SecretKey
             'bucket'        => env('QINIU_BUCKET',123),  //Bucket名字
+            'notify_url'    => 'www.tanteng.me',  //持久化处理回调地址
         ],
 
     ],

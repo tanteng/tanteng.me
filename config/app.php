@@ -157,7 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Zizaco\Entrust\EntrustServiceProvider::class,
-        //itbdw\QiniuStorage\QiniuFilesystemServiceProvider::class,//七牛
+        zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
 
     ],
 

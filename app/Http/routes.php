@@ -15,7 +15,6 @@ Route::get('/', ['uses' => 'IndexController@index']);
 Route::get('/blog', ['as'=>'index.blog', 'uses' => 'BlogController@index']);
 
 
-Route::get('/test/qiniu', ['uses' => 'Admin\QiniuController@test']);
 Route::get('/test/redis', ['uses' => 'TestController@testRedis']);
 
 /*
@@ -42,5 +41,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/admin/logout', 'Admin\AuthController@logout');
     Route::post('/admin/register', 'Admin\AuthController@postRegister');
     Route::get('/admin', 'AdminController@index');
+
+    Route::get('/admin/upload', ['uses' => 'Admin\QiniuController@index']);
+    Route::post('/admin/upload', ['uses' => 'Admin\QiniuController@postUpload']);
 });
 

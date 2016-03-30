@@ -8,7 +8,8 @@
     <title>Admin</title>
 
     <!-- Styles -->
-    <link href="/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.tanteng.me" rel="dns-prefetch">
+    <link href="//cdn.tanteng.me/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
     <style>
