@@ -4,6 +4,9 @@
 <div class="container">
     <h2>媒体文件</h2>
     <p><a class="btn btn-default" href="{{ url('admin/upload') }}" role="button">上传文件</a></p>
+    @if(isset($error))
+    <p class="text-warning">{{ $error }}</p>
+    @endif
     <div class="row">
         <div class="table-responsive">
             <table class="table table-bordered table-striped">

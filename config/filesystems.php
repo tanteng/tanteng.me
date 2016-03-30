@@ -83,14 +83,14 @@ return [
         'qiniu' => [
             'driver'        => 'qiniu',
             'domains' => [
-                'default'   => 'cdn.tanteng.me', //ÄãµÄÆßÅ£ÓòÃû
-                'https'     => 'cdn.tanteng.me',         //ÄãµÄHTTPSÓòÃû
-                'custom'    => 'cdn.tanteng.me',                //ÄãµÄ×Ô¶¨ÒåÓòÃû
+                'default'   => 'cdn.tanteng.me', //ä½ çš„ä¸ƒç‰›åŸŸå
+                'https'     => 'cdn.tanteng.me',         //ä½ çš„HTTPSåŸŸå
+                'custom'    => 'cdn.tanteng.me',                //ä½ çš„è‡ªå®šä¹‰åŸŸå
             ],
             'access_key'    => env('QINIU_AK',123),   //AccessKey
             'secret_key'    => env('QINIU_SK',123),   //SecretKey
-            'bucket'        => env('QINIU_BUCKET',123),  //BucketÃû×Ö
-            'notify_url'    => 'www.tanteng.me',  //³Ö¾Ã»¯´¦Àí»Øµ÷µØÖ·
+            'bucket'        => env('QINIU_BUCKET',123),  //Bucketåå­—
+            'notify_url'    => 'www.tanteng.me',  //æŒä¹…åŒ–å¤„ç†å›è°ƒåœ°å€
         ],
 
     ],

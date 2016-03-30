@@ -34,14 +34,14 @@ class QiniuController extends Controller
 
         $file = $request->file('file');
         $originalName = $file->getClientOriginalName();
-        list($fname,) = explode('.', $originalName);
+        list($original,) = explode('.', $originalName);
         $disk = QiniuStorage::disk('qiniu');
-        $filename = 'uploads/' . date('Y/m/') . $fname . time() . '.' . $file->getClientOriginalExtension();
-        $disk->put($filename, file_get_contents($file->getRealPath()));
+        $key = 'uploads/' . date('Y/m/') . $original . '.' . $file->getClientOriginalExtension();
+        $disk->put($key, file_get_contents($file->getRealPath()));
 
         $data = [
-            'key' => $filename,
-            'url' => 'http://cdn.tanteng.me/' . $filename,
+            'key' => $key,
+            'url' => 'http://cdn.tanteng.me/' . $key,
             'type' => $file->getClientMimeType(),
             'size' => $file->getSize()
         ];
