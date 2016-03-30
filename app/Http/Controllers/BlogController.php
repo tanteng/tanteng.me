@@ -10,14 +10,13 @@ use Illuminate\Support\Facades\Cache;
 
 class BlogController extends Controller
 {
-    private $indexPostsKey = 'com.tanteng.me.blog.index.posts';
+    private $indexPostsKey = 'com.tanteng.me.index.blog.posts';
+
     public function index()
     {
-        $newPosts = Cache::get($this->indexPostsKey);
-        if (!$newPosts) {
-            $newPosts = Wp::type('post')->status('publish')->orderBy('post_date', 'desc')->take(16)->get();
-            Cache::put($this->indexPostsKey, $newPosts, 30);
-        }
+        $newPosts = Cache::store('redis')->remember($this->indexPostsKey, 30, function () {
+            return Wp::type('post')->status('publish')->orderBy('post_date', 'desc')->take(16)->get();
+        });
         return View('index/blog', compact('newPosts'));
     }
 }
