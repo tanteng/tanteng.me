@@ -26,8 +26,10 @@ class QiniuController extends Controller
             die('没有上传文件！');
         }
         $file = $request->file('file');
+        $originalName = $file->getClientOriginalName();
+        list($fname,) = explode('.', $originalName);
         $disk = QiniuStorage::disk('qiniu');
-        $filename = 'uploads/' . date('Y/m/') . time() . '.' . $file->getClientOriginalExtension();
+        $filename = 'uploads/' . date('Y/m/') . $fname . time() . '.' . $file->getClientOriginalExtension();
         $disk->put($filename, file_get_contents($file->getRealPath()));
         echo 'http://cdn.tanteng.me/' . $filename;
     }
