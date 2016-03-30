@@ -37,7 +37,7 @@
                     </div>
                     <div class="item">
                         <a href="http://blog.tanteng.me/2016/03/redis-maxmemory/">
-                            <img src="http://static.blog.tanteng.me/wp-content/uploads/2016/03/redis-logo.jpg" alt="设置Redis">
+                            <img src="http://static.blog.tanteng.me/wp-content/uploads/2016/03/redis-ico.jpg" alt="设置Redis">
                             <div class="carousel-caption">设置Redis最大占用内存</div>
                         </a>
                     </div>

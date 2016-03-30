@@ -15,7 +15,7 @@ Route::get('/', ['uses' => 'IndexController@index']);
 Route::get('/blog', ['as'=>'index.blog', 'uses' => 'BlogController@index']);
 
 
-
+Route::get('/test/qiniu', ['uses' => 'Admin\QiniuController@test']);
 Route::get('/test/redis', ['uses' => 'TestController@testRedis']);
 
 /*

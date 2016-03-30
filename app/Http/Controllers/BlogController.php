@@ -18,7 +18,7 @@ class BlogController extends Controller
         $navFlag = 'blog';
 
         $newPosts = Cache::store('redis')->remember($this->indexPostsKey, 30, function () {
-            return Wp::type('post')->status('publish')->orderBy('post_date', 'desc')->take(16)->get();
+            return Wp::type('post')->status('publish')->orderBy('post_date', 'desc')->take(17)->get();
         });
         return View('index/blog', compact('newPosts', 'navFlag'));
     }

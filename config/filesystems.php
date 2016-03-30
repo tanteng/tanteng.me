@@ -80,6 +80,14 @@ return [
             'url_type'  => 'publicURL',
         ],
 
+        'qiniu' => [
+            'driver'        => 'qiniu',
+            'domain'        => 'cdn.tanteng.me',   //ÄãµÄÆßÅ£ÓòÃû
+            'access_key'    => env('QINIU_AK',123),   //AccessKey
+            'secret_key'    => env('QINIU_SK',123),   //SecretKey
+            'bucket'        => env('QINIU_BUCKET',123),  //BucketÃû×Ö
+        ],
+
     ],
 
 ];
