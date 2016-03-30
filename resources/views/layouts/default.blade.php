@@ -55,9 +55,7 @@
 
 <div class="jumbotron">
     <div class="container">
-        <h1>Blog!</h1>
-        <p class="lead">小谈博客是一个关注WEB开发的技术博客，学习世界上最流行的WEB开发语言PHP，这里有PHP的基础知识和技术实践，学习Laravel、ThinkPHP、Yii 2等开发框架，包括MySQL数据库设计和性能优化，Redis,memcache等数据库和缓存技术，还有Linux服务器方面的知识，Nginx配置优化，负载均衡等等。</p>
-        <p><a class="btn btn-primary btn-lg" href="http://blog.tanteng.me" role="button">Go</a></p>
+        <p class="lead">小谈博客是一个关注WEB开发的技术博客，这里有PHP的基础知识和技术实践，学习Laravel、ThinkPHP、Yii 2等开发框架，包括MySQ,Redis,memcache等数据库和缓存技术，还有Linux服务器方面的知识，Nginx配置优化，负载均衡等等。</p>
     </div>
 </div>
 
