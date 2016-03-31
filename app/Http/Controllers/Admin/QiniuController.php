@@ -31,8 +31,12 @@ class QiniuController extends Controller
     //上传post请求
     public function postUpload(Request $request)
     {
+        if (!$request->hasFile('file')) {
+            return redirect()->back()->with(['error' => '没有要上传的文件！']);
+        }
+
         $file = $request->file('file');
-        if ($request->hasFile('file') && $file && $file->isValid()) {
+        if ($file && $file->isValid()) {
             $originalName = $file->getClientOriginalName();
             list($filename,) = explode('.', $originalName);
             $extension = $file->getClientOriginalExtension();
