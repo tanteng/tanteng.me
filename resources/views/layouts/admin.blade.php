@@ -52,7 +52,6 @@
                     <!-- Authentication Links -->
                     @if (Auth::guard('admin')->guest())
                         <li><a href="{{ url('/admin/login') }}">Login</a></li>
-                        <li><a href="{{ url('/admin/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
