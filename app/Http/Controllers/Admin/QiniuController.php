@@ -37,6 +37,11 @@ class QiniuController extends Controller
         list($original,) = explode('.', $originalName);
         $disk = QiniuStorage::disk('qiniu');
         $key = 'uploads/' . date('Y/m/') . $original . '.' . $file->getClientOriginalExtension();
+        $count = $this->attachment->where('key', $key)->count();
+        if ($count > 0) {
+            return redirect()->back()->with(['error' => '存在相同文件名的文件，请更改文件名重新上传！']);
+        }
+
         $disk->put($key, file_get_contents($file->getRealPath()));
 
         $data = [
