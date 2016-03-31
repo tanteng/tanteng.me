@@ -1,22 +1,29 @@
 @extends('layouts.admin')
+@section('title', '媒体管理')
 
 @section('content')
 <div class="container">
-    <h2>媒体文件</h2>
+    <h2><span class="glyphicon glyphicon-plus"></span> 文件上传</h2>
     <div class="row">
         @if(session('error'))
             <p class="text-warning">{{ session('error') }}</p>
         @endif
         <form method="post" action="{{ url('/admin/upload') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
-            <input type="file" name="file">
-            <input type="submit">
+            <div class="form-group">
+                <label for="exampleInputEmail1">请选择文件</label>
+                <input type="file" name="file">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-default">提交</button>
+            </div>
         </form>
     </div>
 
+    <h2><span class="glyphicon glyphicon-camera"></span> 媒体库</h2>
     <div class="row">
         <div class="table-responsive">
-            <table class="table table-bordered table-striped">
+            <table class="table table-striped .table-hover">
                 <thead>
                 <tr>
                     <th>文件名</th>
