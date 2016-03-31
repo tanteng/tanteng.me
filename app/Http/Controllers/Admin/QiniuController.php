@@ -29,7 +29,7 @@ class QiniuController extends Controller
     {
         $hasFile = $request->hasFile('file');
         if (!$hasFile) {
-            die('没有上传文件！');
+            return redirect()->back()->with(['error' => '没有可上传的文件！']);
         }
 
         $file = $request->file('file');

@@ -42,7 +42,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/admin/register', 'Admin\AuthController@postRegister');
     Route::get('/admin', 'AdminController@index');
 
-    Route::get('/admin/upload', ['uses' => 'Admin\QiniuController@index']);
     Route::post('/admin/upload', ['uses' => 'Admin\QiniuController@postUpload']);
     Route::get('/admin/attachment', ['uses' => 'Admin\QiniuController@showList']);
 });

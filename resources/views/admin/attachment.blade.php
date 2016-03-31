@@ -3,7 +3,17 @@
 @section('content')
 <div class="container">
     <h2>媒体文件</h2>
-    <p><a class="btn btn-default" href="{{ url('admin/upload') }}" role="button">上传文件</a></p>
+    <div class="row">
+        @if(session('error'))
+            <p class="text-warning">{{ session('error') }}</p>
+        @endif
+        <form method="post" action="{{ url('/admin/upload') }}" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <input type="file" name="file">
+            <input type="submit">
+        </form>
+    </div>
+
     <div class="row">
         <div class="table-responsive">
             <table class="table table-bordered table-striped">
