@@ -20,7 +20,7 @@ class QiniuController extends Controller
     private $disk;
     private $allowedExts = ["gif", "jpeg", "jpg", "png", "txt", "pdf", "doc", "rtf", "docx", "xls", "xlsx"];
     const MAX_FILE_SIZE = 5; //5M
-    const CDN_DOMAIN = 'http://cdn.tanteng.me';
+    const CDN_DOMAIN = 'http://cdn.tanteng.me/';
 
     public function __construct(Attachment $attachment)
     {
