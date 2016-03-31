@@ -36,7 +36,7 @@ class QiniuController extends Controller
             $originalName = $file->getClientOriginalName();
             list($filename,) = explode('.', $originalName);
             $extension = $file->getClientOriginalExtension();
-            if (!in_array($extension, $this->allowedExts)) {
+            if (!in_array(strtolower($extension), $this->allowedExts)) {
                 return redirect()->back()->with(['error' => sprintf('不能上传%s格式的文件！', $extension)]);
             }
 
