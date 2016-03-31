@@ -19,7 +19,7 @@ class QiniuController extends Controller
     private $attachment;
     private $disk;
     private $allowedExts = ["gif", "jpeg", "jpg", "png", "txt", "pdf", "doc", "rtf", "docx", "xls", "xlsx"];
-    const MAX_FILE_SIZE = 5; //5M
+    const MAX_FILE_SIZE = 5 * 1024 * 1024; //5M
     const CDN_DOMAIN = 'http://cdn.tanteng.me/';
 
     public function __construct(Attachment $attachment)
@@ -41,8 +41,8 @@ class QiniuController extends Controller
             }
 
             $size = $file->getClientSize();
-            if ($size > self::MAX_FILE_SIZE * 1024 * 1024) {
-                return redirect()->back()->with(['error' => sprintf('文件大小不能超过%s！', '5M')]);
+            if ($size > self::MAX_FILE_SIZE) {
+                return redirect()->back()->with(['error' => sprintf('文件大小不能超过%dM！', self::MAX_FILE_SIZE)]);
             }
 
             $key = 'uploads/' . date('Y/m/') . $filename . '.' . $extension;
