@@ -23,7 +23,7 @@ class Attachment extends Eloquent
     //媒体文件列表
     public function attachmentList()
     {
-        return $this->orderBy('updated_at','desc')->take(100)->paginate(20);
+        return $this->orderBy('updated_at','desc')->paginate(15);
     }
 
     //文件大小

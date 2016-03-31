@@ -54,6 +54,9 @@
                 @endforeach
                 </tbody>
             </table>
+            <nav>
+                {{ $lists->render() }}
+            </nav>
         </div>
     </div>
 </div>
