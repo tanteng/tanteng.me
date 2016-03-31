@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title') < Admin -- tanteng.me</title>
+    <title>@yield('title', 'Admin') < Admin -- tanteng.me</title>
 
     <!-- Styles -->
     <link href="//cdn.tanteng.me" rel="dns-prefetch">
