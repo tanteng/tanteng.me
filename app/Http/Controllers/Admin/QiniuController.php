@@ -26,6 +26,7 @@ class QiniuController extends Controller
     {
         $this->attachment = $attachment;
         $this->disk = QiniuStorage::disk('qiniu');
+        $this->middleware('auth:admin');
     }
 
     //上传post请求
