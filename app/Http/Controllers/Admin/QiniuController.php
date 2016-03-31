@@ -32,7 +32,7 @@ class QiniuController extends Controller
     public function postUpload(Request $request)
     {
         $file = $request->file('file');
-        if ($file && $file->isValid()) {
+        if ($request->hasFile('file') && $file && $file->isValid()) {
             $originalName = $file->getClientOriginalName();
             list($filename,) = explode('.', $originalName);
             $extension = $file->getClientOriginalExtension();
