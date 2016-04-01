@@ -16,4 +16,10 @@ class IndexController extends Controller
         $navFlag = 'home';
         return view('index.index', compact('navFlag'));
     }
+
+    public function resume()
+    {
+        $navFlag = 'resume';
+        return view('index.resume', compact('navFlag'));
+    }
 }

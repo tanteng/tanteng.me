@@ -1,6 +1,6 @@
 @extends('layouts.cover')
 
-@section('title', 'tanteng.me')
+@section('title', 'Home')
 @section('description', 'Welcome to tanteng.me!')
 @section('content')
 <div class="site-wrapper">

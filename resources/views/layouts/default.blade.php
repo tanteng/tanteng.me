@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>@yield('title')</title>
+    <title>@yield('title') - tanteng.me</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -30,7 +30,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">tanteng.me</a>
+            <a class="navbar-brand" href="/">Tanteng.me</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar">
@@ -52,12 +52,6 @@
         </div>
     </div>
 </nav>
-
-<div class="jumbotron">
-    <div class="container">
-        <p class="lead"><span class="glyphicon glyphicon-home"></span> 小谈博客关注WEB开发，这里有PHP的基础知识和技术实践，学习Laravel、ThinkPHP、Yii等开发框架，MySQL,Redis,memcache等数据库和缓存技术，还有Linux服务器方面的知识，Nginx配置优化，负载均衡等等。</p>
-    </div>
-</div>
 
 @yield('content')
 

@@ -1,9 +1,14 @@
 @extends('layouts.default')
 
-@section('title', 'Blog - tanteng.me')
+@section('title', 'Blog')
 @section('description', '小谈博客关注WEB开发，这里有PHP的基础知识和技术实践，学习Laravel、ThinkPHP、Yii等开发框架，MySQL,Redis,memcache等数据库和缓存技术，还有Linux服务器方面的知识，Nginx配置优化，负载均衡等等。')
 @section('canonical', 'http://www.tanteng.me/blog')
 @section('content')
+<div class="jumbotron">
+    <div class="container">
+        <p class="lead"><span class="glyphicon glyphicon-home"></span> 小谈博客关注WEB开发，这里有PHP的基础知识和技术实践，学习Laravel、ThinkPHP、Yii等开发框架，MySQL,Redis,memcache等数据库和缓存技术，还有Linux服务器方面的知识，Nginx配置优化，负载均衡等等。</p>
+    </div>
+</div>
 
 <div class="container">
     <div class="row">
@@ -66,4 +71,4 @@
         <a class="btn btn-default" href="http://blog.tanteng.me/page/2" role="button">更多</a>
     </div>
 </div>
-@stop
+@endsection
