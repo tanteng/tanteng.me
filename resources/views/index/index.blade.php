@@ -8,7 +8,6 @@
     <div class="site-wrapper-inner">
 
         <div class="cover-container">
-
             <div class="masthead clearfix inner">
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
@@ -40,7 +39,7 @@
                     <div class="col-md-10 col-md-offset-1">
                         <img class="img-circle" src="http://cdn.tanteng.me/assets/images/avatar.jpg" alt="avatar" width="140" height="140">
                         <h2>谈腾</h2>
-                        <p>主要从事PHP开发，熟悉Laravel，ThinkPHP，CI等框架，熟悉jQuery、css等前端技术，熟悉MySQL数据库及性能优化，能较好理解MVC架构和面向对象的思想，注重代码的规范和性能。有大型网站的开发经验，熟悉Redis，Memcache的用法，使用过MongoDB，对Python感兴趣并有所研究。</p>
+                        <p>从事PHP开发，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，MongoDB数据库及缓存技术，熟悉jQuery等前端技术，较好理解面向对象的思想，注重代码规范和性能。有大型网站开发经验，熟悉Linux环境，对Nginx等服务器端配置和优化有所研究。</p>
                         <p><a class="btn btn-default" href="/resume" role="button">更多</a></p>
                     </div>
                 </div>
