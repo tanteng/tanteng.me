@@ -22,4 +22,10 @@ class IndexController extends Controller
         $navFlag = 'resume';
         return view('index.resume', compact('navFlag'));
     }
+
+    public function contact()
+    {
+        $navFlag = 'contact';
+        return view('index.contact', compact('navFlag'));
+    }
 }

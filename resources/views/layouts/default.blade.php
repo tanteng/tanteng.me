@@ -17,6 +17,7 @@
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="//cdn.tanteng.me/assets/js/ie-emulation-modes-warning.js"></script>
+    @yield('head')
 </head>
 <body>
 
@@ -77,6 +78,9 @@
 <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="//cdn.tanteng.me/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+@yield('js')
+
 <script>
     var _hmt = _hmt || [];
     (function() {
