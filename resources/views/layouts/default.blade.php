@@ -8,7 +8,7 @@
     <meta name="description" content="@yield('description')">
     <link href="//cdn.tanteng.me" rel="dns-prefetch">
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/styles/style.css" rel="stylesheet">
+    <link href="//cdn.tanteng.me/assets/styles/style.css" rel="stylesheet">
     <link rel="icon" href="/favicon.ico">
     <link rel="canonical" href="@yield('canonical')" />
     <!--[if lt IE 9]>
