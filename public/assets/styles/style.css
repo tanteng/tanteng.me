@@ -1,4 +1,29 @@
 
+.sns  {
+}
+
+.sns_size {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}
+
+.sns .weibo {
+    background: rgba(0, 0, 0, 0) url("../images/sns_bg.png") no-repeat scroll -469px -5px;
+}
+
+.sns .linked {
+    background: rgba(0, 0, 0, 0) url("../images/sns_bg.png") no-repeat scroll -160px -5px;
+}
+
+.sns .github {
+    background: rgba(0, 0, 0, 0) url("../images/sns_bg.png") no-repeat scroll -263px -5px;
+}
+
+.sns .zhihu {
+    background: rgba(0, 0, 0, 0) url("../images/sns_bg.png") no-repeat scroll -315px -5px;
+}
+
 .margin-top15 {
     margin-top: 15px;
 }

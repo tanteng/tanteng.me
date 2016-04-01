@@ -6,7 +6,7 @@
 @section('content')
 <div class="container">
     <div class="page-header">
-        <h1><span class="glyphicon glyphicon-file"></span> 我的简历 <small>PHP工程师</small></h1>
+        <h1><span class="glyphicon glyphicon-file"></span> 简历 <small>Resume</small></h1>
     </div>
 
     <div class="row">
