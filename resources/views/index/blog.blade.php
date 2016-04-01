@@ -57,7 +57,7 @@
         @foreach($newPosts as $post)
         <div class="col-md-4 col-md-offset-1">
             <h3><a href="{{ $post->url }}" target="_blank">{{ $post->post_title }}</a></h3>
-            <span>{{ $post->post_date }} | @if($post->main_category) {{ $post->main_category }} @endif</span>
+            <span>{{ $post->post_date }}</span>
         </div>
         @endforeach
     </div>
