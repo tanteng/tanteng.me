@@ -1,8 +1,8 @@
 @extends('layouts.default')
 
-@section('title', 'Resume')
-@section('description', '谈腾的简历')
-
+@section('title', 'Contact')
+@section('description', '联系方式')
+@section('canonical', 'http://www.tanteng.me/contact')
 @section('head')
         <!--引用百度地图API-->
 <style type="text/css">
@@ -15,7 +15,7 @@
 @section('content')
 <div class="container">
     <div class="page-header">
-        <h1>联系我 <small>社交网络</small></h1>
+        <h1><span class="glyphicon glyphicon-phone"></span> 联系我 <small>社交网络</small></h1>
     </div>
 
     <div class="row">

@@ -31,19 +31,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Tanteng.me</a>
+            <a class="navbar-brand" href="/">tanteng.me</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">About Me</a></li>
-                    </ul>
-                </li>
-            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li @if($navFlag == 'home')class="active" @endif><a href="/">Home</a></li>
                 <li @if($navFlag == 'blog')class="active" @endif><a href="/blog">Blog</a></li>

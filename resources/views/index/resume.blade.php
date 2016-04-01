@@ -2,10 +2,11 @@
 
 @section('title', 'Resume')
 @section('description', '谈腾的简历')
+@section('canonical', 'http://www.tanteng.me/resume')
 @section('content')
 <div class="container">
     <div class="page-header">
-        <h1>我的简历 <small>PHP工程师</small></h1>
+        <h1><span class="glyphicon glyphicon-file"></span> 我的简历 <small>PHP工程师</small></h1>
     </div>
 
     <div class="row">
