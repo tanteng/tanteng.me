@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title', 'Contact')
-@section('description', '联系方式')
+@section('description', '联系方式，社交网络，微博，github')
 @section('canonical', 'http://www.tanteng.me/contact')
 @section('head')
         <!--引用百度地图API-->

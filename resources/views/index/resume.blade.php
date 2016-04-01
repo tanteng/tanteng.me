@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title', 'Resume')
-@section('description', '谈腾的简历')
+@section('description', '谈腾的简历，PHP开发工程师，目前在深圳工作，3年工作经验，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，MongoDB数据库及缓存技术，熟悉jQuery等前端技术。主要负责或参与的业务：商品报名，商家售后、订单、批量发货，商家资金相关需求，商家结算系统，财务系统。')
 @section('canonical', 'http://www.tanteng.me/resume')
 @section('content')
 <div class="container">
@@ -29,7 +29,6 @@
                 <li>商品报名</li>
                 <li>买家帮助中心</li>
                 <li>商家售后、订单、批量发货</li>
-                <li>商家资金相关需求</li>
                 <li>商家资金相关需求</li>
                 <li>商家结算系统</li>
             </ul>
