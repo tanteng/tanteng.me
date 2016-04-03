@@ -21,8 +21,8 @@
 
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
-            <h3>自我描述</h3>
-            <p>从事PHP开发，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，Memcache，MongoDB数据库及缓存技术，熟悉jQuery，css等前端技术，有数据库设计和优化的经验，能较好理解面向对象的思想，注重代码的规范和性能。有大型网站开发经验，熟悉Linux环境下的开发，对Nginx等服务器端配置和优化有实践经验，另外对Python比较感兴趣并有所研究。</p>
+            <h3>自我简介</h3>
+            <p>从事PHP开发，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，MongoDB数据库及缓存技术，熟悉jQuery，css等前端技术，能较好理解面向对象的思想，注重代码的规范和性能。有大型网站开发经验，熟悉Linux环境下的开发，对Nginx等服务器端配置和优化有所了解，另外对Python比较感兴趣并有所研究。</p>
 
             <h3>工作经历</h3>
             <h4>深圳迅雷网络技术有限公司</h4>
