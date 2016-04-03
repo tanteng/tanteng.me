@@ -28,6 +28,31 @@
                 <a href="https://github.com/tanteng" target="_blank" class="list-group-item"><span class="github sns_size"></span> Github</a>
             </div>
 
+            <h2>有话要说</h2>
+            <form>
+                {{ csrf_field() }}
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" name="nick_name" id="nickName" placeholder="请输入名字">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-7">
+                        <input type="text" class="form-control" name="website" id="website" placeholder="请输入网址(可不填)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="5" name="content" placeholder="请输入内容"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="captcha" placeholder="请输入验证码">
+                        <p class="help-block">{!! captcha_img() !!}</p>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-default">提交</button>
+            </form>
+
             <h2>位置</h2>
             <!--百度地图容器-->
             <div style="height:360px;border:#ccc solid 1px;" id="dituContent"></div>

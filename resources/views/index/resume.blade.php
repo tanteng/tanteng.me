@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title', 'Resume')
-@section('description', '谈腾的简历，PHP开发工程师，目前在深圳工作，3年工作经验，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，MongoDB数据库及缓存技术，熟悉jQuery等前端技术。主要负责或参与的业务：商品报名，商家售后、订单、批量发货，商家资金相关需求，商家结算系统，财务系统。')
+@section('description', '从事PHP开发，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，MongoDB数据库及缓存技术，熟悉jQuery，css等前端技术，能较好理解面向对象的思想，注重代码的规范和性能。有大型网站开发经验，熟悉Linux环境下的开发，对Nginx等服务器端配置和优化有所了解。')
 @section('canonical', 'http://www.tanteng.me/resume')
 @section('content')
 <div class="container">
@@ -83,7 +83,6 @@
                 <li><span class="label label-primary">消息队列</span></li>
                 <li><span class="label label-primary">jQuery</span></li>
                 <li><span class="label label-primary">CSS</span></li>
-                <li><span class="label label-primary">Python</span></li>
             </ul>
             <p>计划学习的方向：服务器方面的部署，WEB集群，Redis集群等，负载均衡，以及服务器端性能优化方面的知识。</p>
 
