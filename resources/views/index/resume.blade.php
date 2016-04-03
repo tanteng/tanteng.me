@@ -73,8 +73,8 @@
                 </div>
             </div>
 
-            <h3>掌握技术</h3>
-            <p>熟悉在Linux环境下的开发，熟练使用Git，本地环境使用Vagrant+VirtualBox搭建的虚拟机，使用CentOS或Ubuntu操作系统，部署PHP+MySQL+Redis+Git+Composer等，对Nginx的基本配置比较掌握，了解一些WEB服务器的性能调优。</p>
+            <h3>开发环境</h3>
+            <p>熟悉Linux开发环境，本地环境使用Vagrant+VirtualBox搭建的虚拟机，使用CentOS或Ubuntu操作系统，会部署PHP+MySQL+Redis+Git+Composer等，对Nginx的基本配置和服务器端性能调优有了解。熟悉Git和SVN版本控制工具。</p>
             <ul class="list-unstyled">
                 <li><span class="label label-primary">PHP</span></li>
                 <li><span class="label label-primary">MySQL</span></li>
@@ -84,7 +84,7 @@
                 <li><span class="label label-primary">jQuery</span></li>
                 <li><span class="label label-primary">CSS</span></li>
             </ul>
-            <p>计划学习的方向：服务器方面的部署，WEB集群，Redis集群等，以及服务器端性能优化方面的知识。</p>
+            <p>计划学习的方向：服务器方面的部署，WEB集群，Redis集群等，负载均衡，以及服务器端性能优化方面的知识。</p>
 
 
             <h3>个人爱好</h3>
