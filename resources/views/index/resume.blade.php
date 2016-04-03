@@ -43,14 +43,14 @@
             <p>主要负责或参与的业务：</p>
             <ul>
                 <li>鹰眼系统PHP支持</li>
-                <li>双12活动APP端API接口开发</li>
+                <li>双12活动&3.7女生节API接口开发</li>
                 <li>JAVA服务化升级PHP接口改造</li>
-                <li>财务系统（总账，对账单，供应商往来等）</li>
+                <li>财务系统</li>
             </ul>
             <p>以上项目中涉及到的技术：</p>
             <ul>
                 <li>Redis的使用</li>
-                <li>HTTPSQS消息系统队列，用于异步任务</li>
+                <li>消息队列，用于异步任务</li>
                 <li>MongoDB存取文件</li>
                 <li>数据库的设计、分表、性能优化等</li>
                 <li>Shell脚本计划任务</li>
@@ -84,6 +84,7 @@
                 <li><span class="label label-primary">jQuery</span></li>
                 <li><span class="label label-primary">CSS</span></li>
             </ul>
+            <p>计划学习的方向：服务器方面的部署，WEB集群，Redis集群等，以及服务器端性能优化方面的知识。</p>
 
 
             <h3>个人爱好</h3>
