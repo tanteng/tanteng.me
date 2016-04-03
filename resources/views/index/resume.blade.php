@@ -58,8 +58,8 @@
 
             <h4 class="margin-top15">武汉快游科技有限公司</h4>
             <ol>
-                <li>基于PHPCMS开源系统进行二次开发整站，9553.com软件下载站、99danji.com单机游戏站、页游门户等整站开发，包括前后台功能的开发。网站之前是asp+mssql架构，改成php+mysql，要进行数据的转换，保证数据完整和正确。</li>
-                <li>使用ThinkPHP框架开发一套广告联盟系统，该系统提供各种类型的广告给其他网站，帮助推广公司的游戏或者软件产品，按点击量、下载量等统计并支付推广费用，有完善的前台和后台系统。</li>
+                <li>基于PHPCMS进行CMS系统的二次开发，软件下载站9553.com、单机游戏站99danji.com、页游门户等整站开发，包括前后台功能的开发。网站之前是asp+mssql，改成php+mysql，进行数据的转换，保证数据完整和正确，以及第三方接口的使用等。</li>
+                <li>基于ThinkPHP框架开发的一套广告联盟系统，该系统提供不同类型的广告给其他网站，帮助推广公司的游戏或者软件产品，按点击量、下载量等统计并支付推广费用，有完善的前台和后台系统。</li>
             </ol>
 
             <h3>教育经历</h3>
@@ -73,7 +73,7 @@
                 </div>
             </div>
 
-            <h3>开发环境</h3>
+            <h3>其他技能</h3>
             <p>熟悉Linux开发环境，本地环境使用Vagrant+VirtualBox搭建的虚拟机，使用CentOS或Ubuntu操作系统，会部署PHP+MySQL+Redis+Git+Composer等，对Nginx的基本配置和服务器端性能调优有了解。熟悉Git和SVN版本控制工具。</p>
             <ul class="list-unstyled">
                 <li><span class="label label-primary">PHP</span></li>
@@ -83,6 +83,7 @@
                 <li><span class="label label-primary">消息队列</span></li>
                 <li><span class="label label-primary">jQuery</span></li>
                 <li><span class="label label-primary">CSS</span></li>
+                <li><span class="label label-primary">Python</span></li>
             </ul>
             <p>计划学习的方向：服务器方面的部署，WEB集群，Redis集群等，负载均衡，以及服务器端性能优化方面的知识。</p>
 
