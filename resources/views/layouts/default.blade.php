@@ -17,6 +17,7 @@
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="//cdn.tanteng.me/assets/js/ie-emulation-modes-warning.js"></script>
+    <script src="//cdn.tanteng.me/assets/js/pace.min.js"></script>
     @yield('head')
 </head>
 <body>
