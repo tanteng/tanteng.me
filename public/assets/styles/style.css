@@ -28,6 +28,10 @@
     margin-top: 15px;
 }
 
+.marquee {
+    padding: 20px 0;
+}
+
 .footer {
     border-top: 1px solid #e5e5e5;
     color: #767676;
