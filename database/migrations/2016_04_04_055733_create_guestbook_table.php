@@ -17,6 +17,7 @@ class CreateGuestbookTable extends Migration
             $table->string('nickname');
             $table->string('website');
             $table->string('content');
+            $table->smallInteger('is_audit');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateGuestbookTable extends Migration
      */
     public function down()
     {
-        Schema::drop('attachment');
+        Schema::drop('guestbook');
     }
 }
