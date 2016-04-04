@@ -47,6 +47,7 @@ class IndexController extends Controller
                 'website' => $request['website'],
                 'content' => $request['content'],
                 'ip' => $request->getClientIp(),
+                'is_audit' => 0,
                 'created_at' => date('Y-m-d H:i:s'),
             ]);
 
