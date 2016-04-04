@@ -28,6 +28,10 @@
     margin-top: 15px;
 }
 
+.captcha {
+    margin-top: 10px;
+}
+
 .marquee {
     padding: 30px 0;
 }
@@ -68,5 +72,9 @@
 @media (min-width: 768px) {
     .footer {
         margin-top: 40px;
+    }
+
+    .captcha {
+        margin-top: 0;
     }
 }

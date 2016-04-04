@@ -40,7 +40,9 @@
             @endif
 
             @if (session('info'))
-                <p>{{ session('info') }}</p>
+                <div class="alert alert-success">
+                    <p>{{ session('info') }}</p>
+                </div>
             @endif
 
             <form method="post" action="{{ url('/contact/comment') }}">
@@ -63,7 +65,7 @@
                         <input type="text" class="form-control" name="captcha" id="captcha" placeholder="请输入验证码">
                     </div>
                     <div class="col-md-4">
-                        <img src="{!! captcha_src() !!}" alt="验证码" title="点击更新验证码">（点击图片更新验证码）
+                        <img src="{!! captcha_src() !!}" class="captcha" alt="验证码" title="点击更换验证码" onclick="this.src='{!! captcha_src() !!}' + Math.random()" style="cursor: pointer;">（点击图片更换验证码）
                     </div>
                 </div>
                 <button type="submit" class="btn btn-default">提交</button>

@@ -26,7 +26,7 @@ class IndexController extends Controller
         return view('index.resume', compact('navFlag'));
     }
 
-    public function contact()
+    public function contact(Request $quest)
     {
         $navFlag = 'contact';
         return view('index.contact', compact('navFlag'));
@@ -35,25 +35,25 @@ class IndexController extends Controller
     //Contact页面提交留言
     public function postComment(Request $request)
     {
-        if($request->method() == 'POST'){
+        if ($request->method() == 'POST'){
             $this->validate($request,[
                 'nickname' => 'required',
                 'content' => 'required',
                 'captcha' => 'required|captcha',
             ]);
 
-            $id = DB::table('guestbook')->insert([
+            $result = DB::table('guestbook')->insert([
                 'nickname' => $request['nickname'],
                 'website' => $request['website'],
                 'content' => $request['content'],
                 'created_at' => date('Y-m-d H:i:s'),
             ]);
 
-            if($id){
-                return redirect()->back()->with(['info', '发布成功！']);
-            }else{
-                return redirect()->back()->with(['info', '发布失败！']);
+            if ($result) {
+                return redirect()->back()->with(['info' => '发布成功！']);
             }
         }
+
+        return redirect()->back()->with(['info' => '发布失败！']);
     }
 }
