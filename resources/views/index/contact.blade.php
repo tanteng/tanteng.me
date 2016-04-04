@@ -1,10 +1,10 @@
 @extends('layouts.default')
 
 @section('title', 'Contact')
-@section('description', '联系方式，社交网络，微博，github')
+@section('description', '联系方式，社交网络(微博，Github，知乎，Linked)，以及留言本。')
 @section('canonical', 'http://www.tanteng.me/contact')
 @section('head')
-        <!--引用百度地图API-->
+<!--引用百度地图API-->
 <style type="text/css">
     .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
     .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
@@ -29,25 +29,41 @@
             </div>
 
             <h2>有话要说</h2>
-            <form>
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
+            @if (session('info'))
+                <p>{{ session('info') }}</p>
+            @endif
+
+            <form method="post" action="{{ url('/contact/comment') }}">
                 {{ csrf_field() }}
                 <div class="form-group row">
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="nick_name" id="nickName" placeholder="请输入名字">
+                        <input type="text" class="form-control" name="nickname" id="nickName" value="{{ old('nickname') }}" placeholder="请输入名字">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-7">
-                        <input type="text" class="form-control" name="website" id="website" placeholder="请输入网址(可不填)">
+                        <input type="text" class="form-control" name="website" id="website" value="{{ old('website') }}" placeholder="请输入网址(可不填)">
                     </div>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" rows="5" name="content" placeholder="请输入内容"></textarea>
+                    <textarea class="form-control" rows="5" name="content" placeholder="请输入内容">{{ old('content') }}</textarea>
                 </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <input type="text" class="form-control" id="captcha" placeholder="请输入验证码">
-                        <p class="help-block">{!! captcha_img() !!}</p>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" name="captcha" id="captcha" placeholder="请输入验证码">
+                    </div>
+                    <div class="col-md-4">
+                        <img src="{!! captcha_src() !!}" alt="验证码" title="点击更新验证码">（点击图片更新验证码）
                     </div>
                 </div>
                 <button type="submit" class="btn btn-default">提交</button>

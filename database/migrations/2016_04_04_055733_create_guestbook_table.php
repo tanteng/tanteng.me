@@ -3,21 +3,20 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAttachmentTable extends Migration
+class CreateGuestbookTable extends Migration
 {
     /**
-     * 存储上传到七牛云的媒体文件信息
+     * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create('attachment', function (Blueprint $table) {
+        Schema::create('guestbook', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('key')->unique();
-            $table->string('url');
-            $table->string('type');
-            $table->string('size');
+            $table->string('nickname');
+            $table->string('website');
+            $table->string('content');
             $table->timestamps();
         });
     }
