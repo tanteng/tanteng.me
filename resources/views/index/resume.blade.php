@@ -22,14 +22,16 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h3>自我简介</h3>
-            <p>从事PHP开发，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，MongoDB数据库及缓存技术，熟悉jQuery，css等前端技术，能较好理解面向对象的思想，注重代码的规范和性能。有大型网站开发经验，熟悉Linux环境下的开发，对Nginx等服务器端配置和优化有所了解，另外对Python比较感兴趣并有所研究。</p>
+            <p>主要从事PHP开发，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，MongoDB数据库及缓存技术，熟悉jQuery，css等前端技术，能较好理解面向对象的思想，注重代码的规范和性能,熟悉Linux环境和服务端常见配置，有大型网站的开发经验。</p>
 
             <h3>工作经历</h3>
             <h4>深圳迅雷网络技术有限公司</h4>
+            <p><img src="http://cdn.tanteng.me/assets/images/xunlei-logo.jpg" alt="迅雷网络" width="118" height="112"></p>
             <p>2016.4——至今</p>
             <code>//TODO</code>
 
             <h4>深圳卷皮网络科技有限公司</h4>
+            <p><img src="http://cdn.tanteng.me/assets/images/juanpi-logo.jpg" alt="卷皮网络" width="118" height="112"></p>
             <p>2015.3——2015.9 武汉奇米网络科技有限公司（卷皮网武汉总部）财务支撑组</p>
             <p>主要负责或参与的业务：</p>
             <ul>
