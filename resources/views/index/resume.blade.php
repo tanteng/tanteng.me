@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h3>自我简介</h3>
-            <p>主要从事PHP开发，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，MongoDB数据库及缓存技术，熟悉jQuery，css等前端技术，能较好理解面向对象的思想，注重代码的规范和性能,熟悉Linux环境和服务端常见配置，有大型网站的开发经验。</p>
+            <p>主要从事PHP开发，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，MongoDB数据库及缓存技术，熟悉jQuery，css等前端技术，能较好理解面向对象的思想，注重代码的规范和性能，有大型网站的开发经验。</p>
 
             <h3>工作经历</h3>
             <h4>深圳迅雷网络技术有限公司</h4>
@@ -38,6 +38,7 @@
                 <li>商品报名</li>
                 <li>买家帮助中心</li>
                 <li>商家售后、订单、批量发货</li>
+                <li>商家数据中心</li>
                 <li>商家资金</li>
                 <li>商家结算系统</li>
             </ul>
@@ -76,7 +77,7 @@
             </div>
 
             <h3>其他技能</h3>
-            <p>熟悉Linux开发环境，本地环境使用Vagrant+VirtualBox搭建的虚拟机，使用CentOS或Ubuntu操作系统，会部署PHP+MySQL+Redis+Git+Composer等，对Nginx的基本配置和服务器端性能调优有了解。熟悉Git和SVN版本控制工具。</p>
+            <p>熟悉在Linux环境下的开发，本地使用Vagrant+VirtualBox搭建的虚拟机，使用CentOS或Ubuntu操作系统，对Nginx的基本配置和服务器性能调优有所了解。遵守开发流程和规范，熟悉Git和SVN版本控制工具。对Python比较感兴趣并有所学习。</p>
             <ul class="list-unstyled">
                 <li><span class="label label-primary">PHP</span></li>
                 <li><span class="label label-primary">MySQL</span></li>
@@ -86,11 +87,14 @@
                 <li><span class="label label-primary">jQuery</span></li>
                 <li><span class="label label-primary">CSS</span></li>
             </ul>
-            <p>计划学习的方向：服务器方面的部署，WEB集群，Redis集群等，负载均衡，以及服务器端性能优化方面的知识。</p>
+            <p>计划学习的方向：深入学习Laravel框架和其中的概念，了解和学习服务器方面的部署，WEB集群，Redis集群等，负载均衡等，以及服务器端安全和性能优化方面的知识。</p>
 
 
             <h3>个人爱好</h3>
             <p>旅行，看书</p>
+
+            <h3>博客</h3>
+            <p><a href="http://blog.tanteng.me" target="_blank">http://blog.tanteng.me</a></p>
         </div>
     </div>
 </div>
