@@ -35,12 +35,19 @@ class IndexController extends Controller
     //Contact页面提交留言
     public function postComment(Request $request)
     {
+        $messages = [
+            'nickname.required' => '请填写你的名字！',
+            'content.required' => '请填写要发布的内容！',
+            'captcha.required' => '请填写验证码，以证明你不是机器人！',
+            'captcha.captcha' => '验证码错误！',
+        ];
+
         if ($request->method() == 'POST'){
             $this->validate($request,[
                 'nickname' => 'required',
                 'content' => 'required',
                 'captcha' => 'required|captcha',
-            ]);
+            ], $messages);
 
             $result = DB::table('guestbook')->insert([
                 'nickname' => $request['nickname'],
