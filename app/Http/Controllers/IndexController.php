@@ -46,6 +46,7 @@ class IndexController extends Controller
                 'nickname' => $request['nickname'],
                 'website' => $request['website'],
                 'content' => $request['content'],
+                'ip' => $request->getClientIp(),
                 'created_at' => date('Y-m-d H:i:s'),
             ]);
 

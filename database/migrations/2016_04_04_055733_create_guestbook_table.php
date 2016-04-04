@@ -17,6 +17,7 @@ class CreateGuestbookTable extends Migration
             $table->string('nickname');
             $table->string('website');
             $table->string('content');
+            $table->string('ip');
             $table->smallInteger('is_audit');
             $table->timestamps();
         });
