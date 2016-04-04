@@ -7,25 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@yield('description')">
     <link href="//cdn.tanteng.me" rel="dns-prefetch">
-    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.tanteng.me/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.tanteng.me/assets/styles/cover.css" rel="stylesheet">
     <link rel="icon" href="/favicon.ico">
     <link rel="canonical" href="http://www.tanteng.me/" />
-    <!--[if lt IE 9]>
-    <script src="//cdn.tanteng.me/assets/js/ie8-responsive-file-warning.js'"></script>
-    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="//cdn.tanteng.me/assets/js/ie-emulation-modes-warning.js"></script>
 </head>
 <body>
 
 @yield('content')
 
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-<script src="//cdn.tanteng.me/assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src="//cdn.tanteng.me/assets/bootstrap/js/bootstrap.min.js"></script>
 <script>
     var _hmt = _hmt || [];
     (function() {
