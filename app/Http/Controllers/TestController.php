@@ -26,6 +26,14 @@ class TestController extends Controller
         dump($value);
     }
 
+    //测试memcache
+    public function testMemcache()
+    {
+        Cache::store('memcached')->put('tanteng', 'tantengmemcache', 4);
+        $value = Cache::store('memcached')->get('tanteng');
+        dd($value);
+    }
+
     //测试闭包传参及use使用外部变量
     public function testClosure($t1, $t2)
     {

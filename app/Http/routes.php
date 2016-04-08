@@ -16,6 +16,7 @@ Route::get('/blog', ['as'=>'index.blog', 'uses' => 'BlogController@index']);
 Route::get('/resume', ['uses' => 'IndexController@resume']);
 
 Route::get('/test/redis', ['uses' => 'TestController@testRedis']);
+Route::get('/test/memcache', ['uses' => 'TestController@testMemcache']);
 
 /*
 |--------------------------------------------------------------------------
