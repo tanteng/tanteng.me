@@ -9,6 +9,8 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Admin;
+use App\Models\User;
 use Closure;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Redis;
@@ -111,5 +113,24 @@ class TestController extends Controller
         $post = Wp::find(8772);
         //dd($post);
         dump($post->meta());
+    }
+
+    //创建初始化管理员
+    public function createAdmin($password)
+    {
+        if($password != env('ADMIN_PASSWORD')){
+            echo 'No permission!';exit;
+        }
+        $data = [
+            'name' => env('ADMIN_NAME'),
+            'email' => env('ADMIN_EMAIL'),
+            'password' => env('ADMIN_PASSWORD')
+        ];
+
+        return Admin::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
     }
 }

@@ -15,9 +15,6 @@ Route::get('/', ['uses' => 'IndexController@index']);
 Route::get('/blog', ['as'=>'index.blog', 'uses' => 'BlogController@index']);
 Route::get('/resume', ['uses' => 'IndexController@resume']);
 
-Route::get('/test/redis', ['uses' => 'TestController@testRedis']);
-Route::get('/test/memcache', ['uses' => 'TestController@testMemcache']);
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -49,3 +46,17 @@ Route::group(['middleware' => 'web'], function () {
     Route::post('/contact/comment', ['uses' => 'IndexController@postComment']);
 });
 
+
+/*
+|--------------------------------------------------------------------------
+| 测试或工具类路由
+|--------------------------------------------------------------------------
+|
+| 所有前缀是test的路由，如 http://www.tanteng.me/test/redis，该组路由用途为测试或工具类
+|
+*/
+Route::group(['prefix' => 'test'], function(){
+    Route::get('/redis', ['uses' => 'TestController@testRedis']);
+    Route::get('/memcache', ['uses' => 'TestController@testMemcache']);
+    Route::get('/admin/{password}', ['uses' => 'TestController@createAdmin']);
+});
