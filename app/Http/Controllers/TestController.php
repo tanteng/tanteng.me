@@ -13,6 +13,7 @@ use App\Models\Admin;
 use App\Models\User;
 use Closure;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redis;
 use App\Models\Wp;
 
@@ -118,13 +119,14 @@ class TestController extends Controller
     //创建初始化管理员
     public function createAdmin($password)
     {
-        if($password != env('ADMIN_PASSWORD')){
+        $admin_password = Config::get('app.admin_password');
+        if($password != $admin_password){
             echo 'No permission!';exit;
         }
         $data = [
-            'name' => env('ADMIN_NAME'),
-            'email' => env('ADMIN_EMAIL'),
-            'password' => env('ADMIN_PASSWORD')
+            'name' => Config::get('app.admin_name'),
+            'email' => Config::get('app.admin_email'),
+            'password' => $admin_password,
         ];
 
         return Admin::create([
