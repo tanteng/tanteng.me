@@ -120,7 +120,7 @@ class TestController extends Controller
     public function createAdmin($password)
     {
         $admin_password = Config::get('app.admin_password');
-        if($password != $admin_password){
+        if($admin_password == null || $password != $admin_password){
             echo 'No permission!';exit;
         }
         $data = [

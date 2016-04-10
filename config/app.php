@@ -111,9 +111,9 @@ return [
     'log' => env('APP_LOG', 'single'),
 
     //自定义手动创建后台管理员
-    'admin_name' => env('ADMIN_NAME', 'admin'),
-    'admin_email' => env('ADMIN_EMAIL', 'email'),
-    'admin_password' => env('ADMIN_PASSWORD', 'pwd'),
+    'admin_name' => env('ADMIN_NAME', null),
+    'admin_email' => env('ADMIN_EMAIL', null),
+    'admin_password' => env('ADMIN_PASSWORD', null),
 
     /*
     |--------------------------------------------------------------------------
