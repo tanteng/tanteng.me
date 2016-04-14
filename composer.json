@@ -12,7 +12,8 @@
         "predis/predis":"~1.0.1",
         "jgrossi/corcel": "^1.0",
         "itbdw/laravel-storage-qiniu": "^1.0",
-        "mews/captcha": "^2.1"
+        "mews/captcha": "^2.1",
+        "barryvdh/laravel-ide-helper": "^2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -46,7 +47,9 @@
             "php artisan optimize"
         ],
         "pre-update-cmd": [
-            "php artisan clear-compiled"
+            "php artisan clear-compiled",
+            "php artisan ide-helper:generate",
+            "php artisan optimize"
         ],
         "post-update-cmd": [
             "php artisan optimize"

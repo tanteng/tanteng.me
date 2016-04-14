@@ -160,7 +160,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
