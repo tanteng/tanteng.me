@@ -11,6 +11,15 @@
 |
 */
 
+
+//后台管理
+Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function () {
+    Route::get('/', 'AdminController@index');
+    Route::get('/login', 'Admin\AuthController@getLogin');
+    Route::post('/login', 'Admin\AuthController@postLogin');
+    Route::get('/logout', 'Admin\AuthController@logout');
+});
+
 Route::get('/', ['uses' => 'IndexController@index']);
 Route::get('/blog', ['as'=>'index.blog', 'uses' => 'BlogController@index']);
 Route::get('/resume', ['uses' => 'IndexController@resume']);
@@ -45,6 +54,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/contact', ['uses' => 'IndexController@contact']);
     Route::post('/contact/comment', ['uses' => 'IndexController@postComment']);
 });
+
+
 
 
 /*

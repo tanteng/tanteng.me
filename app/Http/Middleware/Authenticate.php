@@ -20,8 +20,6 @@ class Authenticate
         if (Auth::guard($guard)->guest()) {
             if ($request->ajax()) {
                 return response('Unauthorized.', 401);
-            } elseif ($guard == 'admin') {
-                return redirect()->guest('admin/login');
             } else {
                 return redirect()->guest('login');
             }
