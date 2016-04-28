@@ -18,6 +18,8 @@ Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function (
     Route::get('/login', 'Admin\AuthController@getLogin');
     Route::post('/login', 'Admin\AuthController@postLogin');
     Route::get('/logout', 'Admin\AuthController@logout');
+    Route::post('/admin/upload', ['uses' => 'Admin\QiniuController@postUpload']);
+    Route::get('/admin/attachment', ['uses' => 'Admin\QiniuController@showList']);
 });
 
 Route::get('/', ['uses' => 'IndexController@index']);
@@ -38,19 +40,8 @@ Route::get('/resume', ['uses' => 'IndexController@resume']);
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
-
     Route::get('/home', 'HomeController@index');
     Route::get('/post', ['name' => 'post.show',  'uses' => 'ArticleController@show']);
-
-    Route::get('/admin/login', 'Admin\AuthController@getLogin');
-    Route::post('/admin/login', 'Admin\AuthController@postLogin');
-    Route::get('/admin/logout', 'Admin\AuthController@logout');
-    Route::post('/admin/register', 'Admin\AuthController@postRegister');
-    Route::get('/admin', 'AdminController@index');
-
-    Route::post('/admin/upload', ['uses' => 'Admin\QiniuController@postUpload']);
-    Route::get('/admin/attachment', ['uses' => 'Admin\QiniuController@showList']);
-
     Route::get('/contact', ['uses' => 'IndexController@contact']);
     Route::post('/contact/comment', ['uses' => 'IndexController@postComment']);
 });
