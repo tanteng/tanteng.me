@@ -18,8 +18,9 @@ Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function (
     Route::get('/login', 'Admin\AuthController@getLogin');
     Route::post('/login', 'Admin\AuthController@postLogin');
     Route::get('/logout', 'Admin\AuthController@logout');
-    Route::post('/admin/upload', ['uses' => 'Admin\QiniuController@postUpload']);
-    Route::get('/admin/attachment', ['uses' => 'Admin\QiniuController@showList']);
+    Route::post('/upload', ['uses' => 'Admin\QiniuController@postUpload']);
+    Route::get('/attachment', ['uses' => 'Admin\QiniuController@showList']);
+    Route::get('/tables', ['uses' => 'AdminController@tables']);
 });
 
 Route::get('/', ['uses' => 'IndexController@index']);
