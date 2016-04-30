@@ -23,6 +23,11 @@ Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function (
     Route::get('/tables', ['uses' => 'AdminController@tables']);
 });
 
+//英文怎么说
+Route::group(['domain' => 'english.tanteng.me', 'middleware' => 'web'], function() {
+    Route::get('/', 'EnglishController@index');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
