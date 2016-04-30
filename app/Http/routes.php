@@ -23,10 +23,6 @@ Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function (
     Route::get('/tables', ['uses' => 'AdminController@tables']);
 });
 
-Route::get('/', ['uses' => 'IndexController@index']);
-Route::get('/blog', ['as'=>'index.blog', 'uses' => 'BlogController@index']);
-Route::get('/resume', ['uses' => 'IndexController@resume']);
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -41,6 +37,9 @@ Route::get('/resume', ['uses' => 'IndexController@resume']);
 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
+    Route::get('/', ['uses' => 'IndexController@index']);
+    Route::get('/blog', ['as'=>'index.blog', 'uses' => 'BlogController@index']);
+    Route::get('/resume', ['uses' => 'IndexController@resume']);
     Route::get('/home', 'HomeController@index');
     Route::get('/post', ['name' => 'post.show',  'uses' => 'ArticleController@show']);
     Route::get('/contact', ['uses' => 'IndexController@contact']);
