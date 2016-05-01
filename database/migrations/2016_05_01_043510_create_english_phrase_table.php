@@ -20,6 +20,7 @@ class CreateEnglishPhraseTable extends Migration
             $table->string('description');
             $table->string('slug')->unique();
             $table->integer('tag');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
