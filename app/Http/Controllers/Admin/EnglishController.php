@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Models\English;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use App\Http\Requests;
 
 class EnglishController extends Controller
@@ -50,14 +49,12 @@ class EnglishController extends Controller
     //添加内容
     public function create()
     {
-        $isEdit = 0;
         return view('admin.english.create', compact('isEdit'));
     }
 
     //编辑内容
     public function edit($id)
     {
-        $isEdit = 1;
         $detail = $this->english->find($id);
         return view('admin.english.edit', compact('detail', 'isEdit'));
     }

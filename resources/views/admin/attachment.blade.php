@@ -20,7 +20,7 @@
             @endif
             <p class="bg-danger" style="display: none;" id="error_tip"></p>
 
-            <form method="post" action="{{ url('/admin/upload') }}" enctype="multipart/form-data">
+            <form method="post" action="{{ url('/upload') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="exampleInputEmail1">请选择文件</label>
