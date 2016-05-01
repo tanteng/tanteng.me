@@ -39,7 +39,7 @@
                 <li class="dropdown @if($navFlag == 'explore')active @endif">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="http://english.tanteng.me" target="_blank">English</a></li>
+                        <li><a href="http://english.tanteng.me/how-to-say" target="_blank">English</a></li>
                     </ul>
                 </li>
             </ul>

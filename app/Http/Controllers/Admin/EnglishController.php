@@ -19,7 +19,7 @@ class EnglishController extends Controller
     //后台列表
     public function index()
     {
-        $lists = $this->english->orderBy('id','desc')->paginate(10);
+        $lists = $this->english->orderBy('id', 'desc')->paginate(10);
         return view('admin.english.index', compact('lists'));
     }
 
@@ -29,14 +29,18 @@ class EnglishController extends Controller
         if ($request->isMethod('POST')) {
             $isEdit = $request->input('isEdit');
             $data['phrase'] = $request->input('phrase');
-            $data['content'] = $request->input('content');
-            $data['seo_title'] = $request->input('seo_title');
-            $data['description'] = $request->input('description');
             $data['slug'] = $request->input('slug');
+            $data['content'] = $request->input('content');
+            $seoTitle = $request->input('seo_title');
+            if (!$seoTitle) {
+                $seoTitle = $data['slug'] . '英文怎么说';
+            }
+            $data['seo_title'] = $seoTitle;
+            $data['description'] = $request->input('description');
 
-            if($isEdit){
+            if ($isEdit) {
                 $this->english->where('id', $request->input('id'))->update($data);
-            }else{
+            } else {
                 $this->english->create($data);
             }
         }
@@ -55,6 +59,6 @@ class EnglishController extends Controller
     {
         $isEdit = 1;
         $detail = $this->english->find($id);
-        return view('admin.english.create', compact('detail', 'isEdit'));
+        return view('admin.english.edit', compact('detail', 'isEdit'));
     }
 }
