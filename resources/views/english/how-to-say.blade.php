@@ -12,8 +12,8 @@
         <li class="active"><a href="{{ route('how-to-say.detail', ['slug'=>$slug]) }}">{{ $phrase }}</a></li>
     </ol>
 
-    <div class="row">
-        <div class="col-lg-8 col-md-8">
+    <div class="row" id="english">
+        <div class="col-lg-8 col-md-8 content">
             {!! $content !!}
         </div>
         <div class="col-lg-4 col-md-4">
