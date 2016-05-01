@@ -18,11 +18,11 @@
                 </div>
                 <nav>
                     <ul class="pager">
-                        @if($prevSlug)
-                            <li><a href="{{ route('how-to-say.detail', ['slug'=>$prevSlug]) }}" rel="prev">上一篇</a>
+                        @if($prevSlug->slug)
+                            <li><a href="{{ route('how-to-say.detail', ['slug'=>$prevSlug->slug]) }}" rel="prev">上一篇</a>
                             </li>@endif
-                        @if($nextSlug)
-                            <li><a href="{{ route('how-to-say.detail', ['slug'=>$nextSlug]) }}" rel="next">下一篇</a>
+                        @if($nextSlug->slug)
+                            <li><a href="{{ route('how-to-say.detail', ['slug'=>$nextSlug->slug]) }}" rel="next">下一篇</a>
                             </li>@endif
                     </ul>
                 </nav>

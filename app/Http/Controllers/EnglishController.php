@@ -24,15 +24,17 @@ class EnglishController extends Controller
     {
         $navFlag = $this->navFlag;
         $detail = English::where('slug', $slug)->firstOrFail();
-        $nextSlug = English::where('id', '>', $detail['id'])->min('slug');
-        $prevSlug = English::where('id', '<', $detail['id'])->max('slug');
-        $latest = English::latest('id')->take(10)->get(['slug', 'seo_title']);
+        $nextId = English::where('id', '>', $detail['id'])->min('id');
+        $prevId = English::where('id', '<', $detail['id'])->max('id');
+        $nextSlug = English::where('id', $nextId)->first(['slug']);
+        $prevSlug = English::where('id', $prevId)->first(['slug']);
+        $latest = English::latest('id')->take(10)->get(['id', 'slug', 'seo_title']);
         $phrase = $detail['phrase'];
         $seoTitle = $detail['seo_title'] . '_英语_tanteng.me';
         $description = $detail['description'];
         $content = Markdown::convertToHtml($detail['content']);
         $canonical = 'http://english.tanteng.me/how-to-say/' . $slug;
-        $compact = compact('navFlag', 'slug', 'phrase', 'seoTitle', 'description', 'content', 'canonical', 'latest', 'nextSlug', 'prevSlug');
+        $compact = compact('navFlag', 'slug', 'phrase', 'seoTitle', 'description', 'content', 'canonical', 'latest', 'prevSlug', 'nextSlug');
         return view('english.how-to-say', $compact);
     }
 }
