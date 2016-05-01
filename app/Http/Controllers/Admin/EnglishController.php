@@ -33,7 +33,7 @@ class EnglishController extends Controller
             $data['content'] = $request->input('content');
             $seoTitle = $request->input('seo_title');
             if (!$seoTitle) {
-                $seoTitle = $data['slug'] . '英文怎么说';
+                $seoTitle = $data['phrase'] . '英文怎么说';
             }
             $data['seo_title'] = $seoTitle;
             $data['description'] = $request->input('description');
