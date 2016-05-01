@@ -13,7 +13,8 @@
         "jgrossi/corcel": "^1.0",
         "itbdw/laravel-storage-qiniu": "^1.0",
         "mews/captcha": "^2.1",
-        "barryvdh/laravel-ide-helper": "^2.1"
+        "barryvdh/laravel-ide-helper": "^2.1",
+        "graham-campbell/markdown": "^6.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -21,11 +21,14 @@ Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function (
     Route::post('/upload', ['uses' => 'Admin\QiniuController@postUpload']);
     Route::get('/attachment', ['uses' => 'Admin\QiniuController@showList']);
     Route::get('/tables', ['uses' => 'AdminController@tables']);
+    Route::get('/english/post-new', ['uses' => 'Admin\EnglishController@create']);
+    Route::post('/english/post-new', ['uses' => 'Admin\EnglishController@postNew']);
 });
 
 //英文怎么说
 Route::group(['domain' => 'english.tanteng.me', 'middleware' => 'web'], function() {
     Route::get('/', 'EnglishController@index');
+    Route::get('/how-to-say', 'EnglishController@detail');
 });
 
 /*

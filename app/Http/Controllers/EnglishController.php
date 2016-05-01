@@ -16,4 +16,9 @@ class EnglishController extends Controller
     {
         return 'Hello World!';
     }
+
+    public function detail()
+    {
+
+    }
 }

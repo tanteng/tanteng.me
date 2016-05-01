@@ -164,6 +164,7 @@ return [
         Zizaco\Entrust\EntrustServiceProvider::class,
         zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
     ],
 
     /*
@@ -209,8 +210,8 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
-
-        'Captcha' => Mews\Captcha\Facades\Captcha::class,
+        'Captcha'   => Mews\Captcha\Facades\Captcha::class,
+        'Markdown'  => GrahamCampbell\Markdown\Facades\Markdown::class,
     ],
 
 ];
