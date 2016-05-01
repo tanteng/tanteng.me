@@ -13,8 +13,16 @@
     </ol>
 
     <div class="row" id="english">
-        <div class="col-lg-8 col-md-8 content">
-            {!! $content !!}
+        <div class="col-lg-8 col-md-8">
+            <div class="content">
+                {!! $content !!}
+            </div>
+            <nav>
+                <ul class="pager">
+                    @if($prevSlug)<li><a href="{{ route('how-to-say.detail', ['slug'=>$prevSlug]) }}">上一篇</a></li>@endif
+                    @if($nextSlug)<li><a href="{{ route('how-to-say.detail', ['slug'=>$nextSlug]) }}">下一篇</a></li>@endif
+                </ul>
+            </nav>
         </div>
         <div class="col-lg-4 col-md-4">
             <div class="list-group">
