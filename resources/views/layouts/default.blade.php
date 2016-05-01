@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <title>@yield('title') - tanteng.me</title>
+    <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,15 +27,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">tanteng.me</a>
+            <a class="navbar-brand" href="{{ route('index') }}">tanteng.me</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-                <li @if($navFlag == 'home')class="active" @endif><a href="/">Home</a></li>
-                <li @if($navFlag == 'blog')class="active" @endif><a href="/blog">Blog</a></li>
-                <li @if($navFlag == 'resume')class="active" @endif><a href="/resume">Resume</a></li>
-                <li @if($navFlag == 'contact')class="active" @endif><a href="/contact">Contact</a></li>
+                <li @if($navFlag == 'home')class="active" @endif><a href="{{ route('index') }}">Home</a></li>
+                <li @if($navFlag == 'blog')class="active" @endif><a href="{{ route('index.blog') }}">Blog</a></li>
+                <li @if($navFlag == 'resume')class="active" @endif><a href="{{ route('index.resume') }}">Resume</a></li>
+                <li @if($navFlag == 'contact')class="active" @endif><a href="{{ route('index.contact') }}">Contact</a></li>
+                <li class="dropdown @if($navFlag == 'explore')active @endif">
+                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="http://english.tanteng.me" target="_blank">English</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>

@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Models\English;
 use App\Http\Requests;
-use App\Models\Wp;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\URL;
 
 class EnglishController extends Controller
 {
@@ -17,8 +14,16 @@ class EnglishController extends Controller
         return 'Hello World!';
     }
 
-    public function detail()
+    public function detail($slug = false)
     {
-
+        $navFlag = 'explore';
+        $detail = English::where('slug', $slug)->firstOrFail();
+        $phrase = $detail['phrase'];
+        $seoTitle = $detail['seo_title'] . '_英语_tanteng.me';
+        $description = $detail['description'];
+        $content = $detail['content'];
+        $canonical = 'http://english.tanteng.me/how-to-say/' . $slug;
+        $compact = compact('navFlag','slug', 'phrase', 'seoTitle', 'description', 'content', 'canonical');
+        return view('english.how-to-say', $compact);
     }
 }

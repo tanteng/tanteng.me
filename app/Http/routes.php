@@ -27,8 +27,9 @@ Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function (
 
 //英文怎么说
 Route::group(['domain' => 'english.tanteng.me', 'middleware' => 'web'], function() {
-    Route::get('/', 'EnglishController@index');
-    Route::get('/how-to-say', 'EnglishController@detail');
+    Route::get('/', ['as' => 'english.index', 'uses' => 'EnglishController@index']);
+    Route::get('/how-to-say', ['as'=>'how-to-say.index' ,'uses' => 'EnglishController@index']);
+    Route::get('/how-to-say/{phrase}', ['as' => 'how-to-say.detail' ,'uses' => 'EnglishController@detail']);
 });
 
 /*
@@ -43,14 +44,13 @@ Route::group(['domain' => 'english.tanteng.me', 'middleware' => 'web'], function
 */
 
 
-Route::group(['middleware' => 'web'], function () {
+Route::group(['domain' => 'www.tanteng.me', 'middleware' => 'web'], function () {
     Route::auth();
-    Route::get('/', ['uses' => 'IndexController@index']);
+    Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
     Route::get('/blog', ['as'=>'index.blog', 'uses' => 'BlogController@index']);
-    Route::get('/resume', ['uses' => 'IndexController@resume']);
-    Route::get('/home', 'HomeController@index');
+    Route::get('/resume', ['as'=>'index.resume' , 'uses' => 'IndexController@resume']);
     Route::get('/post', ['name' => 'post.show',  'uses' => 'ArticleController@show']);
-    Route::get('/contact', ['uses' => 'IndexController@contact']);
+    Route::get('/contact', ['as'=>'index.contact' ,'uses' => 'IndexController@contact']);
     Route::post('/contact/comment', ['uses' => 'IndexController@postComment']);
 });
 

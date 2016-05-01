@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Contact')
+@section('title', 'Contact - tanteng.me')
 @section('description', '联系方式，社交网络(微博，Github，知乎，Linked)，以及留言本。')
 @section('canonical', 'http://www.tanteng.me/contact')
 @section('head')

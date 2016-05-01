@@ -160,7 +160,7 @@
                         <a href="/"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
                     <li>
-                        <a href="/english"><i class="fa fa-font fa-fw"></i>英语怎么说<span class="fa arrow"></span></a>
+                        <a href="/english"><i class="fa fa-font fa-fw"></i>英文怎么说<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="/english">内容列表</a>

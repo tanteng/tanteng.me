@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'Resume')
+@section('title', 'Resume - tanteng.me')
 @section('description', '从事PHP开发，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，MongoDB数据库及缓存技术，熟悉jQuery，css等前端技术，能较好理解面向对象的思想，注重代码的规范和性能。有大型网站开发经验，熟悉Linux环境下的开发，对Nginx等服务器端配置和优化有所了解。')
 @section('canonical', 'http://www.tanteng.me/resume')
 @section('content')

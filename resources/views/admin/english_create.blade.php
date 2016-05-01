@@ -5,7 +5,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">添加 - 英语怎么说</h1>
+            <h1 class="page-header">添加 - 英文怎么说</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -14,6 +14,10 @@
         <div class="col-lg-8 col-md-10">
             <form role="form" method="POST" action="{{ url('/english/post-new') }}">
                 {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="slug">Slug</label>
+                    <input class="form-control" type="text" name="slug" id="slug">
+                </div>
                 <div class="form-group">
                     <label for="phrase">单词或句子</label>
                     <input class="form-control" type="text" name="phrase" id="phrase">
@@ -24,11 +28,7 @@
                 </div>
                 <div class="form-group">
                     <label for="seo_title">SEO标题</label>
-                    <input class="form-control" type="text" name="seo_title" id="seo_title">
-                </div>
-                <div class="form-group">
-                    <label for="slug">Slug</label>
-                    <input class="form-control" type="text" name="slug" id="slug" value="http://english.tanteng.me/how-to-say/">
+                    <input class="form-control" type="text" name="seo_title" id="seo_title" value="英文怎么说">
                 </div>
                 <div class="form-group">
                     <label for="description">描述</label>
