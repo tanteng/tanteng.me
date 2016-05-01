@@ -11,7 +11,6 @@
     <link href="//cdn.tanteng.me/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.tanteng.me/assets/styles/style.css" rel="stylesheet">
     <link rel="icon" href="/favicon.ico">
-    <link rel="canonical" href="@yield('canonical')" />
     <script src="//cdn.tanteng.me/assets/js/pace.min.js"></script>
     @yield('head')
 </head>

@@ -2,7 +2,6 @@
 
 @section('title', '英文怎么说_英语_tanteng.me')
 @section('description'){{ $seo['description'] }}@endsection
-@section('canonical'){{ $seo['canonical'] }}@endsection
 
 @section('content')
     <div class="container">

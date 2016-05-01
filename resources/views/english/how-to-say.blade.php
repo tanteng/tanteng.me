@@ -2,7 +2,6 @@
 
 @section('title'){{ $seoTitle }}@endsection
 @section('description'){{ $description }}@endsection
-@section('canonical'){{ $canonical }}@endsection
 
 @section('content')
     <div class="container">

@@ -16,7 +16,6 @@ class EnglishController extends Controller
         $navFlag = $this->navFlag;
         $latest = English::latest('id')->take(20)->get(['slug', 'seo_title']);
         $seo['description'] = '英文怎么说';
-        $seo['canonical'] = 'http://english.tanteng.me/how-to-say';
         return view('english.index', compact('latest', 'seo', 'navFlag'));
     }
 
@@ -38,7 +37,6 @@ class EnglishController extends Controller
         $seoTitle = $detail['seo_title'] . '_英语_tanteng.me';
         $description = $detail['description'];
         $content = Markdown::convertToHtml($detail['content']);
-        $canonical = 'http://english.tanteng.me/how-to-say/' . $slug;
         $compact = compact('navFlag', 'slug', 'phrase', 'seoTitle', 'description', 'content', 'canonical', 'latest', 'prevSlug', 'nextSlug');
         return view('english.how-to-say', $compact);
     }
