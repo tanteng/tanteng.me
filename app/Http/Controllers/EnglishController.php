@@ -26,8 +26,13 @@ class EnglishController extends Controller
         $detail = English::where('slug', $slug)->firstOrFail();
         $nextId = English::where('id', '>', $detail['id'])->min('id');
         $prevId = English::where('id', '<', $detail['id'])->max('id');
-        $nextSlug = English::where('id', $nextId)->first(['slug']);
-        $prevSlug = English::where('id', $prevId)->first(['slug']);
+        $nextSlug = $prevSlug = '';
+        if($nextId){
+            $nextSlug = English::where('id', $nextId)->first(['slug']);
+        }
+        if($prevId){
+            $prevSlug = English::where('id', $prevId)->first(['slug']);
+        }
         $latest = English::latest('id')->take(10)->get(['id', 'slug', 'seo_title']);
         $phrase = $detail['phrase'];
         $seoTitle = $detail['seo_title'] . '_英语_tanteng.me';

@@ -18,10 +18,10 @@
                 </div>
                 <nav>
                     <ul class="pager">
-                        @if($prevSlug->slug)
+                        @if(isset($prevSlug->slug))
                             <li><a href="{{ route('how-to-say.detail', ['slug'=>$prevSlug->slug]) }}" rel="prev">上一篇</a>
                             </li>@endif
-                        @if($nextSlug->slug)
+                        @if(isset($nextSlug->slug))
                             <li><a href="{{ route('how-to-say.detail', ['slug'=>$nextSlug->slug]) }}" rel="next">下一篇</a>
                             </li>@endif
                     </ul>
