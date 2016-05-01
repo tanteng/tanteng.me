@@ -29,5 +29,6 @@
 <script src="/assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
 <script src="/assets/bower_components/raphael/raphael.min.js"></script>
 <script src="/assets/admin/dist/js/sb-admin-2.js"></script>
+@yield('js')
 </body>
 </html>

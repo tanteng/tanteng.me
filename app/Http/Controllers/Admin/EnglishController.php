@@ -7,31 +7,54 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use App\Http\Requests;
-use Illuminate\Support\Facades\DB;
 
 class EnglishController extends Controller
 {
-    public function __construct()
+    public function __construct(English $english)
     {
         $this->middleware('auth:admin');
+        $this->english = $english;
     }
 
-    public function create()
+    //后台列表
+    public function index()
     {
-        return view('admin.english_create');
+        $lists = $this->english->orderBy('id','desc')->paginate(10);
+        return view('admin.english.index', compact('lists'));
     }
 
+    //POST提交表单
     public function postNew(Request $request)
     {
-        if($request->isMethod('POST')){
-            $english = new English();
-            $english->phrase = $request->input('phrase');
-            $english->content = Markdown::convertToHtml($request->input('content'));
-            $english->seo_title = $request->input('seo_title');
-            $english->description = $request->input('description');
-            $english->slug = $request->input('slug');
-            $english->save();
+        if ($request->isMethod('POST')) {
+            $isEdit = $request->input('isEdit');
+            $data['phrase'] = $request->input('phrase');
+            $data['content'] = $request->input('content');
+            $data['seo_title'] = $request->input('seo_title');
+            $data['description'] = $request->input('description');
+            $data['slug'] = $request->input('slug');
+
+            if($isEdit){
+                $this->english->where('id', $request->input('id'))->update($data);
+            }else{
+                $this->english->create($data);
+            }
         }
-        return redirect()->back();
+        return redirect('/english');
+    }
+
+    //添加内容
+    public function create()
+    {
+        $isEdit = 0;
+        return view('admin.english.create', compact('isEdit'));
+    }
+
+    //编辑内容
+    public function edit($id)
+    {
+        $isEdit = 1;
+        $detail = $this->english->find($id);
+        return view('admin.english.create', compact('detail', 'isEdit'));
     }
 }

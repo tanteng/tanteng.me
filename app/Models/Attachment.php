@@ -20,19 +20,19 @@ class Attachment extends Eloquent
         'is_img'
     ];
 
-    //Ã½ÌåÎÄ¼şÁĞ±í
+    //åª’ä½“æ–‡ä»¶åˆ—è¡¨
     public function attachmentList()
     {
         return $this->orderBy('updated_at','desc')->paginate(15);
     }
 
-    //ÎÄ¼ş´óĞ¡
+    //æ–‡ä»¶å¤§å°
     public function getSizeAttribute()
     {
         return $this->formatBytes($this->attributes['size']);
     }
 
-    //ÅĞ¶ÏÎÄ¼şÊÇ·ñÊÇÍ¼Æ¬
+    //åˆ¤æ–­æ–‡ä»¶æ˜¯å¦æ˜¯å›¾ç‰‡
     public function getIsImgAttribute()
     {
         list($tp,) = explode('/', $this->attributes['type']);
@@ -42,7 +42,7 @@ class Attachment extends Eloquent
         return false;
     }
 
-    //ÎÄ¼ş´óĞ¡µ¥Î»×ª»»
+    //æ–‡ä»¶å¤§å°å•ä½è½¬æ¢
     private function formatBytes($size)
     {
         $units = array(' B', ' KB', ' MB', ' GB', ' TB');
