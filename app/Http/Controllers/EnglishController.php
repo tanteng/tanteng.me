@@ -9,15 +9,20 @@ use Illuminate\Support\Facades\Cache;
 
 class EnglishController extends Controller
 {
+    private $navFlag = 'explore';
 
     public function index()
     {
-        return 'Hello World!';
+        $navFlag = $this->navFlag;
+        $latest = English::latest('id')->take(20)->get(['slug', 'seo_title']);
+        $seo['description'] = '英文怎么说';
+        $seo['canonical'] = 'http://english.tanteng.me/how-to-say';
+        return view('english.index', compact('latest', 'seo', 'navFlag'));
     }
 
     public function detail($slug = false)
     {
-        $navFlag = 'explore';
+        $navFlag = $this->navFlag;
         $detail = English::where('slug', $slug)->firstOrFail();
         $nextSlug = English::where('id', '>', $detail['id'])->min('slug');
         $prevSlug = English::where('id', '<', $detail['id'])->max('slug');
