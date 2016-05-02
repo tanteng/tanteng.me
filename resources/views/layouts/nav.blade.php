@@ -160,6 +160,17 @@
                         <a href="/"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-share-square-o  fa-fw"></i> 我的分享<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/share"> 分享列表</a>
+                            </li>
+                            <li>
+                                <a href="/share/post-new"> 添加分享</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-font fa-fw"></i> 英文怎么说<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -169,7 +180,6 @@
                                 <a href="/english/post-new"> 添加内容</a>
                             </li>
                         </ul>
-                        <!-- /.nav-second-level -->
                     </li>
                     <li>
                         <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
