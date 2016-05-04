@@ -59,7 +59,7 @@
             <li><span class="label label-info">Laravel 5.2</span></li>
             <li><span class="label label-info">Bootstrap 3</span></li>
         </ul>
-        <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a> 鄂ICP备14007278号</p>
+        <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a> | <a href="http://english.tanteng.me/sitemap.xml">Sitemap</a> | 鄂ICP备14007278号</p>
     </div>
 </footer>
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>

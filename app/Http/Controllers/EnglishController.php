@@ -40,7 +40,7 @@ class EnglishController extends Controller
     {
         $key = 'english.latest.articles.' . $nums;
         $latest = Cache::remember($key, 30, function () use ($nums) {
-            return English::latest('id')->take($nums)->paginate(20, ['id', 'slug', 'seo_title']);
+            return English::latest('id')->take($nums)->paginate(20, ['id', 'slug', 'seo_title', 'created_at']);
         });
         return $latest;
     }
@@ -66,7 +66,8 @@ class EnglishController extends Controller
 
     public function sitemap()
     {
-        $content = view('english.sitemap');
+        $latest = $this->latest(200);
+        $content = view('english.sitemap', ['data' => $latest]);
         return Response($content, '200')->header('Content-Type', 'text/xml');
     }
 }
