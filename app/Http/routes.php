@@ -32,6 +32,7 @@ Route::group(['domain' => 'english.tanteng.me', 'middleware' => 'web'], function
     Route::get('/', ['as' => 'english.index', 'uses' => 'EnglishController@index']);
     Route::get('/how-to-say', ['as' => 'how-to-say.index', 'uses' => 'EnglishController@index']);
     Route::get('/how-to-say/{phrase}', ['as' => 'how-to-say.detail', 'uses' => 'EnglishController@detail']);
+    Route::get('/sitemap.xml', ['uses' => 'EnglishController@sitemap']);
 });
 
 /*

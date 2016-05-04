@@ -6,6 +6,7 @@ use App\Models\English;
 use App\Http\Requests;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Response;
 
 class EnglishController extends Controller
 {
@@ -61,5 +62,11 @@ class EnglishController extends Controller
             });
         }
         return $slug;
+    }
+
+    public function sitemap()
+    {
+        $content = view('english.sitemap');
+        return Response($content, '200')->header('Content-Type', 'text/xml');
     }
 }
