@@ -48,19 +48,16 @@ class EnglishController extends Controller
     //缓存上一篇下一篇
     public function getSlug($id, $prevOrnext = 'prev')
     {
-        $slugId = $slug = '';
         if ($prevOrnext == 'prev') {
-            $slugId = English::where('id', '<', $id)->max('id');
+            $op = '<';
         } elseif ($prevOrnext == 'next') {
-            $slugId = English::where('id', '>', $id)->min('id');
+            $op = '>';
         }
+        $key = 'english.article.' . $id . '.' . $prevOrnext;
+        $slug = Cache::remember($key, 30, function () use ($id, $op) {
+            return English::where('id', $op, $id)->first(['slug']);
+        });
 
-        if ($slugId) {
-            $key = 'english.article.' . $id . '.' . $prevOrnext;
-            $slug = Cache::remember($key, 30, function () use ($slugId) {
-                return English::where('id', $slugId)->first(['slug']);
-            });
-        }
         return $slug;
     }
 
