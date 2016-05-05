@@ -18,7 +18,7 @@
                     @endforeach
                 </div>
                 <nav>
-                    {{ $latest->render() }}
+                    {{ $latest->links() }}
                 </nav>
             </div>
         </div>

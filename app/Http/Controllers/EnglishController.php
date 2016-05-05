@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\English;
-use App\Http\Requests;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Response;
 
@@ -12,10 +12,11 @@ class EnglishController extends Controller
 {
     private $navFlag = 'explore';
 
-    public function index()
+    public function index(Request $request)
     {
+        $page = $request->input('page', 1);
         $navFlag = $this->navFlag;
-        $latest = $this->latest(40);
+        $latest = $this->latest(20, $page);
         $seo['description'] = '英文怎么说';
         return view('english.index', compact('latest', 'seo', 'navFlag'));
     }
@@ -36,11 +37,11 @@ class EnglishController extends Controller
     }
 
     //缓存最新文章
-    public function latest($nums)
+    public function latest($nums, $page=1)
     {
-        $key = 'english.latest.articles.' . $nums;
+        $key = 'english.latest.articles.page.'.$page.'.nums.' . $nums;
         $latest = Cache::remember($key, 30, function () use ($nums) {
-            return English::latest('id')->take($nums)->paginate(20, ['id', 'slug', 'seo_title', 'created_at']);
+            return English::latest('id')->paginate($nums, ['id', 'slug', 'seo_title', 'created_at']);
         });
         return $latest;
     }
@@ -61,6 +62,7 @@ class EnglishController extends Controller
         return $slug;
     }
 
+    //生成sitemap.xml
     public function sitemap()
     {
         $latest = $this->latest(200);
