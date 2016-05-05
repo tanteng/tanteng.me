@@ -17,6 +17,9 @@
                            class="list-group-item">{{ $list->seo_title }}</a>
                     @endforeach
                 </div>
+                <nav>
+                    {{ $latest->render() }}
+                </nav>
             </div>
         </div>
     </div>
