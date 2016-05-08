@@ -61,8 +61,8 @@
         </div>
         @foreach($newPosts as $post)
         <div class="col-md-4 col-md-offset-1">
-            <h3><a href="{{ $post->url }}" target="_blank">{{ $post->post_title }}</a></h3>
-            <span>{{ $post->post_date }}</span>
+            <h3><a href="{{ $post['url'] }}" target="_blank">{{ $post['post_title'] }}</a></h3>
+            <span>{{ $post['post_date'] }}</span>
         </div>
         @endforeach
     </div>
