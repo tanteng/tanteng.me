@@ -21,8 +21,7 @@ class TravelController extends Controller
     {
         $navFlag = 'travel';
 
-        $list = $this->destination->getList();
-        dump($list);
-        return view('travel.index', compact('navFlag'));
+        $lists = $this->destination->getList();
+        return view('travel.index', compact('navFlag','lists'));
     }
 }

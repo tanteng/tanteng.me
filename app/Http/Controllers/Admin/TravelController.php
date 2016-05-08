@@ -42,7 +42,7 @@ class TravelController extends Controller
         $this->destination->create([
             'destination' => $request->input('destination'),
             'description' => $request->input('description'),
-            'cover_img' => $request->input('cover_img'),
+            'cover_image' => $request->input('cover_image_url'),
             'year' => $request->input('year'),
         ]);
 
