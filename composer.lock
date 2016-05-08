@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4be16562a8db5ee1b689bba43fd28db1",
+    "hash": "e4d3f412589a173750a06e3fca0bd5e9",
     "content-hash": "6f5b41359382ddc1a1844e502ecb88d1",
     "packages": [
         {
@@ -655,16 +655,16 @@
         },
         {
             "name": "jgrossi/corcel",
-            "version": "v1.0.6",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jgrossi/corcel.git",
-                "reference": "a8ebf1b0481d60196ef96a8d84ff566d7d1cb0dc"
+                "reference": "3ba8a6b8c5bfd8f9f0c1e337b9795dcedb68e623"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/jgrossi/corcel/a8ebf1b0481d60196ef96a8d84ff566d7d1cb0dc.zip",
-                "reference": "a8ebf1b0481d60196ef96a8d84ff566d7d1cb0dc",
+                "url": "https://packagist.phpcomposer.com/files/jgrossi/corcel/3ba8a6b8c5bfd8f9f0c1e337b9795dcedb68e623.zip",
+                "reference": "3ba8a6b8c5bfd8f9f0c1e337b9795dcedb68e623",
                 "shasum": ""
             },
             "require": {
@@ -700,9 +700,9 @@
                     "homepage": "http://jgrossi.com"
                 }
             ],
-            "description": "Wrappers to collect data from Wordpress databases",
+            "description": "Use WordPress backend with any PHP framework",
             "homepage": "http://github.com/jgrossi/corcel",
-            "time": "2016-04-29 19:06:22"
+            "time": "2016-05-07 15:07:59"
         },
         {
             "name": "laravel/framework",
@@ -3437,16 +3437,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "1.3.5",
+            "version": "1.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf"
+                "reference": "2292b116f43c272ff4328083096114f84ea46a56"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/sebastianbergmann/environment/dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf.zip",
-                "reference": "dc7a29032cf72b54f36dac15a1ca5b3a1b6029bf",
+                "url": "https://packagist.phpcomposer.com/files/sebastianbergmann/environment/2292b116f43c272ff4328083096114f84ea46a56.zip",
+                "reference": "2292b116f43c272ff4328083096114f84ea46a56",
                 "shasum": ""
             },
             "require": {
@@ -3466,7 +3466,7 @@
                     "src/"
                 ]
             },
-            "notification-url": "https://packagist.orghttps://packagist.orghttps://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -3483,7 +3483,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2016-02-26 18:40:46"
+            "time": "2016-05-04 07:59:13"
         },
         {
             "name": "sebastian/exporter",

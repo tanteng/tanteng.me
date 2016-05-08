@@ -27,14 +27,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('index') }}">tanteng.me</a>
+            <a class="navbar-brand" href="{{ route('home') }}">tanteng.me</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-                <li @if($navFlag == 'home')class="active" @endif><a href="{{ route('index') }}">Home</a></li>
+                <li @if($navFlag == 'home')class="active" @endif><a href="{{ route('home') }}">Home</a></li>
                 <li @if($navFlag == 'blog')class="active" @endif><a href="{{ route('index.blog') }}">Blog</a></li>
                 <li @if($navFlag == 'resume')class="active" @endif><a href="{{ route('index.resume') }}">Resume</a></li>
+                <li @if($navFlag == 'travel')class="active" @endif><a href="{{ route('travel.index') }}">Travel</a></li>
                 <li @if($navFlag == 'contact')class="active" @endif><a href="{{ route('index.contact') }}">Contact</a></li>
                 <li class="dropdown @if($navFlag == 'explore')active @endif">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore<span class="caret"></span></a>

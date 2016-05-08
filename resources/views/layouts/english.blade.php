@@ -30,7 +30,7 @@
 
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right">
-                <li @if($navFlag == 'home')class="active" @endif><a href="{{ route('index') }}">Home</a></li>
+                <li @if($navFlag == 'home')class="active" @endif><a href="{{ route('home') }}">Home</a></li>
                 <li @if($navFlag == 'blog')class="active" @endif><a href="{{ route('index.blog') }}">Blog</a></li>
                 <li @if($navFlag == 'resume')class="active" @endif><a href="{{ route('index.resume') }}">Resume</a></li>
                 <li @if($navFlag == 'contact')class="active" @endif><a href="{{ route('index.contact') }}">Contact</a></li>

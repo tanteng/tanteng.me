@@ -19,7 +19,7 @@
 </head>
 <body>
 <div id="wrapper">
-    @include('layouts.nav')
+    @include('admin.nav')
     @yield('content')
 </div>
 <!-- /#wrapper -->

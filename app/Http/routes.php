@@ -12,29 +12,6 @@
 */
 
 
-//后台管理
-Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function () {
-    Route::get('/', 'AdminController@index');
-    Route::get('/login', 'Admin\AuthController@getLogin');
-    Route::post('/login', 'Admin\AuthController@postLogin');
-    Route::get('/logout', 'Admin\AuthController@logout');
-    Route::post('/upload', ['uses' => 'Admin\QiniuController@postUpload']);
-    Route::get('/attachment', ['uses' => 'Admin\QiniuController@showList']);
-    Route::get('/tables', ['uses' => 'AdminController@tables']);
-    Route::get('/english', ['uses' => 'Admin\EnglishController@index']);
-    Route::get('/english/post-new', ['uses' => 'Admin\EnglishController@create']);
-    Route::post('/english/post-new', ['uses' => 'Admin\EnglishController@postNew']);
-    Route::get('/english/edit/{id}', ['uses' => 'Admin\EnglishController@edit']);
-});
-
-//英文怎么说
-Route::group(['domain' => 'english.tanteng.me', 'middleware' => 'web'], function () {
-    Route::get('/', ['as' => 'english.index', 'uses' => 'EnglishController@index']);
-    Route::get('/how-to-say', ['as' => 'how-to-say.index', 'uses' => 'EnglishController@index']);
-    Route::get('/how-to-say/{phrase}', ['as' => 'how-to-say.detail', 'uses' => 'EnglishController@detail']);
-    Route::get('/sitemap.xml', ['uses' => 'EnglishController@sitemap']);
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -49,12 +26,42 @@ Route::group(['domain' => 'english.tanteng.me', 'middleware' => 'web'], function
 
 Route::group(['domain' => 'www.tanteng.me', 'middleware' => 'web'], function () {
     Route::auth();
-    Route::get('/', ['as' => 'index', 'uses' => 'IndexController@index']);
+    Route::get('/', ['as' => 'home', 'uses' => 'IndexController@index']);
     Route::get('/blog', ['as' => 'index.blog', 'uses' => 'BlogController@index']);
     Route::get('/resume', ['as' => 'index.resume', 'uses' => 'IndexController@resume']);
     Route::get('/post', ['name' => 'post.show', 'uses' => 'ArticleController@show']);
     Route::get('/contact', ['as' => 'index.contact', 'uses' => 'IndexController@contact']);
     Route::post('/contact/comment', ['uses' => 'IndexController@postComment']);
+    Route::get('/travel', ['as' => 'travel.index', 'uses' => 'TravelController@index']);
+});
+
+//英文怎么说
+Route::group(['domain' => 'english.tanteng.me', 'middleware' => 'web'], function () {
+    Route::get('/', ['as' => 'english.index', 'uses' => 'EnglishController@index']);
+    Route::get('/how-to-say', ['as' => 'how-to-say.index', 'uses' => 'EnglishController@index']);
+    Route::get('/how-to-say/{phrase}', ['as' => 'how-to-say.detail', 'uses' => 'EnglishController@detail']);
+    Route::get('/sitemap.xml', ['uses' => 'EnglishController@sitemap']);
+});
+
+
+//后台管理
+Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function () {
+    Route::get('/', 'Admin\AdminController@index');
+    Route::get('/login', 'Admin\AuthController@getLogin');
+    Route::post('/login', 'Admin\AuthController@postLogin');
+    Route::get('/logout', 'Admin\AuthController@logout');
+    Route::post('/upload', ['uses' => 'Admin\QiniuController@postUpload']);
+    Route::get('/attachment', ['uses' => 'Admin\QiniuController@showList']);
+    Route::get('/tables', ['uses' => 'AdminController@tables']);
+    Route::get('/english', ['uses' => 'Admin\EnglishController@index']);
+    Route::get('/english/post-new', ['uses' => 'Admin\EnglishController@create']);
+    Route::post('/english/post-new', ['uses' => 'Admin\EnglishController@postNew']);
+    Route::get('/english/edit/{id}', ['uses' => 'Admin\EnglishController@edit']);
+    Route::get('/travel', ['uses' => 'Admin\TravelController@create']);
+    Route::get('/travel/post-new', ['uses' => 'Admin\TravelController@create']);
+    Route::post('/travel/post-new', ['uses' => 'Admin\TravelController@postNew']);
+    Route::get('/travel/destination', ['uses' => 'Admin\TravelController@destination']);
+    Route::post('/travel/destination/add', ['uses' => 'Admin\TravelController@destinationAdd']);
 });
 
 
@@ -69,5 +76,4 @@ Route::group(['domain' => 'www.tanteng.me', 'middleware' => 'web'], function () 
 Route::group(['prefix' => 'test'], function () {
     Route::get('/redis', ['uses' => 'TestController@testRedis']);
     Route::get('/memcache', ['uses' => 'TestController@testMemcache']);
-    Route::get('/admin/{password}', ['uses' => 'TestController@createAdmin']);
 });

@@ -157,7 +157,7 @@
                         <!-- /input-group -->
                     </li>
                     <li>
-                        <a href="/"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+                        <a href="/"><i class="fa fa-dashboard fa-fw"></i> 控制台</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-share-square-o  fa-fw"></i> 我的分享<span class="fa arrow"></span></a>
@@ -171,6 +171,20 @@
                         </ul>
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-road fa-fw"></i> 旅行<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/english"> 游记列表</a>
+                            </li>
+                            <li>
+                                <a href="/travel/post-new"> 添加游记</a>
+                            </li>
+                            <li>
+                                <a href="/travel/destination"> 目的地管理</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-font fa-fw"></i> 英文怎么说<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
@@ -180,36 +194,6 @@
                                 <a href="/english/post-new"> 添加内容</a>
                             </li>
                         </ul>
-                    </li>
-                    <li>
-                        <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                    </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="panels-wells.html">Panels and Wells</a>
-                            </li>
-                            <li>
-                                <a href="buttons.html">Buttons</a>
-                            </li>
-                            <li>
-                                <a href="notifications.html">Notifications</a>
-                            </li>
-                            <li>
-                                <a href="typography.html">Typography</a>
-                            </li>
-                            <li>
-                                <a href="icons.html"> Icons</a>
-                            </li>
-                            <li>
-                                <a href="grid.html">Grid</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
@@ -242,19 +226,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="blank.html">Blank Page</a>
-                            </li>
-                            <li>
-                                <a href="login.html">Login Page</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="/attachment" target="_blank"><i class="fa fa-file-photo-o fa-fw"></i> 图片上传</a>
+                        <a href="/attachment" target="_blank"><i class="fa fa-file-photo-o fa-fw"></i> 媒体管理</a>
                     </li>
                 </ul>
             </div>

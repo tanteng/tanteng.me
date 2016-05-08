@@ -5,7 +5,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">Dashboard</h1>
+            <h1 class="page-header">控制台</h1>
         </div>
         <!-- /.col-lg-12 -->
     </div>
@@ -101,6 +101,18 @@
         </div>
     </div>
     <!-- /.row -->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header">最新留言</h3>
+            <ul class="list-group">
+            @foreach($guestbook as $line)
+                <li class="list-group-item">{{ $line->nickname }}@if($line->website)({{ $line->website }})@endif:{{ $line->content }} IP:{{ $line->ip }} 发布时间:{{ $line->created_at }}</li>
+            @endforeach
+            </ul>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
 </div>
 <!-- /#page-wrapper -->
 @endsection
