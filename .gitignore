@@ -2,5 +2,5 @@
 /storge
 .env
 /node_modules
-
+/public/assets/bower_components
 .idea/
