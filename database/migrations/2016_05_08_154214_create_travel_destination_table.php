@@ -18,6 +18,8 @@ class CreateTravelDestinationTable extends Migration
             $table->string('description');
             $table->string('cover_image');
             $table->string('year');
+            $table->integer('like')->default(0);
+            $table->smallInteger('score')->default(10);
             $table->timestamps();
         });
     }

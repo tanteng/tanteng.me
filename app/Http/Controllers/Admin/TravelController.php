@@ -18,22 +18,25 @@ class TravelController extends Controller
     public function __construct(Destination $destination)
     {
         $this->destination = $destination;
+        $this->allDestination = $this->destination->getAll();
     }
 
     public function create()
     {
-        return view('admin.travel.create');
+        $destination = $this->allDestination;
+        return view('admin.travel.create', compact('destination'));
     }
 
-    public function postNew()
+    public function postNew(Request $request)
     {
-
+        dd($request);
     }
 
     //目的地管理
     public function destination()
     {
-        return view('admin.travel.destination');
+        $destination = $this->allDestination;
+        return view('admin.travel.destination', compact('destination'));
     }
 
     //目的地添加
@@ -44,6 +47,7 @@ class TravelController extends Controller
             'description' => $request->input('description'),
             'cover_image' => $request->input('cover_image_url'),
             'year' => $request->input('year'),
+            'score'=>$request->input('score'),
         ]);
 
         return redirect()->back();

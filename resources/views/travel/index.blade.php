@@ -9,11 +9,18 @@
         <p>Comming soon!</p>
     </div>
 
+    <div class="es-filter">
+        <ul class="nav nav-sort clearfix">
+            <li><a class="" href="">最新</a></li>
+            <li><a class="" href="">最爱</a></li>
+        </ul>
+    </div>
+
     <div class="row">
         @foreach($lists as $list)
-        <div class="col-sm-12 col-md-6">
+        <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img src="{{ $list->cover_image }}" alt="{{ $list->destination }}" style="height:252px; width: 100%;">
+                <img class="img-responsive" src="{{ $list->cover_image }}" alt="{{ $list->destination }}">
                 <div class="caption">
                     <h3>{{ $list->destination }}</h3>
                     <p>{{ $list->description }}</p>

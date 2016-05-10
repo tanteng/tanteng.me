@@ -59,6 +59,26 @@
     height: 2px;
 }
 
+.es-filter {
+    background-color: #fafafa;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    position: relative;
+}
+.es-filter .nav-sort > li {
+    float: left;
+}
+.es-filter .nav-sort > li > a.active {
+    background-color: #000011;
+    color: #fff;
+}
+.es-filter .nav-sort > li > a {
+    color: #616161;
+    height: 40px;
+    padding: 10px 15px;
+    transition: all 0.3s ease 0s;
+}
+
 #english .content img {
     max-width: 100%;
 }

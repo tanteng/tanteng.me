@@ -11,32 +11,61 @@
     </div>
     <!-- /.row -->
     <div class="row">
-        <div class="col-lg-8 col-md-10">
-            <form role="form" method="POST" action="{{ url('/english/post-new') }}">
-                {{ csrf_field() }}
-                <div class="form-group">
-                    <label for="slug">的</label>
-                    <input class="form-control" type="text" name="slug" id="slug" value="">
+        <div class="col-lg-12 col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">添加游记</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <form role="form" method="POST" action="{{ url('/travel/post-new') }}">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <label for="destination">目的地</label>
+                                    <select class="form-control" name="destination" id="destination">
+                                        @foreach($destination as $item)
+                                            <option>{{ $item->destination }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="seo_title">标题</label>
+                                    <input class="form-control" type="text" name="title" id="title" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="seo_title">SEO标题</label>
+                                    <input class="form-control" type="text" name="seo_title" id="seo_title" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">描述</label>
+                                    <input class="form-control" type="text" name="description" id="description" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cover_img">封面图片</label>
+                                    <input class="form-control" type="text" name="cover_img" id="cover_img" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="date_begin">开始时间</label>
+                                    <input class="form-control" type="text" name="date_begin" id="date_begin" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="date_end">结束时间</label>
+                                    <input class="form-control" type="text" name="date_end" id="date_end" value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="content">正文</label>
+                                    <textarea class="form-control" rows="10" cols="40" name="content" id="content"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="score">排序</label>
+                                    <input class="form-control" type="text" name="score" id="score" value="">
+                                </div>
+                                <input type="hidden" name="isEdit" value="0">
+                                <button class="btn btn-default" type="submit">发布</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="phrase">单词或句子</label>
-                    <input class="form-control" type="text" name="phrase" id="phrase" value="">
-                </div>
-                <div class="form-group">
-                    <label for="content">正文</label>
-                    <textarea class="form-control" rows="10" cols="40" name="content" id="content"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="seo_title">SEO标题</label>
-                    <input class="form-control" type="text" name="seo_title" id="seo_title" value="">
-                </div>
-                <div class="form-group">
-                    <label for="description">描述</label>
-                    <textarea class="form-control" rows="4" cols="40" name="description" id="description"></textarea>
-                </div>
-                <input type="hidden" name="isEdit" value="0">
-                <button class="btn btn-default" type="submit">发布</button>
-            </form>
+            </div>
         </div>
     </div>
     <!-- /.row -->
