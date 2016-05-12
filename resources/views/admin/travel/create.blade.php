@@ -21,9 +21,9 @@
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="destination">目的地</label>
-                                    <select class="form-control" name="destination" id="destination">
+                                    <select class="form-control" name="destination_id" id="destination">
                                         @foreach($destination as $item)
-                                            <option>{{ $item->destination }}</option>
+                                            <option value="{{ $item->id }}">{{ $item->destination }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -40,16 +40,16 @@
                                     <input class="form-control" type="text" name="description" id="description" value="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="cover_img">封面图片</label>
-                                    <input class="form-control" type="text" name="cover_img" id="cover_img" value="">
+                                    <label for="img_cover">封面图片</label>
+                                    <input class="form-control" type="text" name="img_cover" id="img_cover" value="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="date_begin">开始时间</label>
-                                    <input class="form-control" type="text" name="date_begin" id="date_begin" value="">
+                                    <label for="begin_date">开始时间</label>
+                                    <input class="form-control" type="text" name="begin_date" id="begin_date" value="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="date_end">结束时间</label>
-                                    <input class="form-control" type="text" name="date_end" id="date_end" value="">
+                                    <label for="end_date">结束时间</label>
+                                    <input class="form-control" type="text" name="end_date" id="end_date" value="">
                                 </div>
                                 <div class="form-group">
                                     <label for="content">正文</label>

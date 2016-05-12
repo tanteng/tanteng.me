@@ -24,4 +24,10 @@ class TravelController extends Controller
         $lists = $this->destination->getList();
         return view('travel.index', compact('navFlag','lists'));
     }
+
+    public function show()
+    {
+        $list = $this->destination->find(2)->travel()->paginate(5);
+        dump($list);
+    }
 }

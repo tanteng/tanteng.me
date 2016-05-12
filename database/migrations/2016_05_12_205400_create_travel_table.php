@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTravelDestinationTable extends Migration
+class CreateTravelTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,16 +12,19 @@ class CreateTravelDestinationTable extends Migration
      */
     public function up()
     {
-        Schema::create('travel_destination', function (Blueprint $table) {
+        Schema::create('travel', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('destination')->unique();
+            $table->string('destination_id');
+            $table->string('title');
+            $table->string('seo_title');
             $table->string('description');
-            $table->string('cover_image');
-            $table->string('year');
-            $table->integer('total');
-            $table->integer('like')->default(0);
+            $table->string('img_cover');
+            $table->string('begin_date');
+            $table->string('end_date');
+            $table->text('content');
             $table->smallInteger('score')->default(10);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -32,6 +35,6 @@ class CreateTravelDestinationTable extends Migration
      */
     public function down()
     {
-        Schema::drop('travel_destination');
+        Schema::drop('travel');
     }
 }
