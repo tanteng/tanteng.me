@@ -20,10 +20,10 @@
         @foreach($lists as $list)
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <img class="img-responsive" src="{{ $list->cover_image }}" alt="{{ $list->destination }}">
+                <a href="{{ $list->url }}" target="_blank"><img class="img-responsive" src="{{ $list->cover_image }}" alt="{{ $list->destination }}"></a>
                 <div class="caption">
-                    <h3>{{ $list->destination }}</h3>
-                    <p>{{ $list->description }}</p>
+                    <h3><a href="{{ $list->url }}" target="_blank">{{ $list->destination }}</a></h3>
+                    <p><a href="{{ $list->url }}" target="_blank">{{ $list->description }}</a></p>
                 </div>
             </div>
         </div>

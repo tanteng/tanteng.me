@@ -15,6 +15,7 @@ class CreateTravelTable extends Migration
         Schema::create('travel', function (Blueprint $table) {
             $table->increments('id');
             $table->string('destination_id');
+            $table->string('slug');
             $table->string('title');
             $table->string('seo_title');
             $table->string('description');

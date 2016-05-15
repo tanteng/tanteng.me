@@ -50,14 +50,7 @@ class TravelController extends Controller
     //目的地添加
     public function destinationAdd(Request $request)
     {
-        $this->destination->create([
-            'destination' => $request->input('destination'),
-            'description' => $request->input('description'),
-            'cover_image' => $request->input('cover_image_url'),
-            'year' => $request->input('year'),
-            'score' => $request->input('score'),
-        ]);
-
+        $this->destination->create($request->all());
         return redirect()->back();
     }
 }

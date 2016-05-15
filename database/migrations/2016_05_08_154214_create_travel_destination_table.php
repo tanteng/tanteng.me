@@ -14,6 +14,9 @@ class CreateTravelDestinationTable extends Migration
     {
         Schema::create('travel_destination', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->string('seo_title');
+            $table->string('slug');
             $table->string('destination')->unique();
             $table->string('description');
             $table->string('cover_image');

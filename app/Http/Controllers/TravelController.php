@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Destination;
+use Illuminate\Http\Request;
 
 class TravelController extends Controller
 {
@@ -25,9 +26,16 @@ class TravelController extends Controller
         return view('travel.index', compact('navFlag','lists'));
     }
 
-    public function show()
+    public function destinationList($destination)
     {
-        $list = $this->destination->find(2)->travel()->paginate(5);
+        $id = $this->destination->where('slug', $destination)->value('id');
+        $list = $this->destination->find($id)->travel()->paginate(10);
+        dump($list);
+    }
+
+    public function destination(Request $request)
+    {
+        $list = $this->destination->paginate(10);
         dump($list);
     }
 }

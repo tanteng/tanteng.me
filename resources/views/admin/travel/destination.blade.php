@@ -23,6 +23,18 @@
                                     <input class="form-control" type="text" name="destination" id="destination">
                                 </div>
                                 <div class="form-group">
+                                    <label for="seo_title">slug</label>
+                                    <input class="form-control" type="text" name="slug" id="slug">
+                                </div>
+                                <div class="form-group">
+                                    <label for="title">标题</label>
+                                    <input class="form-control" type="text" name="title" id="title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="seo_title">SEO标题</label>
+                                    <input class="form-control" type="text" name="seo_title" id="seo_title">
+                                </div>
+                                <div class="form-group">
                                     <label for="description">描述</label>
                                     <textarea class="form-control" name="description" id="description" rows="5" cols="10"></textarea>
                                 </div>
@@ -32,8 +44,8 @@
                                     <p class="help-block">多个年份可用,隔开，如"2014,2016"</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="cover">封面图片</label>
-                                    <input class="form-control" type="text" name="cover_image_url" id="cover">
+                                    <label for="cover_image">封面图片</label>
+                                    <input class="form-control" type="text" name="cover_image" id="cover_image">
                                 </div>
                                 <div class="form-group">
                                     <label for="score">评分</label>

@@ -8,7 +8,21 @@ class Destination extends Model
 {
     protected $table = "travel_destination";
 
-    protected $fillable = ['destination', 'description', 'cover_image', 'year', 'score', 'like'];
+    protected $fillable = [
+        'destination',
+        'title',
+        'seo_title',
+        'description',
+        'cover_image',
+        'year',
+        'slug',
+        'score',
+        'like'
+    ];
+
+    protected $appends = [
+        'url',
+    ];
 
     public function getList()
     {
@@ -23,5 +37,10 @@ class Destination extends Model
     public function travel()
     {
         return $this->hasMany('App\Models\Travel', 'destination_id');
+    }
+
+    public function getUrlAttribute()
+    {
+        return route('travel.index').'/'.$this->slug;
     }
 }

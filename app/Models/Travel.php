@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Routing\Route;
 
 class Travel extends Model
 {
@@ -10,6 +11,7 @@ class Travel extends Model
 
     protected $fillable = [
         'destination_id',
+        'slug',
         'title',
         'seo_title',
         'description',
@@ -18,6 +20,10 @@ class Travel extends Model
         'end_date',
         'content',
         'score'
+    ];
+
+    public $appends = [
+      'url'
     ];
 
     public function destination()

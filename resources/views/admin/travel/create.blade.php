@@ -28,6 +28,10 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label for="slug">Slug</label>
+                                    <input class="form-control" type="text" name="slug" id="slug" value="">
+                                </div>
+                                <div class="form-group">
                                     <label for="seo_title">标题</label>
                                     <input class="form-control" type="text" name="title" id="title" value="">
                                 </div>
