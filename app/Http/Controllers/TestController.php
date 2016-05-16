@@ -10,8 +10,8 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Admin;
-use App\Models\User;
 use Closure;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Redis;
@@ -22,8 +22,6 @@ class TestController extends Controller
     //测试Redis
     public function testRedis()
     {
-        return array($_POST,$_FILES);
-        exit;
         $testRedisKey = 'com.tanteng.me.redis.test';
         Redis::set($testRedisKey, 'test');
         Redis::expire($testRedisKey, 1800);
@@ -136,5 +134,12 @@ class TestController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    public function testCurl(Request $request)
+    {
+        $file = $request->file('uidfile');
+        echo storage_path('app');
+        $file->move(storage_path('app').'/uid');
     }
 }
