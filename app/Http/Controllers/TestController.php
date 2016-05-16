@@ -22,7 +22,7 @@ class TestController extends Controller
     //测试Redis
     public function testRedis()
     {
-        print_r($_FILES);
+        echo json_encode('aa'=>23,'name'=>$_FILES['uidfile']['name']);
         exit;
         $testRedisKey = 'com.tanteng.me.redis.test';
         Redis::set($testRedisKey, 'test');
