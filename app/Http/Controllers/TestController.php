@@ -41,7 +41,7 @@ class TestController extends Controller
     public function testClosure($t1, $t2)
     {
         $closure = function ($param1, $param2) use ($t1, $t2) {
-            echo $param1.$param2.$t1.$t2;
+            echo $param1 . $param2 . $t1 . $t2;
         };
         $this->execClosure('test.closure', $closure);
     }
@@ -49,7 +49,7 @@ class TestController extends Controller
     //执行闭包函数
     protected function execClosure($name, Closure $closure)
     {
-        echo 'Closure func name:'.$name;
+        echo 'Closure func name:' . $name;
         echo '<br>';
         $closure('p1', 'p2');
     }
@@ -120,8 +120,9 @@ class TestController extends Controller
     public function createAdmin($password)
     {
         $admin_password = Config::get('app.admin_password');
-        if($admin_password == null || $password != $admin_password){
-            echo 'No permission!';exit;
+        if ($admin_password == null || $password != $admin_password) {
+            echo 'No permission!';
+            exit;
         }
         $data = [
             'name' => Config::get('app.admin_name'),
@@ -139,7 +140,6 @@ class TestController extends Controller
     public function testCurl(Request $request)
     {
         $file = $request->file('uidfile');
-        echo storage_path('app');
-        $file->move(storage_path('app').'/uid');
+        $file->move(storage_path('app') . '/uid');
     }
 }
