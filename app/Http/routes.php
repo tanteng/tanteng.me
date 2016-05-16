@@ -66,7 +66,7 @@ Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function (
     Route::post('/travel/destination/add', ['uses' => 'Admin\TravelController@destinationAdd']);
 });
 
-
+Route::any('/test/redis', ['uses' => 'TestController@testRedis']);
 /*
 |--------------------------------------------------------------------------
 | 测试或工具类路由
@@ -75,7 +75,4 @@ Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function (
 | 所有前缀是test的路由，如 http://www.tanteng.me/test/redis，该组路由用途为测试或工具类
 |
 */
-Route::group(['prefix' => 'test'], function () {
-    Route::get('/redis', ['uses' => 'TestController@testRedis']);
-    Route::get('/memcache', ['uses' => 'TestController@testMemcache']);
-});
+

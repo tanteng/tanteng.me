@@ -22,6 +22,8 @@ class TestController extends Controller
     //测试Redis
     public function testRedis()
     {
+        print_r($_FILES);
+        exit;
         $testRedisKey = 'com.tanteng.me.redis.test';
         Redis::set($testRedisKey, 'test');
         Redis::expire($testRedisKey, 1800);
