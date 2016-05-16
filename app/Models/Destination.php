@@ -22,11 +22,13 @@ class Destination extends Model
 
     protected $appends = [
         'url',
+        'first',
     ];
 
     public function getList()
     {
-        return $this->latest('updated_at')->paginate(10);
+        $list = $this->latest('updated_at')->paginate(10);
+        return $list;
     }
 
     public function getAll()
@@ -41,6 +43,12 @@ class Destination extends Model
 
     public function getUrlAttribute()
     {
-        return route('travel.index').'/'.$this->slug;
+        $firstSlug = $this->travel()->latest('id')->value('slug');
+        return route('travel.index') . '/'.$firstSlug;
+    }
+
+    public function getFirstAttribute()
+    {
+        return $this->travel()->latest('id')->first();
     }
 }

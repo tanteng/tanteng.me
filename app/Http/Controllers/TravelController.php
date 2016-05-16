@@ -23,17 +23,21 @@ class TravelController extends Controller
         $navFlag = 'travel';
 
         $lists = $this->destination->getList();
+        foreach ($lists as $list) {
+            dump($list->url);
+        }
+
         return view('travel.index', compact('navFlag','lists'));
     }
 
     //目的地游记列表
-    public function destinationList($destination)
+    public function destinationFirst($destination)
     {
         $id = $this->destination->where('slug', $destination)->value('id');
         if (!$id) {
             abort(404);
         }
-        $list = $this->destination->find($id)->travel()->paginate(10);
+        $list = $this->destination->find($id)->travel()->first;
         dump($list);
         $total = $list->total();
     }
