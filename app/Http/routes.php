@@ -34,6 +34,7 @@ Route::group(['domain' => 'www.tanteng.me', 'middleware' => 'web'], function () 
     Route::post('/contact/comment', ['uses' => 'IndexController@postComment']);
     Route::get('/travel', ['as' => 'travel.index', 'uses' => 'TravelController@index']);
     Route::get('/travel/{destination}', ['uses' => 'TravelController@destinationList']);
+    Route::get('/travel/{destination}/{slug}', ['as' => 'travel.detail', 'uses' => 'TravelController@destinationList']);
 });
 
 //英文怎么说

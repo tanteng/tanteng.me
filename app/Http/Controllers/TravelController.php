@@ -26,11 +26,16 @@ class TravelController extends Controller
         return view('travel.index', compact('navFlag','lists'));
     }
 
+    //目的地游记列表
     public function destinationList($destination)
     {
         $id = $this->destination->where('slug', $destination)->value('id');
+        if (!$id) {
+            abort(404);
+        }
         $list = $this->destination->find($id)->travel()->paginate(10);
         dump($list);
+        $total = $list->total();
     }
 
     public function destination(Request $request)

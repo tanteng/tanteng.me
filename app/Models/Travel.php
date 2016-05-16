@@ -23,11 +23,16 @@ class Travel extends Model
     ];
 
     public $appends = [
-      'url'
+        'url'
     ];
 
     public function destination()
     {
         $this->belongsTo('\App\Models\Destination', 'destination_id');
+    }
+
+    public function getUrlAttribute()
+    {
+        return route('travel.index') . '/' . $this->destination_id . '/' . $this->slug;
     }
 }
