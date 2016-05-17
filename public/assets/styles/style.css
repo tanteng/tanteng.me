@@ -93,6 +93,13 @@
     transition: all 0.2s ease 0s;
 }
 
+.widget .tag-cloud a:hover {
+    background: #e67e22 none repeat scroll 0 0;
+    border: 1px solid #e67e22;
+    color: #ffffff;
+    text-decoration: none;
+}
+
 .footer {
     border-top: 1px solid #e5e5e5;
     color: #767676;
