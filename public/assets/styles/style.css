@@ -83,6 +83,16 @@
     max-width: 100%;
 }
 
+.widget .tag-cloud a {
+    border: 1px solid #ebebeb;
+    color: #959595;
+    display: inline-block;
+    line-height: 1.5em;
+    margin: 0 7px 7px 0;
+    padding: 2px 7px;
+    transition: all 0.2s ease 0s;
+}
+
 .footer {
     border-top: 1px solid #e5e5e5;
     color: #767676;
