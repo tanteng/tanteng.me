@@ -139,15 +139,14 @@ class TestController extends Controller
 
     public function testCurl(Request $request)
     {
-        if (!$request->hasFile('filename')) {
-            return json_encode(['status' => 1, 'msg' => 'no file']);
+        if ($request->hasFile('filename')) {
+            $file = $request->file('filename');
+            $filename = $file->getClientOriginalName();
+            $target = $file->move(storage_path('app') . '/uid', $filename);
+            if ($target) {
+                return json_encode(['status' => 0, 'msg' => 'curl post file success.']);
+            }
         }
-        $file = $request->file('filename');
-        $filename = $file->getClientOriginalName();
-        $target = $file->move(storage_path('app') . '/uid', $filename);
-        if ($target) {
-            return json_encode(['status' => 0, 'msg' => 'curl post file success.']);
-        }
-        return false;
+        return json_encode(['status' => 0, 'msg' => 'connection success.']);
     }
 }
