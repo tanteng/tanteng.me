@@ -9,42 +9,36 @@
 namespace App\Http\Controllers;
 
 use App\Models\Destination;
+use App\Models\Travel;
 use Illuminate\Http\Request;
 
 class TravelController extends Controller
 {
-    public function __construct(Destination $destination)
+    public function __construct(Destination $destination, Travel $travel)
     {
         $this->destination = $destination;
+        $this->travel = $travel;
     }
 
+    //旅行栏目首页，列出所有目的地，链接指向目的地最新游记
     public function index()
     {
         $navFlag = 'travel';
 
         $lists = $this->destination->getList();
-        foreach ($lists as $list) {
-            dump($list->url);
-        }
-
         return view('travel.index', compact('navFlag','lists'));
     }
 
     //目的地游记列表
-    public function destinationFirst($destination)
+    public function travelList($destination)
     {
-        $id = $this->destination->where('slug', $destination)->value('id');
-        if (!$id) {
+        $destinationId = $this->destination->where('slug',$destination)->value('id');
+        if(!$destinationId){
             abort(404);
         }
-        $list = $this->destination->find($id)->travel()->first;
-        dump($list);
-        $total = $list->total();
-    }
-
-    public function destination(Request $request)
-    {
-        $list = $this->destination->paginate(10);
-        dump($list);
+        $list = $this->travel->travelList($destinationId);
+        foreach ($list as $item) {
+            dump($item->url);
+        }
     }
 }

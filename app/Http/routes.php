@@ -33,8 +33,8 @@ Route::group(['domain' => 'www.tanteng.me', 'middleware' => 'web'], function () 
     Route::get('/contact', ['as' => 'index.contact', 'uses' => 'IndexController@contact']);
     Route::post('/contact/comment', ['uses' => 'IndexController@postComment']);
     Route::get('/travel', ['as' => 'travel.index', 'uses' => 'TravelController@index']);
-    Route::get('/travel/{destination}', ['uses' => 'TravelController@destinationList']);
-    Route::get('/travel/{destination}/{slug}', ['as' => 'travel.detail', 'uses' => 'TravelController@destinationList']);
+    Route::get('/travel/{destination}', ['uses' => 'TravelController@travelList']);
+    Route::get('/travel/{destination}/{slug}', ['uses' => 'TravelController@travelDetail']);
 });
 
 //英文怎么说

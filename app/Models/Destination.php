@@ -22,7 +22,6 @@ class Destination extends Model
 
     protected $appends = [
         'url',
-        'first',
     ];
 
     public function getList()
@@ -44,11 +43,9 @@ class Destination extends Model
     public function getUrlAttribute()
     {
         $firstSlug = $this->travel()->latest('id')->value('slug');
-        return route('travel.index') . '/'.$firstSlug;
-    }
-
-    public function getFirstAttribute()
-    {
-        return $this->travel()->latest('id')->first();
+        if($firstSlug){
+            return route('travel.index') . '/' . $this->slug . '/' . $firstSlug;
+        }
+        return '';
     }
 }

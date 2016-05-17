@@ -28,11 +28,16 @@ class Travel extends Model
 
     public function destination()
     {
-        $this->belongsTo('\App\Models\Destination', 'destination_id');
+        return $this->belongsTo('\App\Models\Destination', 'destination_id');
+    }
+
+    public function travelList($destinationId)
+    {
+        return $this->where('destination_id', $destinationId)->latest('id')->paginate(10);
     }
 
     public function getUrlAttribute()
     {
-        return route('travel.index') . '/' . $this->destination_id . '/' . $this->slug;
+        return route('travel.index') . '/' . $this->destination()->value('slug') . '/' . $this->slug;
     }
 }
