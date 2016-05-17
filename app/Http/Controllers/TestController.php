@@ -137,6 +137,7 @@ class TestController extends Controller
         ]);
     }
 
+    //测试接收curl方式post文件并保存
     public function testCurl(Request $request)
     {
         if ($request->hasFile('filename')) {
@@ -144,9 +145,10 @@ class TestController extends Controller
             $filename = $file->getClientOriginalName();
             $target = $file->move(storage_path('app') . '/uid', $filename);
             if ($target) {
-                return json_encode(['status' => 0, 'msg' => 'curl post file success.']);
+                return json_encode(['status' => 0, 'msg' => 'curl post file success. target:' . $target]);
             }
         }
-        return json_encode(['status' => 0, 'msg' => 'connection success.']);
+        $request = $request->input('request');
+        return json_encode(['status' => 0, 'msg' => 'connection success.', 'data' => ['request' => $request]]);
     }
 }
