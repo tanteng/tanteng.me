@@ -11,17 +11,37 @@
         </div>
 
         <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <ol class="breadcrumb">
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li><a href="{{ route('travel.index') }}">Travel</a></li>
-                    <li class="active"><a href="{{ route('travel.destination', [$destination]) }}">Hong Kong</a></li>
-                </ol>
-                <h1>{{ $detail->title }}</h1>
-                <div class="content">
-                    {{ $detail->content }}
+            <main class="col-md-8 main-content">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li><a href="{{ route('home') }}">Home</a></li>
+                        <li><a href="{{ route('travel.index') }}">Travel</a></li>
+                        <li class="active"><a href="{{ route('travel.destination', [$destinationSlug]) }}">Hong Kong</a>
+                        </li>
+                    </ol>
+                </nav>
+                <article>
+                    <header>
+                        <h1>{{ $detail->title }}</h1>
+                        <section class="post-meta">
+                            <time title="{{ $detail->updated_at }}" datetime="{{ $detail->updated_at }}" class="post-date">{{ $detail->updated_at }}</time>
+                        </section>
+                    </header>
+                    <section class="post-content">
+                        {{ $detail->content }}
+                    </section>
+                </article>
+            </main>
+            <aside class="col-md-4">
+                <div class="widget">
+                    <h4 class="title">目的地</h4>
+                    <div class="content tag-cloud">
+                        @foreach($destinationList as $item)
+                        <a href="{{ route('travel.destination', [$item->slug]) }}">{{ $item->destination }}</a>
+                        @endforeach
+                    </div>
                 </div>
-            </div>
+            </aside>
         </div>
     </div>
 @endsection

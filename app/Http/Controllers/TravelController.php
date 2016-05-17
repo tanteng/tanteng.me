@@ -32,23 +32,25 @@ class TravelController extends Controller
     //目的地游记列表
     public function travelList($destination)
     {
+        $navFlag = 'travel';
+
         $destinationId = $this->destination->where('slug', $destination)->value('id');
         if (!$destinationId) {
             abort(404);
         }
-        $list = $this->travel->travelList($destinationId);
-        foreach ($list as $item) {
-            dump($item->url);
-        }
+        $lists = $this->travel->travelList($destinationId);
+        return view('travel.destination', compact('navFlag', 'lists'));
     }
 
     //游记详情
-    public function travelDetail($destination, $slug)
+    public function travelDetail($destinationSlug, $slug)
     {
         $navFlag = 'travel';
 
-        $seoSuffix = '_游记_tanteng.me';
+        $destinationList = $this->destination->getList();
+        $destination = $this->destination->where('slug', $destinationSlug)->value('destination');
+        $seoSuffix = "_{$destination}游记_tanteng.me";
         $detail = $this->travel->where('slug', $slug)->firstOrFail();
-        return view('travel.detail', compact('navFlag', 'detail', 'destination', 'slug', 'seoSuffix'));
+        return view('travel.detail', compact('navFlag', 'detail', 'destinationList', 'destinationSlug', 'slug', 'seoSuffix'));
     }
 }

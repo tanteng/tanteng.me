@@ -9,7 +9,7 @@
     <meta name="description" content="@yield('description')">
     <link href="//cdn.tanteng.me" rel="dns-prefetch">
     <link href="//cdn.tanteng.me/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdn.tanteng.me/assets/styles/style.css" rel="stylesheet">
+    <link href="/assets/styles/style.css" rel="stylesheet">
     <link rel="icon" href="/favicon.ico">
     <link rel="canonical" href="@yield('canonical')" />
     <script src="//cdn.tanteng.me/assets/js/pace.min.js"></script>

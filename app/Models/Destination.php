@@ -31,11 +31,6 @@ class Destination extends Model
         return $list;
     }
 
-    public function getAll()
-    {
-        return $this->all();
-    }
-
     public function travel()
     {
         return $this->hasMany('App\Models\Travel', 'destination_id');
