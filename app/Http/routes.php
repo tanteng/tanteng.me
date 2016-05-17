@@ -63,7 +63,8 @@ Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function (
     Route::get('/travel/post-new', ['uses' => 'Admin\TravelController@create']);
     Route::post('/travel/post-new', ['uses' => 'Admin\TravelController@postNew']);
     Route::get('/travel/destination', ['uses' => 'Admin\TravelController@destination']);
-    Route::post('/travel/destination/add', ['uses' => 'Admin\TravelController@destinationAdd']);
+    Route::get('/travel/destination/edit/{id}', ['uses' => 'Admin\TravelController@destinationEdit']);
+    Route::post('/travel/destination/save', ['uses' => 'Admin\TravelController@postDestinationSave']);
 });
 
 

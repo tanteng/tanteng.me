@@ -20,42 +20,43 @@
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="destination">目的地名称</label>
-                                    <input class="form-control" type="text" name="destination" id="destination">
+                                    <input class="form-control" type="text" name="destination" id="destination" value="{{ $detail->destination }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="seo_title">Slug</label>
-                                    <input class="form-control" type="text" name="slug" id="slug">
+                                    <input class="form-control" type="text" name="slug" id="slug" value="{{ $detail->slug }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="title">标题</label>
-                                    <input class="form-control" type="text" name="title" id="title">
+                                    <input class="form-control" type="text" name="title" id="title" value="{{ $detail->title }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="seo_title">SEO标题</label>
-                                    <input class="form-control" type="text" name="seo_title" id="seo_title">
+                                    <input class="form-control" type="text" name="seo_title" id="seo_title" value="{{ $detail->seo_title }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="description">描述</label>
-                                    <textarea class="form-control" name="description" id="description" rows="5" cols="10"></textarea>
+                                    <textarea class="form-control" name="description" id="description" rows="5" cols="10">{{ $detail->description }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="year">年份</label>
-                                    <input class="form-control" type="text" name="year" id="year">
+                                    <input class="form-control" type="text" name="year" id="year" value="{{ $detail->year }}">
                                     <p class="help-block">多个年份可用,隔开，如"2014,2016"</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="cover_image">封面图片</label>
-                                    <input class="form-control" type="text" name="cover_image" id="cover_image">
+                                    <input class="form-control" type="text" name="cover_image" id="cover_image" value="{{ $detail->cover_image }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="latest">最后来访时间</label>
-                                    <input class="form-control" type="text" name="latest" id="latest">
+                                    <input class="form-control" type="text" name="latest" id="latest" value="{{ $detail->latest }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="score">评分</label>
-                                    <input class="form-control" type="text" name="score" id="score">
+                                    <input class="form-control" type="text" name="score" id="score" value="{{ $detail->score }}">
                                 </div>
-                                <input type="hidden" name="isEdit" value="0">
+                                <input type="hidden" name="id" value="{{ $detail->id }}">
+                                <input type="hidden" name="isEdit" value="1">
                                 <button class="btn btn-default" type="submit">发布</button>
                             </form>
                         </div>

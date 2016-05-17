@@ -15,7 +15,7 @@
                 <a href="{{ $list->url }}" target="_blank"><img class="img-responsive" src="{{ $list->cover_image }}" alt="{{ $list->destination }}"></a>
                 <div class="caption">
                     <h3><a href="{{ $list->url }}" target="_blank">{{ $list->destination }}</a><span class="pull-right badge">{{ $list->total }}</span></h3>
-                    <p><a href="{{ $list->url }}" target="_blank">{{ $list->description }}</a></p>
+                    <p><a href="{{ $list->url }}" target="_blank">{{ str_limit($list->description, 86) }}</a></p>
                 </div>
             </div>
         </div>

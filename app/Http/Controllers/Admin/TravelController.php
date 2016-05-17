@@ -47,10 +47,35 @@ class TravelController extends Controller
         return view('admin.travel.destination', compact('destination'));
     }
 
-    //目的地添加
-    public function destinationAdd(Request $request)
+
+    //目的地添加编辑
+    public function postDestinationSave(Request $request)
     {
-        $this->destination->create($request->all());
+        $isEdit = $request->input('isEdit');
+        if ($isEdit) {
+            $id = $request->input('id');
+            $data['destination'] = $request->input('destination');
+            $data['slug'] = $request->input('slug');
+            $data['title'] = $request->input('title');
+            $data['seo_title'] = $request->input('seo_title');
+            $data['description'] = $request->input('description');
+            $data['year'] = $request->input('year');
+            $data['cover_image'] = $request->input('cover_image');
+            $data['latest'] = $request->input('latest');
+            $data['score'] = $request->input('score');
+            $this->destination->where('id', $id)->update($data);
+        } else {
+            $this->destination->create($request->all());
+        }
+
         return redirect()->back();
+    }
+
+    //目的地编辑
+    public function destinationEdit($id)
+    {
+        $detail = $this->destination->find($id);
+        $destination = $this->allDestination;
+        return view('admin.travel.destination_edit', compact('destination', 'detail'));
     }
 }

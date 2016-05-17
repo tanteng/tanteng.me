@@ -28,7 +28,7 @@ class Destination extends Model
 
     public function getList()
     {
-        $list = $this->latest('updated_at')->paginate(10);
+        $list = $this->latest('latest')->paginate(10);
         return $list;
     }
 
