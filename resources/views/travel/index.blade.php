@@ -4,14 +4,13 @@
 
 @section('content')
 <div class="container">
-    <div class="jumbotron">
-        <h1>旅行的意义</h1>
-        <p>Comming soon!</p>
+    <div class="page-header">
+        <h1><span class="glyphicon glyphicon-picture"></span> 旅行 <small>Travel</small></h1>
     </div>
 
     <div class="es-filter">
         <ul class="nav nav-sort clearfix">
-            <li><a class="" href="">最新</a></li>
+            <li><a class="active" href="">最新</a></li>
             <li><a class="" href="">最爱</a></li>
         </ul>
     </div>
