@@ -23,7 +23,7 @@
                                     <input class="form-control" type="text" name="destination" id="destination">
                                 </div>
                                 <div class="form-group">
-                                    <label for="seo_title">slug</label>
+                                    <label for="seo_title">Slug</label>
                                     <input class="form-control" type="text" name="slug" id="slug">
                                 </div>
                                 <div class="form-group">
@@ -46,6 +46,10 @@
                                 <div class="form-group">
                                     <label for="cover_image">封面图片</label>
                                     <input class="form-control" type="text" name="cover_image" id="cover_image">
+                                </div>
+                                <div class="form-group">
+                                    <label for="latest">最后来访时间</label>
+                                    <input class="form-control" type="text" name="latest" id="latest">
                                 </div>
                                 <div class="form-group">
                                     <label for="score">评分</label>

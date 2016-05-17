@@ -17,6 +17,7 @@ class Destination extends Model
         'year',
         'slug',
         'score',
+        'latest',
         'like'
     ];
 
@@ -29,6 +30,11 @@ class Destination extends Model
     {
         $list = $this->latest('updated_at')->paginate(10);
         return $list;
+    }
+
+    public function getAllDestination()
+    {
+        return $this->all();
     }
 
     public function travel()

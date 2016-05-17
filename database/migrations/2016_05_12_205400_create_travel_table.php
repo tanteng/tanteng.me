@@ -19,7 +19,7 @@ class CreateTravelTable extends Migration
             $table->string('title');
             $table->string('seo_title');
             $table->string('description');
-            $table->string('img_cover');
+            $table->string('cover_image');
             $table->string('begin_date');
             $table->string('end_date');
             $table->text('content');
