@@ -22,6 +22,7 @@ class Destination extends Model
 
     protected $appends = [
         'url',
+        'total',
     ];
 
     public function getList()
@@ -47,5 +48,10 @@ class Destination extends Model
             return route('travel.index') . '/' . $this->slug . '/' . $firstSlug;
         }
         return '';
+    }
+
+    public function getTotalAttribute()
+    {
+        return $this->travel()->count();
     }
 }
