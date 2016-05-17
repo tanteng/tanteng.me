@@ -79,8 +79,20 @@
     transition: all 0.3s ease 0s;
 }
 
-#english .content img {
-    max-width: 100%;
+.post {
+    margin-bottom: 35px;
+}
+
+.post .post-content {
+    margin: 30px 0;
+}
+.post-content {
+    color: #444443;
+    font: 400 18px/1.62 "Georgia","Xin Gothic","Hiragino Sans GB","Droid Sans Fallback","Microsoft YaHei",sans-serif;
+}
+
+.widget {
+    margin-bottom: 35px;
 }
 
 .widget .tag-cloud a {
@@ -94,10 +106,28 @@
 }
 
 .widget .tag-cloud a:hover {
-    background: #e67e22 none repeat scroll 0 0;
-    border: 1px solid #e67e22;
+    background: #337ab7 none repeat scroll 0 0;
+    border: 1px solid #337ab7;
     color: #ffffff;
     text-decoration: none;
+}
+
+.widget .title::after {
+    background: #337ab7 none repeat scroll 0 0;
+    bottom: -1px;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 90px;
+}
+
+.widget .title {
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: 21px;
+    margin-top: 0;
+    padding-bottom: 7px;
+    position: relative;
 }
 
 .footer {
@@ -107,6 +137,10 @@
     padding-bottom: 40px;
     padding-top: 40px;
     text-align: center;
+}
+
+#english .content img {
+    max-width: 100%;
 }
 
 @media (min-width: 768px) {
