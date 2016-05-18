@@ -44,7 +44,7 @@ class TravelController extends Controller
 
         $seoSuffix = "_tanteng.me";
         $lists = $this->travel->travelList($destinationId);
-        return view('travel.destination', compact('navFlag', 'lists', 'destination', 'destinationSlug', 'seoTitle' , 'seoSuffix'));
+        return view('travel.destination', compact('navFlag', 'lists', 'destination', 'destinationSlug', 'seoTitle', 'seoSuffix'));
     }
 
     //游记详情
@@ -56,6 +56,7 @@ class TravelController extends Controller
         $destination = $this->destination->where('slug', $destinationSlug)->value('destination');
         $seoSuffix = "_{$destination}游记_tanteng.me";
         $detail = $this->travel->where('slug', $slug)->firstOrFail();
-        return view('travel.detail', compact('navFlag', 'detail', 'destinationList', 'destination', 'destinationSlug', 'slug', 'seoSuffix'));
+        $sid = 'travel-' . $destinationSlug . '-' . $detail->id; //travel-hongkong-1
+        return view('travel.detail', compact('navFlag', 'detail', 'destinationList', 'destination', 'destinationSlug', 'slug', 'seoSuffix', 'sid'));
     }
 }

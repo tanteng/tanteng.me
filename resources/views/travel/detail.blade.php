@@ -30,6 +30,17 @@
                     <section class="post-content">
                         {{ $detail->content }}
                     </section>
+                    <section class="comment">
+                        <!--高速版-->
+                        <div id="SOHUCS" sid="{{ $sid }}"></div>
+                        <script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
+                        <script type="text/javascript">
+                            window.changyan.api.config({
+                                appid: 'cysoRvh1E',
+                                conf: 'prod_89a607ba09618e8e8b657d93d4ca1f96'
+                            });
+                        </script>
+                    </section>
                 </article>
             </main>
             <aside class="col-md-4">
