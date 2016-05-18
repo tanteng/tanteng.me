@@ -22,6 +22,19 @@ class TestController extends Controller
     //测试Redis
     public function testRedis()
     {
+
+        $options = [
+            'condition1' => [
+                'option1' => 3,
+                'option2' => 5,
+                'potion3' => [4, 'or', 5],
+            ]
+        ];
+        dump($options);
+        echo json_encode($options);
+        exit;
+
+
         $testRedisKey = 'com.tanteng.me.redis.test';
         Redis::set($testRedisKey, 'test');
         Redis::expire($testRedisKey, 1800);

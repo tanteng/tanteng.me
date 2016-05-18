@@ -8,6 +8,15 @@
         <h1><span class="glyphicon glyphicon-picture"></span> 旅行 <small>Travel</small></h1>
     </div>
 
+    <nav>
+        <ol class="breadcrumb">
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('travel.index') }}">Travel</a></li>
+            <li class="active"><a href="{{ route('travel.destination', [$destinationSlug]) }}">{{ $destination }}</a>
+            </li>
+        </ol>
+    </nav>
+
     <div class="row">
         @foreach($lists as $list)
         <div class="col-sm-6 col-md-4">
