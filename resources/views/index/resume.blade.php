@@ -91,7 +91,7 @@
 
 
             <h3>个人爱好</h3>
-            <p>旅行，看书</p>
+            <p><a href="{{ route('index.travel') }}">旅行</a>，看书</p>
 
             <h3>博客</h3>
             <p><a href="http://blog.tanteng.me" target="_blank">http://blog.tanteng.me</a></p>
