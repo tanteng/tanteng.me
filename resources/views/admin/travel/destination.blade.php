@@ -16,7 +16,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" method="POST" action="{{ url('/travel/destination/save') }}">
+                            <form role="form" method="POST" action="{{ url('/destination') }}">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="destination">目的地名称</label>
@@ -73,7 +73,7 @@
                             <ul class="list-group">
                                 @foreach($destination as $item)
                                     <li class="list-group-item">
-                                        <span class="pull-right"><a href="/travel/destination/edit/{{ $item->id }}">编辑</a></span>{{ $item['destination'] }}
+                                        <span class="pull-right"><a href="/destination/{{ $item->id }}/edit">编辑</a></span>{{ $item['destination'] }}
                                     </li>
                                 @endforeach
                             </ul>

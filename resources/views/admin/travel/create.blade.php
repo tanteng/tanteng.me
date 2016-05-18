@@ -17,7 +17,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12 col-md-12">
-                            <form role="form" method="POST" action="{{ url('/travel/post-new') }}">
+                            <form role="form" method="POST" action="{{ url('/travel') }}">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="destination">目的地</label>

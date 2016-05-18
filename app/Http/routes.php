@@ -59,12 +59,8 @@ Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function (
     Route::get('/english/post-new', ['uses' => 'Admin\EnglishController@create']);
     Route::post('/english/post-new', ['uses' => 'Admin\EnglishController@postNew']);
     Route::get('/english/edit/{id}', ['uses' => 'Admin\EnglishController@edit']);
-    Route::get('/travel', ['uses' => 'Admin\TravelController@create']);
-    Route::get('/travel/post-new', ['uses' => 'Admin\TravelController@create']);
-    Route::post('/travel/post-new', ['uses' => 'Admin\TravelController@postNew']);
-    Route::get('/travel/destination', ['uses' => 'Admin\TravelController@destination']);
-    Route::get('/travel/destination/edit/{id}', ['uses' => 'Admin\TravelController@destinationEdit']);
-    Route::post('/travel/destination/save', ['uses' => 'Admin\TravelController@postDestinationSave']);
+    Route::resource('travel', 'Admin\TravelController');
+    Route::resource('destination', 'Admin\DestinationController');
 });
 
 

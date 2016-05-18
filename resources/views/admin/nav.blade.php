@@ -174,13 +174,13 @@
                         <a href="#"><i class="fa fa-road fa-fw"></i> 旅行<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/english"> 游记列表</a>
+                                <a href="/travel"> 游记列表</a>
                             </li>
                             <li>
-                                <a href="/travel/post-new"> 添加游记</a>
+                                <a href="/travel/create"> 添加游记</a>
                             </li>
                             <li>
-                                <a href="/travel/destination"> 目的地管理</a>
+                                <a href="/destination"> 目的地管理</a>
                             </li>
                         </ul>
                     </li>

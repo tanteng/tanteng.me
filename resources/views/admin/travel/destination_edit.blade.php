@@ -16,14 +16,14 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" method="POST" action="{{ url('/travel/destination/save') }}">
+                            <form role="form" method="POST" action="/destination/{{ $id }}">
                                 {{ csrf_field() }}
                                 <div class="form-group">
                                     <label for="destination">目的地名称</label>
                                     <input class="form-control" type="text" name="destination" id="destination" value="{{ $detail->destination }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="seo_title">Slug</label>
+                                    <label for="slug">Slug</label>
                                     <input class="form-control" type="text" name="slug" id="slug" value="{{ $detail->slug }}">
                                 </div>
                                 <div class="form-group">
@@ -55,8 +55,7 @@
                                     <label for="score">评分</label>
                                     <input class="form-control" type="text" name="score" id="score" value="{{ $detail->score }}">
                                 </div>
-                                <input type="hidden" name="id" value="{{ $detail->id }}">
-                                <input type="hidden" name="isEdit" value="1">
+                                <input type="hidden" name="_method" value="PUT">
                                 <button class="btn btn-default" type="submit">发布</button>
                             </form>
                         </div>
