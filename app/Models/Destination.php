@@ -46,7 +46,7 @@ class Destination extends Model
     {
         $firstSlug = $this->travel()->latest('id')->value('slug');
         if($firstSlug){
-            return route('travel.index') . '/' . $this->slug . '/' . $firstSlug;
+            return route('index.travel') . '/' . $this->slug . '/' . $firstSlug;
         }
         return '';
     }
