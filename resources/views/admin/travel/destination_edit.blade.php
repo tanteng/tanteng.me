@@ -73,7 +73,7 @@
                             <ul class="list-group">
                                 @foreach($destination as $item)
                                     <li class="list-group-item">
-                                        <span class="pull-right"><a href="/travel/destination/edit/{{ $item->id }}">编辑</a></span>{{ $item['destination'] }}
+                                        <span class="pull-right"><a href="/destination/{{ $item->id }}/edit">编辑</a></span>{{ $item['destination'] }}
                                     </li>
                                 @endforeach
                             </ul>
