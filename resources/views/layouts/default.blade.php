@@ -35,7 +35,7 @@
                 <li @if($navFlag == 'home')class="active" @endif><a href="{{ route('home') }}">Home</a></li>
                 <li @if($navFlag == 'blog')class="active" @endif><a href="{{ route('index.blog') }}">Blog</a></li>
                 <li @if($navFlag == 'resume')class="active" @endif><a href="{{ route('index.resume') }}">Resume</a></li>
-                <li @if($navFlag == 'travel')class="active" @endif><a href="{{ route('travel.index') }}">Travel</a></li>
+                <li @if($navFlag == 'travel')class="active" @endif><a href="{{ route('index.travel') }}">Travel</a></li>
                 <li @if($navFlag == 'contact')class="active" @endif><a href="{{ route('index.contact') }}">Contact</a></li>
                 <li class="dropdown @if($navFlag == 'explore')active @endif">
                     <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore<span class="caret"></span></a>

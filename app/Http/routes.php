@@ -32,7 +32,7 @@ Route::group(['domain' => 'www.tanteng.me', 'middleware' => 'web'], function () 
     Route::get('/post', ['name' => 'post.show', 'uses' => 'ArticleController@show']);
     Route::get('/contact', ['as' => 'index.contact', 'uses' => 'IndexController@contact']);
     Route::post('/contact/comment', ['uses' => 'IndexController@postComment']);
-    Route::get('/travel', ['as' => 'travel.index', 'uses' => 'TravelController@index']);
+    Route::get('/travel', ['as' => 'index.travel', 'uses' => 'TravelController@index']);
     Route::get('/travel/{destination}', ['as' => 'travel.destination', 'uses' => 'TravelController@travelList']);
     Route::get('/travel/{destination}/{slug}', ['uses' => 'TravelController@travelDetail']);
 });
