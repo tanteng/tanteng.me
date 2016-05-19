@@ -11,7 +11,7 @@
     <link href="//cdn.tanteng.me/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.tanteng.me/assets/styles/style.css" rel="stylesheet">
     <link rel="icon" href="/favicon.ico">
-    <link rel="canonical" href="@yield('canonical')" />
+    @if(isset($canonical))<link rel="canonical" href="{{ $canonical }}" />@endif
     @yield('head')
 </head>
 <body>

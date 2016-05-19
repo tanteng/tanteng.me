@@ -25,7 +25,7 @@ class BlogController extends Controller
                 $articles[] = [
                     'url' => $item->url,
                     'post_title' => $item->post_title,
-                    'post_date' => date('Y-m-d',$item->post_date->getTimestamp()),
+                    'post_date' => $item->post_date->format('Y-m-d'),
                 ];
             }
             return $articles;
