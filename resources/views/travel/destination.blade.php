@@ -21,7 +21,7 @@
         @foreach($lists as $list)
         <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-                <a href="{{ $list->url }}"><img class="img-responsive" src="{{ $list->img_cover  }}" alt="{{ $list->title }}"></a>
+                <a href="{{ $list->url }}"><img class="img-responsive" src="{{ $list->cover_image  }}" alt="{{ $list->title }}"></a>
                 <div class="caption">
                     <h3><a href="{{ $list->url }}">{{ $list->description }}</a></h3>
                     <p><a href="{{ $list->url }}">{{ $list->description }}</a></p>

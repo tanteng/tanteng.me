@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="img_cover">封面图片</label>
-                                    <input class="form-control" type="text" name="cover_image" id="cover_image" value="{{ $detail->cover_img }}">
+                                    <input class="form-control" type="text" name="cover_image" id="cover_image" value="{{ $detail->cover_image }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="begin_date">开始时间</label>
