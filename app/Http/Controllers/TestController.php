@@ -153,6 +153,7 @@ class TestController extends Controller
     //测试接收curl方式post文件并保存
     public function testCurl(Request $request)
     {
+        return $request->getContent();
         if ($request->hasFile('filename')) {
             $file = $request->file('filename');
             $filename = $file->getClientOriginalName();
