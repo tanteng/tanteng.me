@@ -28,13 +28,7 @@
                         </section>
                     </header>
                     <section class="post-content">
-                        {{ $detail->content }}
-                    </section>
-                    <section class="comment">
-                        <div id="SOHUCS" sid="{{ $sid }}"></div>
-                        <script id="changyan_mobile_js" charset="utf-8" type="text/javascript"
-                                src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=cysoRvh1E&conf=prod_89a607ba09618e8e8b657d93d4ca1f96">
-                        </script>
+                        {!! Markdown::convertToHtml($detail->content) !!}
                     </section>
                 </article>
             </main>
@@ -51,3 +45,10 @@
         </div>
     </div>
 @endsection
+
+@section('js')
+    <script type="text/javascript">
+        $(".post-content img").addClass('img-responsive');
+    </script>
+@endsection
+
