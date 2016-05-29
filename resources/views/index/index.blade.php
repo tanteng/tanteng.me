@@ -27,6 +27,7 @@
                                 <li class="active"><a href="/">Home</a></li>
                                 <li><a href="/blog">Blog</a></li>
                                 <li><a href="/resume">Resume</a></li>
+                                <li><a href="/travel">Travel</a></li>
                                 <li><a href="/contact">Contact</a></li>
                             </ul>
                         </div>
@@ -39,7 +40,7 @@
                     <div class="col-md-10 col-md-offset-1">
                         <img class="img-circle" src="http://cdn.tanteng.me/assets/images/avatar.jpg" alt="avatar" width="140" height="140">
                         <h2>谈腾</h2>
-                        <p>从事PHP开发，熟悉Laravel，ThinkPHP，CI等框架，熟悉MySQL，Redis，MongoDB数据库及缓存技术，熟悉jQuery等前端技术，较好理解面向对象的思想，注重代码规范和性能，有大型网站开发经验。</p>
+                        <p>{{ $introduce }}</p>
                         <p><a class="btn btn-default" href="/resume" role="button">更多</a></p>
                     </div>
                 </div>

@@ -61,6 +61,8 @@ Route::group(['domain' => 'admin.tanteng.me', 'middleware' => 'web'], function (
     Route::get('/english/edit/{id}', ['uses' => 'Admin\EnglishController@edit']);
     Route::resource('travel', 'Admin\TravelController');
     Route::resource('destination', 'Admin\DestinationController');
+    Route::get('/settings/cover', 'Admin\SettingsController@coverEdit');
+    Route::post('/settings/cover', 'Admin\SettingsController@coverUpdate');
 });
 
 

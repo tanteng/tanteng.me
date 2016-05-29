@@ -9,7 +9,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Options;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
@@ -17,7 +19,11 @@ class IndexController extends Controller
     public function index()
     {
         $navFlag = 'home';
-        return view('index.index', compact('navFlag'));
+        $introduce = Cache::store('redis')->remember('options.introduce', 10, function () {
+            $value = Options::where('name', 'introduce')->value('value');
+            return $value;
+        });
+        return view('index.index', compact('navFlag', 'introduce'));
     }
 
     public function resume()
@@ -26,7 +32,7 @@ class IndexController extends Controller
         return view('index.resume', compact('navFlag'));
     }
 
-    public function contact(Request $quest)
+    public function contact()
     {
         $navFlag = 'contact';
         return view('index.contact', compact('navFlag'));
@@ -42,8 +48,8 @@ class IndexController extends Controller
             'captcha.captcha' => '验证码错误！',
         ];
 
-        if ($request->method() == 'POST'){
-            $this->validate($request,[
+        if ($request->method() == 'POST') {
+            $this->validate($request, [
                 'nickname' => 'required',
                 'content' => 'required',
                 'captcha' => 'required|captcha',

@@ -160,6 +160,14 @@
                         <a href="/"><i class="fa fa-dashboard fa-fw"></i> 控制台</a>
                     </li>
                     <li>
+                        <a href="#"><i class="fa fa-cog fa-fw"></i> 网站设置<span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="/settings/cover"> 封面介绍</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
                         <a href="#"><i class="fa fa-share-square-o  fa-fw"></i> 我的分享<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
