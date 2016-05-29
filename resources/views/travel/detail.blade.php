@@ -15,7 +15,7 @@
                 <nav>
                     <ol class="breadcrumb">
                         <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="{{ route('travel.index') }}">Travel</a></li>
+                        <li><a href="{{ route('index.travel') }}">Travel</a></li>
                         <li class="active"><a href="{{ route('travel.destination', [$destinationSlug]) }}">{{ $destination }}</a>
                         </li>
                     </ol>
