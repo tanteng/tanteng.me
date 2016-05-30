@@ -34,17 +34,18 @@ class TravelController extends Controller
     {
         $navFlag = 'travel';
 
-        $rs = $this->destination->where('slug', $destinationSlug)->first(['id', 'destination', 'seo_title']);
+        $rs = $this->destination->where('slug', $destinationSlug)->first(['id', 'destination', 'seo_title', 'description']);
         $destinationId = $rs->id;
         if (!$destinationId) {
             abort(404);
         }
         $destination = $rs->destination;
         $seoTitle = $rs->seo_title;
+        $description = $rs->description;
 
         $seoSuffix = "_tanteng.me";
         $lists = $this->travel->travelList($destinationId);
-        return view('travel.destination', compact('navFlag', 'lists', 'destination', 'destinationSlug', 'seoTitle', 'seoSuffix'));
+        return view('travel.destination', compact('navFlag', 'lists', 'destination', 'destinationSlug', 'seoTitle', 'description', 'seoSuffix'));
     }
 
     //游记详情
