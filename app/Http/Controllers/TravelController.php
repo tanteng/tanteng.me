@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 use App\Models\Destination;
 use App\Models\Travel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 
 class TravelController extends Controller
 {
@@ -25,7 +26,9 @@ class TravelController extends Controller
     {
         $navFlag = 'travel';
 
-        $lists = $this->destination->getList();
+        $lists = Cache::remember('travel.destination.lists', 20, function () {
+            return $this->destination->getList();
+        });
         return view('travel.index', compact('navFlag', 'lists'));
     }
 
@@ -44,7 +47,9 @@ class TravelController extends Controller
         $description = $rs->description;
 
         $seoSuffix = "_tanteng.me";
-        $lists = $this->travel->travelList($destinationId);
+        $lists = Cache::remember('travel.destination.travel.list', 20, function () use ($destinationId) {
+            return $this->travel->travelList($destinationId);
+        });
         return view('travel.destination', compact('navFlag', 'lists', 'destination', 'destinationSlug', 'seoTitle', 'description', 'seoSuffix'));
     }
 
