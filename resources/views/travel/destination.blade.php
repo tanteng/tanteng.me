@@ -1,6 +1,7 @@
 @extends('layouts.default')
 
 @section('title'){{ $seoTitle }}{{ $seoSuffix }}@endsection
+@section('description'){{ $description }}@endsection
 
 @section('content')
 <div class="container">
