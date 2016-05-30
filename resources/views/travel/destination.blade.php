@@ -18,17 +18,22 @@
     </nav>
 
     <div class="row">
-        @foreach($lists as $list)
-        <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-                <a href="{{ $list->url }}"><img class="img-responsive" src="{{ $list->cover_image  }}" alt="{{ $list->title }}"></a>
-                <div class="caption">
-                    <h3><a href="{{ $list->url }}">{{ $list->description }}</a></h3>
-                    <p><a href="{{ $list->url }}">{{ $list->description }}</a></p>
+        <div class="col-md-12">
+            @foreach($lists as $item)
+            <div class="media">
+                <div class="media-left">
+                    <a href="{{ $item->url }}">
+                        <img class="media-object" src="{{ $item->cover_image }}" alt="{{ $item->title }}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <a href="{{ $item->url }}"><h4 class="media-heading">{{ $item->title }}</h4></a>
+                    <p>{{ $item->begin_date }}</p>
+                    {{ $item->description }}
                 </div>
             </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
 </div>
 @endsection

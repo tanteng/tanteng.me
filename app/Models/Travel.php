@@ -15,7 +15,7 @@ class Travel extends Model
         'title',
         'seo_title',
         'description',
-        'img_cover',
+        'cover_image',
         'begin_date',
         'end_date',
         'content',

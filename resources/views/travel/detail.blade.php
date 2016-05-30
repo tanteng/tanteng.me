@@ -24,7 +24,7 @@
                     <header>
                         <h1>{{ $detail->title }}</h1>
                         <section class="post-meta">
-                            <time title="{{ $detail->updated_at }}" datetime="{{ $detail->updated_at }}" class="post-date">{{ $detail->updated_at }}</time>
+                            <time title="{{ $detail->begin_date }}" datetime="{{ $detail->begin_date }}" class="post-date">{{ $detail->begin_date }}</time>
                         </section>
                     </header>
                     <section class="post-content">
