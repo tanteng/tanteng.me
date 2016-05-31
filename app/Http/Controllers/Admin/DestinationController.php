@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 
 class DestinationController extends Controller
 {
@@ -49,6 +50,7 @@ class DestinationController extends Controller
     public function store(Request $request)
     {
         $this->destination->create($request->all());
+        Cache::forget('travel.destination.lists');
         return redirect()->back();
     }
 
