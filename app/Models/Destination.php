@@ -23,6 +23,7 @@ class Destination extends Model
 
     protected $appends = [
         'url',
+        'first_travel_url',
         'total',
     ];
 
@@ -42,7 +43,14 @@ class Destination extends Model
         return $this->hasMany('App\Models\Travel', 'destination_id');
     }
 
+    //目的地首页url
     public function getUrlAttribute()
+    {
+        return route('index.travel') . '/' . $this->slug;
+    }
+
+    //目的地最新一篇游记url
+    public function getFirstTravelUrlAttribute()
     {
         $firstSlug = $this->travel()->latest('id')->value('slug');
         if($firstSlug){

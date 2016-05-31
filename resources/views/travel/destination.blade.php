@@ -24,7 +24,7 @@
             <div class="media">
                 <div class="media-left">
                     <a href="{{ $item->url }}">
-                        <img class="media-object" src="{{ $item->cover_image }}" alt="{{ $item->title }}">
+                        <img class="media-object" src="{{ $item->cover_image }}" alt="{{ $item->title }}" width="80" height="80">
                     </a>
                 </div>
                 <div class="media-body">
