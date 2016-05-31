@@ -17,7 +17,7 @@
 
 @yield('content')
 
-<script src="//cdn.tanteng.com/assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.tanteng.me/assets/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="//cdn.tanteng.me/assets/bootstrap/js/bootstrap.min.js"></script>
 <script>
     var _hmt = _hmt || [];

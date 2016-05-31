@@ -71,7 +71,7 @@
         <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a> 鄂ICP备14007278号</p>
     </div>
 </footer>
-<script src="//cdn.tanteng.com/assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="//cdn.tanteng.me/assets/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="//cdn.tanteng.me/assets/bootstrap/js/bootstrap.min.js"></script>
 
 @yield('js')
