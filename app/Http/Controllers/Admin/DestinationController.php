@@ -50,7 +50,6 @@ class DestinationController extends Controller
     public function store(Request $request)
     {
         $this->destination->create($request->all());
-        Cache::forget('travel.destination.lists');
         return redirect()->back();
     }
 
@@ -97,6 +96,7 @@ class DestinationController extends Controller
         $data['latest'] = $request->input('latest');
         $data['score'] = $request->input('score');
         $this->destination->where('id', $id)->update($data);
+        Cache::forget('travel.destination.lists');
         return redirect()->back();
     }
 
