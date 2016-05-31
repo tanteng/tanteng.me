@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="applicable-device" content="pc,mobile">
     <meta name="description" content="@yield('description')">
+    @yield('meta')
     <link href="//cdn.tanteng.me" rel="dns-prefetch">
     <link href="//cdn.tanteng.me/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.tanteng.me/assets/styles/style.css" rel="stylesheet">
     <link rel="icon" href="/favicon.ico">
     @if(isset($canonical))<link rel="canonical" href="{{ $canonical }}" />@endif
     @yield('head')
+
 </head>
 <body>
 

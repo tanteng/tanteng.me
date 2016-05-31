@@ -2,6 +2,8 @@
 
 @section('title'){{ $detail->seo_title }}{{ $seoSuffix }}@endsection
 @section('description'){{ $detail->description }}@endsection
+@section('meta')<meta name="author" content="谈腾">
+@endsection
 
 @section('content')
     <div class="container">
@@ -18,7 +20,6 @@
                         <li><a href="{{ route('home') }}">Home</a></li>
                         <li><a href="{{ route('index.travel') }}">Travel</a></li>
                         <li class="active"><a href="{{ route('travel.destination', [$destinationSlug]) }}">{{ $destination }}</a></li>
-                        <li>{{ $detail->title }}</li>
                     </ol>
                 </nav>
                 <article>
