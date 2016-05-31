@@ -47,7 +47,7 @@ class TravelController extends Controller
         $description = $rs->description;
 
         $seoSuffix = "_tanteng.me";
-        $lists = Cache::remember('travel.destination.travel.list', 20, function () use ($destinationId) {
+        $lists = Cache::remember('travel.destination.travel.list.'.$destinationId, 20, function () use ($destinationId) {
             return $this->travel->travelList($destinationId);
         });
         return view('travel.destination', compact('navFlag', 'lists', 'destination', 'destinationSlug', 'seoTitle', 'description', 'seoSuffix'));
