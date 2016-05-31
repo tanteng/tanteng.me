@@ -15,7 +15,7 @@
             <h2 class="text-center">谈腾</h2>
             <p class="text-center">PHP工程师 · 深圳迅雷网络技术有限公司</p>
             <p class="text-center">男 | 26岁 | 本科 | 3年工作经验 | 深圳</p>
-            <p class="text-center">15012801031 | tanteng@qq.com</p>
+            <p class="text-center"><img src="http://cdn.tanteng.me/uploads/2016/05/contact.png" alt="联系方式"></p>
         </div>
     </div>
 
