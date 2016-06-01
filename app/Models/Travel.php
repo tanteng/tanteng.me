@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Routing\Route;
 
@@ -22,6 +23,11 @@ class Travel extends Model
         'score'
     ];
 
+    protected $dates = [
+        'begin_date',
+        'end_date',
+    ];
+
     public $appends = [
         'url'
     ];
@@ -33,7 +39,7 @@ class Travel extends Model
 
     public function travelList($destinationId)
     {
-        return $this->where('destination_id', $destinationId)->latest('id')->paginate(10);
+        return $this->where('destination_id', $destinationId)->latest('begin_date')->paginate(10);
     }
 
     public function getUrlAttribute()

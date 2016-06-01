@@ -26,7 +26,7 @@
                     <header>
                         <h1>{{ $detail->title }}</h1>
                         <section class="post-meta">
-                            <time title="{{ $detail->begin_date }}" datetime="{{ $detail->begin_date }}" class="post-date">{{ $detail->begin_date }}</time>
+                            <time title="{{ $detail->begin_date->format('Y-m-d') }}" datetime="{{ $detail->begin_date }}" class="post-date">{{ $detail->begin_date->format('Y-m-d') }}</time>
                         </section>
                     </header>
                     <section class="post-content">

@@ -29,7 +29,7 @@
                 </div>
                 <div class="media-body">
                     <a href="{{ $item->url }}"><h4 class="media-heading">{{ $item->title }}</h4></a>
-                    <p>{{ $item->begin_date }}</p>
+                    <p>{{ $item->begin_date->diffForHumans() }}</p>
                     {{ $item->description }}
                 </div>
             </div>
