@@ -61,7 +61,9 @@ class TravelController extends Controller
         $destinationList = $this->destination->getList();
         $destination = $this->destination->where('slug', $destinationSlug)->value('destination');
         $seoSuffix = "_{$destination}游记_tanteng.me";
-        $detail = $this->travel->where('slug', $slug)->firstOrFail();
+        $detail = Cache::remember('travel.detail.' . $destinationSlug . $slug, 20, function () use ($slug) {
+            return $this->travel->where('slug', $slug)->firstOrFail();
+        });
         $sid = 'travel-' . $destinationSlug . '-' . $detail->id; //travel-hongkong-1
         return view('travel.detail', compact('navFlag', 'detail', 'destinationList', 'destination', 'destinationSlug', 'slug', 'seoSuffix', 'sid'));
     }
