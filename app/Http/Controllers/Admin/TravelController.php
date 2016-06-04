@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cache;
 
 class TravelController extends Controller
 {
@@ -91,6 +92,7 @@ class TravelController extends Controller
     {
         $data['title'] = $request->input('title');
         $data['seo_title'] = $request->input('seo_title');
+        $data['destination_id'] = $request->input('destination_id');
         $data['slug'] = $request->input('slug');
         $data['description'] = $request->input('description');
         $data['cover_image'] = $request->input('cover_image');
@@ -98,6 +100,7 @@ class TravelController extends Controller
         $data['end_date'] = $request->input('end_date');
         $data['content'] = $request->input('content');
         $data['score'] = $request->input('score');
+        Cache::pull('travel.detail.' . $data['destination_id'] . $data['slug']);
         $this->travel->where('id', $id)->update($data);
         return redirect()->back();
     }

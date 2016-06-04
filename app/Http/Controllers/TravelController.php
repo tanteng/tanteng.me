@@ -47,7 +47,7 @@ class TravelController extends Controller
         $description = $rs->description;
 
         $seoSuffix = "_tanteng.me";
-        $lists = Cache::remember('travel.destination.travel.list.'.$destinationId, 20, function () use ($destinationId) {
+        $lists = Cache::remember('travel.destination.travel.list.' . $destinationId, 20, function () use ($destinationId) {
             return $this->travel->travelList($destinationId);
         });
         return view('travel.destination', compact('navFlag', 'lists', 'destination', 'destinationSlug', 'seoTitle', 'description', 'seoSuffix'));
@@ -58,13 +58,22 @@ class TravelController extends Controller
     {
         $navFlag = 'travel';
 
-        $destinationList = $this->destination->getList();
-        $destination = $this->destination->where('slug', $destinationSlug)->value('destination');
-        $seoSuffix = "_{$destination}游记_tanteng.me";
-        $detail = Cache::remember('travel.detail.' . $destinationSlug . $slug, 20, function () use ($slug) {
+        $destinationList = Cache::remember('travel.destination.list', 30, function () {
+            return $this->destination->getList();
+        });
+
+        $info = Cache::remember('travel.destination.info.' . $destinationSlug, 30, function () use ($destinationSlug) {
+            return $this->destination->where('slug', $destinationSlug)->first(['id', 'destination']);
+        });
+
+        $destination = $info->destination;
+        $destinationId = $info->id;
+        $seoSuffix = "_{$info->destination}游记_tanteng.me";
+
+        $detail = Cache::remember('travel.detail.' . $destinationId . $slug, 20, function () use ($slug) {
             return $this->travel->where('slug', $slug)->firstOrFail();
         });
-        $sid = 'travel-' . $destinationSlug . '-' . $detail->id; //travel-hongkong-1
+        
         return view('travel.detail', compact('navFlag', 'detail', 'destinationList', 'destination', 'destinationSlug', 'slug', 'seoSuffix', 'sid'));
     }
 }
