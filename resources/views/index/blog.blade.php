@@ -1,12 +1,12 @@
 @extends('layouts.default')
 
 @section('title', 'Blog - tanteng.me')
-@section('description', '小谈博客关注WEB开发，这里有PHP的基础知识和技术实践，学习Laravel、ThinkPHP、Yii等开发框架，MySQL,Redis,memcache等数据库和缓存技术，还有Linux服务器方面的知识，Nginx配置优化，负载均衡等等。')
+@section('description', '小谈博客是一个专注WEB开发的技术博客，这里有PHP的基础知识和技术实践，学习Laravel、ThinkPHP等开发框架，以及MySQL,Redis,memcache等数据库和缓存技术，还有Linux服务器方面的知识，如Nginx配置优化，负载均衡等等。')
 @section('canonical', 'http://www.tanteng.me/blog')
 @section('content')
 <div class="jumbotron">
     <div class="container">
-        <p class="lead"><span class="glyphicon glyphicon-book"></span> 小谈博客关注WEB开发，这里有PHP的基础知识和技术实践，学习Laravel、ThinkPHP、Yii等开发框架，MySQL,Redis,memcache等数据库和缓存技术，还有Linux服务器方面的知识，Nginx配置优化，负载均衡等等。</p>
+        <p class="lead"><span class="glyphicon glyphicon-book"></span> 小谈博客是一个专注WEB开发的技术博客，这里有PHP的基础知识和技术实践，学习Laravel、ThinkPHP等开发框架，以及MySQL,Redis,memcache等数据库和缓存技术，还有Linux服务器方面的知识，如Nginx配置优化，负载均衡等等。</p>
     </div>
 </div>
 

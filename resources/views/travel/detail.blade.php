@@ -14,15 +14,18 @@
         </div>
 
         <div class="row">
-            <main class="col-md-8 main-content">
-                <nav>
-                    <ol class="breadcrumb">
-                        <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="{{ route('index.travel') }}">Travel</a></li>
-                        <li class="active"><a href="{{ route('travel.destination', [$destinationSlug]) }}">{{ $destination }}</a></li>
-                    </ol>
-                </nav>
-                <article>
+            <nav class="col-md-12">
+                <ol class="breadcrumb">
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('index.travel') }}">Travel</a></li>
+                    <li class="active"><a href="{{ route('travel.destination', [$destinationSlug]) }}">{{ $destination }}</a></li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="row">
+            <main class="col-md-10 col-md-offset-1">
+                <article class="main-content">
                     <header>
                         <h1>{{ $detail->title }}</h1>
                         <section class="post-meta">
@@ -34,23 +37,24 @@
                     </section>
                 </article>
             </main>
-            <aside class="col-md-4">
-                <div class="widget">
-                    <h4 class="title">目的地</h4>
-                    <div class="content tag-cloud">
-                        @foreach($destinationList as $item)
+        </div>
+
+        <div class="col-md-10 col-md-offset-1">
+            <div class="widget">
+                <h4 class="title">目的地</h4>
+                <div class="content tag-cloud">
+                    @foreach($destinationList as $item)
                         <a href="{{ route('travel.destination', [$item->slug]) }}">{{ $item->destination }}</a>
-                        @endforeach
-                    </div>
+                    @endforeach
                 </div>
-            </aside>
+            </div>
         </div>
     </div>
 @endsection
 
 @section('js')
     <script type="text/javascript">
-        $(".post-content img").addClass('img-responsive');
+        $(".post-content img").addClass('img-responsive center-block');
     </script>
 @endsection
 
