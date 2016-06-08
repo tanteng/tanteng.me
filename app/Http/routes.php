@@ -78,4 +78,5 @@ Route::group(['prefix' => 'test'], function () {
     Route::get('/redis', ['uses' => 'TestController@testRedis']);
     Route::get('/memcache', ['uses' => 'TestController@testMemcache']);
     Route::any('/testCurl', ['uses' => 'TestController@testCurl']);
+    Route::get('/preg', ['uses' => 'TestController@preg']);
 });

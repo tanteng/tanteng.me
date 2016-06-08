@@ -171,4 +171,25 @@ class TestController extends Controller
         $request = $request->input('request');
         return json_encode(['status' => 0, 'msg' => 'connection success.', 'data' => ['request' => $request]]);
     }
+
+    //test preg_replace_callback
+    public function preg()
+    {
+        $content = 'I want {water} and {food}';
+        $new = preg_replace_callback('/\{(\w+)\}/', [$this, 'replace'], $content);
+        dump($new);
+    }
+
+    //正则替换callback
+    public function replace($matches)
+    {
+        $replace = [
+            'water' => 'travel',
+            'hehe' => 'coding',
+        ];
+        if (isset($replace[$matches[1]])) {
+            return $replace[$matches[1]];
+        }
+        return $matches[0];
+    }
 }
