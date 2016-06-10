@@ -30,7 +30,7 @@
                 <div class="media-body">
                     <a href="{{ $item->url }}"><h4 class="media-heading">{{ $item->title }}</h4></a>
                     <p>{{ $item->begin_date->diffForHumans() }}</p>
-                    {{ $item->description }}<a href="{{ $item->url }}">[瞧瞧]</a>
+                    {{ $item->description }}<a href="{{ $item->url }}">[查看全文]</a>
                 </div>
             </div>
             @endforeach

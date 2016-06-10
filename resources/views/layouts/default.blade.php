@@ -38,12 +38,6 @@
                 <li @if($navFlag == 'resume')class="active" @endif><a href="{{ route('index.resume') }}">Resume</a></li>
                 <li @if($navFlag == 'travel')class="active" @endif><a href="{{ route('index.travel') }}">Travel</a></li>
                 <li @if($navFlag == 'contact')class="active" @endif><a href="{{ route('index.contact') }}">Contact</a></li>
-                <li class="dropdown @if($navFlag == 'explore')active @endif">
-                    <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explore<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="http://english.tanteng.me/how-to-say" target="_blank">English</a></li>
-                    </ul>
-                </li>
             </ul>
         </div>
     </div>
