@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: tanteng
+ * User: tanteng<tanteng@qq.com>
  * Date: 16/5/8
  * Time: 13:46
  */
@@ -19,13 +19,12 @@ class TravelController extends Controller
     {
         $this->destination = $destination;
         $this->travel = $travel;
+        view()->share(['navFlag' => 'travel']);
     }
 
     //旅行栏目首页，列出所有目的地，链接指向目的地最新游记
     public function index()
     {
-        $navFlag = 'travel';
-
         $lists = Cache::remember('travel.destination.lists', 20, function () {
             return $this->destination->getList();
         });
@@ -35,45 +34,52 @@ class TravelController extends Controller
     //目的地游记列表
     public function travelList($destinationSlug)
     {
-        $navFlag = 'travel';
-
-        $rs = $this->destination->where('slug', $destinationSlug)->first(['id', 'destination', 'seo_title', 'description']);
-        $destinationId = $rs->id;
-        if (!$destinationId) {
+        $data = Cache::remember("travel.destination.list.{$destinationSlug}", 30, function () use ($destinationSlug) {
+            $destinationInfo = $this->destination->where('slug', $destinationSlug)->first(['id', 'destination', 'seo_title', 'description', 'slug']);
+            $list = $this->travel->travelList($destinationInfo['id']);
+            return [
+                'destinationInfo' => $destinationInfo,
+                'lists' => $list,
+            ];
+        });
+        $destinationInfo = $data['destinationInfo'];
+        if (!$destinationInfo['id']) {
             abort(404);
         }
-        $destination = $rs->destination;
-        $seoTitle = $rs->seo_title;
-        $description = $rs->description;
+        $destination = $destinationInfo->destination;
+        $seoTitle = $destinationInfo->seo_title;
+        $description = $destinationInfo->description;
+
+        $lists = $data['lists'];
 
         $seoSuffix = "_tanteng.me";
-        $lists = Cache::remember('travel.destination.travel.list.' . $destinationId, 20, function () use ($destinationId) {
-            return $this->travel->travelList($destinationId);
-        });
-        return view('travel.destination', compact('navFlag', 'lists', 'destination', 'destinationSlug', 'seoTitle', 'description', 'seoSuffix'));
+        return view('travel.destination', compact('navFlag', 'lists', 'destinationInfo', 'seoSuffix'));
     }
 
     //游记详情
     public function travelDetail($destinationSlug, $slug)
     {
-        $navFlag = 'travel';
-
-        $destinationList = Cache::remember('travel.destination.list', 30, function () {
-            return $this->destination->getList();
+        //缓存查询DB数据
+        $data = Cache::remember("travel.detail.{$destinationSlug}.{$slug}", 30, function () use ($destinationSlug, $slug) {
+            $destinationList = $this->destination->getList();
+            $destinationInfo = $this->destination->where('slug', $destinationSlug)->first(['id', 'destination']);
+            $detail = $this->travel->where('slug', $slug)->firstOrFail();
+            $relation = $this->travel->where('destination_id', $destinationInfo['id'])
+                ->where('id', '<>', $detail->id)->get();
+            return [
+                'destinationList' => $destinationList,
+                'destinationInfo' => $destinationInfo,
+                'detail' => $detail,
+                'relation' => $relation,
+            ];
         });
 
-        $info = Cache::remember('travel.destination.info.' . $destinationSlug, 30, function () use ($destinationSlug) {
-            return $this->destination->where('slug', $destinationSlug)->first(['id', 'destination']);
-        });
+        $destinationList = $data['destinationList'];
+        $destinationInfo = $data['destinationInfo'];
+        $detail = $data['detail'];
+        $destination = $destinationInfo->destination;
+        $seoSuffix = "_{$destination}游记_tanteng.me";
 
-        $destination = $info->destination;
-        $destinationId = $info->id;
-        $seoSuffix = "_{$info->destination}游记_tanteng.me";
-
-        $detail = Cache::remember('travel.detail.' . $destinationId . $slug, 20, function () use ($slug) {
-            return $this->travel->where('slug', $slug)->firstOrFail();
-        });
-        
         return view('travel.detail', compact('navFlag', 'detail', 'destinationList', 'destination', 'destinationSlug', 'slug', 'seoSuffix', 'sid'));
     }
 }

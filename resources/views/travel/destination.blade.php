@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
-@section('title'){{ $seoTitle }}{{ $seoSuffix }}@endsection
-@section('description'){{ $description }}@endsection
+@section('title'){{ $destinationInfo->seo_title }}{{ $seoSuffix }}@endsection
+@section('description'){{ $destinationInfo->description }}@endsection
 
 @section('content')
 <div class="container">
@@ -13,7 +13,7 @@
         <ol class="breadcrumb">
             <li><a href="{{ route('home') }}">Home</a></li>
             <li><a href="{{ route('index.travel') }}">Travel</a></li>
-            <li class="active"><a href="{{ route('travel.destination', [$destinationSlug]) }}">{{ $destination }}</a>
+            <li class="active"><a href="{{ route('travel.destination', [$destinationInfo->slug]) }}">{{ $destinationInfo->destination }}</a>
             </li>
         </ol>
     </nav>
