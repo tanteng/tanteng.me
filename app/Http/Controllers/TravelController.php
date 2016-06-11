@@ -46,9 +46,6 @@ class TravelController extends Controller
         if (!$destinationInfo['id']) {
             abort(404);
         }
-        $destination = $destinationInfo->destination;
-        $seoTitle = $destinationInfo->seo_title;
-        $description = $destinationInfo->description;
 
         $lists = $data['lists'];
 

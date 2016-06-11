@@ -22,5 +22,17 @@
         </div>
         @endforeach
     </div>
+
+    <div class="row">
+        <h3>代码</h3>
+        <p>如果你是一名Developer，或者学习Laravel框架，可以查看Travel部分相关代码，本站代码开源，请参考Github上的代码仓库：</p>
+        <ol>
+            <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Http/routes.php" target="_blank"><code>routes.php</code>路由</a></li>
+            <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Http/Controllers/TravelController.php" target="_blank"><code>TravelController.php</code>控制器</a></li>
+            <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Models/Destination.php" target="_blank"><code>Destination.php</code>目的地模型</a></li>
+            <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Models/Travel.php" target="_blank"><code>Travel.php</code>游记模型</a></li>
+            <li><a href="https://github.com/tanteng/tanteng.me/tree/master/resources/views/travel" target="_blank">视图</a></li>
+        </ol>
+    </div>
 </div>
 @endsection
