@@ -31,15 +31,17 @@
         </div>
 
         <div class="row">
-            <h3>Code</h3>
-            <p>如果你是一名Developer，或者学习Laravel框架，可以参考“Travel”相关代码，Github仓库：</p>
-            <ul>
-                <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Http/routes.php" target="_blank"><code>routes.php</code>路由</a></li>
-                <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Http/Controllers/TravelController.php" target="_blank"><code>TravelController.php</code>控制器</a></li>
-                <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Models/Destination.php" target="_blank"><code>Destination.php</code>目的地模型</a></li>
-                <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Models/Travel.php" target="_blank"><code>Travel.php</code>游记模型</a></li>
-                <li><a href="https://github.com/tanteng/tanteng.me/tree/master/resources/views/travel" target="_blank"><code>View</code>视图</a></li>
-            </ul>
+            <div class="col-md-12">
+                <h3>Code</h3>
+                <p>如果你是一名Developer，或者学习Laravel框架，可以参考“Travel”相关代码，Github仓库：</p>
+                <ul>
+                    <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Http/routes.php" target="_blank"><code>routes.php</code>路由</a></li>
+                    <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Http/Controllers/TravelController.php" target="_blank"><code>TravelController.php</code>控制器</a></li>
+                    <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Models/Destination.php" target="_blank"><code>Destination.php</code>目的地模型</a></li>
+                    <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Models/Travel.php" target="_blank"><code>Travel.php</code>游记模型</a></li>
+                    <li><a href="https://github.com/tanteng/tanteng.me/tree/master/resources/views/travel" target="_blank"><code>View</code>视图</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 @endsection
