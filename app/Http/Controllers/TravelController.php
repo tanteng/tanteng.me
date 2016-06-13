@@ -28,7 +28,7 @@ class TravelController extends Controller
         $lists = Cache::remember('travel.destination.lists', 20, function () {
             return $this->destination->getList();
         });
-        return view('travel.index', compact('navFlag', 'lists'));
+        return view('travel.index', compact('lists'));
     }
 
     //目的地游记列表
@@ -36,27 +36,27 @@ class TravelController extends Controller
     {
         $data = Cache::remember("travel.destination.list.{$destinationSlug}", 30, function () use ($destinationSlug) {
             $destinationInfo = $this->destination->where('slug', $destinationSlug)->first(['id', 'destination', 'seo_title', 'description', 'slug']);
+            if (!$destinationInfo['id']) {
+                abort(404);
+            }
             $list = $this->travel->travelList($destinationInfo['id']);
             return [
-                'destinationInfo' => $destinationInfo,
                 'lists' => $list,
+                'destinationInfo' => $destinationInfo,
             ];
         });
-        $destinationInfo = $data['destinationInfo'];
-        if (!$destinationInfo['id']) {
-            abort(404);
-        }
 
         $lists = $data['lists'];
+        $destinationInfo = $data['destinationInfo'];
 
         $seoSuffix = "_tanteng.me";
-        return view('travel.destination', compact('navFlag', 'lists', 'destinationInfo', 'seoSuffix'));
+        return view('travel.destination', compact('lists', 'destinationInfo', 'seoSuffix'));
     }
 
     //游记详情
     public function travelDetail($destinationSlug, $slug)
     {
-        //缓存查询DB数据
+        //缓存DB数据
         $data = Cache::remember("travel.detail.{$destinationSlug}.{$slug}", 30, function () use ($destinationSlug, $slug) {
             $destinationList = $this->destination->getList();
             $destinationInfo = $this->destination->where('slug', $destinationSlug)->first(['id', 'destination']);
@@ -77,6 +77,6 @@ class TravelController extends Controller
         $destination = $destinationInfo->destination;
         $seoSuffix = "_{$destination}游记_tanteng.me";
 
-        return view('travel.detail', compact('navFlag', 'detail', 'destinationList', 'destination', 'destinationSlug', 'slug', 'seoSuffix', 'sid'));
+        return view('travel.detail', compact('detail', 'destinationList', 'destination', 'destinationSlug', 'slug', 'seoSuffix', 'sid'));
     }
 }

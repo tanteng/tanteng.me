@@ -53,7 +53,7 @@ class Destination extends Model
     public function getFirstTravelUrlAttribute()
     {
         $firstSlug = $this->travel()->latest('id')->value('slug');
-        if($firstSlug){
+        if ($firstSlug) {
             return route('index.travel') . '/' . $this->slug . '/' . $firstSlug;
         }
         return '';
@@ -62,5 +62,12 @@ class Destination extends Model
     public function getTotalAttribute()
     {
         return $this->travel()->count();
+    }
+
+    //目的地slug
+    public function getDestinationSlugById($destinationId)
+    {
+        $result = $this->find($destinationId, ['slug']);
+        return $result['slug'];
     }
 }

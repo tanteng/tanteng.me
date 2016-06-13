@@ -100,7 +100,9 @@ class TravelController extends Controller
         $data['end_date'] = $request->input('end_date');
         $data['content'] = $request->input('content');
         $data['score'] = $request->input('score');
-        Cache::pull('travel.detail.' . $data['destination_id'] . $data['slug']);
+
+        $destinationSlug = $this->destination->getDestinationSlugById($data['destination_id']);
+        Cache::pull("travel.detail.{$destinationSlug}.{$data['slug']}");
         $this->travel->where('id', $id)->update($data);
         return redirect()->back();
     }
