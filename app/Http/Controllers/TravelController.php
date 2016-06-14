@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Destination;
 use App\Models\Travel;
+use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
@@ -61,6 +62,7 @@ class TravelController extends Controller
             $destinationList = $this->destination->getList();
             $destinationInfo = $this->destination->where('slug', $destinationSlug)->first(['id', 'destination']);
             $detail = $this->travel->where('slug', $slug)->firstOrFail();
+            $detail->content = Markdown::convertToHtml($detail->content);
             $relation = $this->travel->where('destination_id', $destinationInfo['id'])
                 ->where('id', '<>', $detail->id)->get();
             return [

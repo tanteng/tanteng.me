@@ -33,7 +33,7 @@
                         </section>
                     </header>
                     <section class="post-content">
-                        {!! Markdown::convertToHtml($detail->content) !!}
+                        {!! $detail->content !!}
                     </section>
                 </article>
             </main>
