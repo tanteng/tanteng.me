@@ -101,8 +101,7 @@ class TravelController extends Controller
         $data['content'] = $request->input('content');
         $data['score'] = $request->input('score');
 
-        $destinationSlug = $this->destination->getDestinationSlugById($data['destination_id']);
-        Cache::pull("travel.detail.{$destinationSlug}.{$data['slug']}");
+        Cache::pull("travel.detail.{$data['slug']}");
         $this->travel->where('id', $id)->update($data);
         return redirect()->back();
     }

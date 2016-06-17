@@ -44,6 +44,6 @@ class Travel extends Model
 
     public function getUrlAttribute()
     {
-        return route('index.travel') . '/' . $this->destination()->value('slug') . '/' . $this->slug;
+        return route('index.travel') . '/' . $this->slug;
     }
 }

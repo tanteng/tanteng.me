@@ -55,14 +55,14 @@ class TravelController extends Controller
     }
 
     //游记详情
-    public function travelDetail($destinationSlug, $slug)
+    public function travelDetail($slug)
     {
         //缓存DB数据
-        $data = Cache::remember("travel.detail.{$destinationSlug}.{$slug}", 30, function () use ($destinationSlug, $slug) {
+        $data = Cache::remember("travel.detail.{$slug}", 30, function () use ($slug) {
             $destinationList = $this->destination->getList();
-            $destinationInfo = $this->destination->where('slug', $destinationSlug)->first(['id', 'destination']);
             $detail = $this->travel->where('slug', $slug)->firstOrFail();
             $detail->content = Markdown::convertToHtml($detail->content);
+            $destinationInfo = $this->destination->where('id', $detail->destination_id)->first(['id', 'destination', 'slug']);
             $relation = $this->travel->where('destination_id', $destinationInfo['id'])
                 ->where('id', '<>', $detail->id)->get();
             return [
@@ -76,9 +76,8 @@ class TravelController extends Controller
         $destinationList = $data['destinationList'];
         $destinationInfo = $data['destinationInfo'];
         $detail = $data['detail'];
-        $destination = $destinationInfo->destination;
-        $seoSuffix = "_{$destination}游记_tanteng.me";
+        $seoSuffix = "_{$destinationInfo->destination}游记_tanteng.me";
 
-        return view('travel.detail', compact('detail', 'destinationList', 'destination', 'destinationSlug', 'slug', 'seoSuffix', 'sid'));
+        return view('travel.detail', compact('detail', 'destinationList', 'destinationInfo', 'seoSuffix'));
     }
 }
