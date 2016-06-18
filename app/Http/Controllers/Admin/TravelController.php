@@ -93,7 +93,7 @@ class TravelController extends Controller
         $data['title'] = $request->input('title');
         $data['seo_title'] = $request->input('seo_title');
         $data['destination_id'] = $request->input('destination_id');
-        $data['slug'] = $request->input('slug');
+        $data['slug'] = str_slug($request->input('slug'));
         $data['description'] = $request->input('description');
         $data['cover_image'] = $request->input('cover_image');
         $data['begin_date'] = $request->input('begin_date');
