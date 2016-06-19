@@ -8,7 +8,7 @@
 @section('content')
     <div class="container">
         <div class="page-header">
-            <h1><span class="glyphicon glyphicon-picture"></span> 旅行
+            <h1><span class=" glyphicon glyphicon-camera"></span> 旅行
                 <small>Travel</small>
             </h1>
         </div>
@@ -29,7 +29,7 @@
                     <header>
                         <h1>{{ $detail->title }}</h1>
                         <section class="post-meta">
-                            <time title="{{ $detail->begin_date->format('Y-m-d') }}" datetime="{{ $detail->begin_date }}" class="post-date">{{ $detail->begin_date->format('Y-m-d') }}</time>
+                            <time title="{{ $detail->begin_date->format('Y-m-d') }}" datetime="{{ $detail->begin_date }}" class="post-date"><span class="glyphicon glyphicon-calendar"></span> {{ $detail->begin_date->format('Y-m-d') }}</time>
                         </section>
                     </header>
                     <section class="post-content">

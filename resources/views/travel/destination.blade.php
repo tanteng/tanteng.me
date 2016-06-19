@@ -6,7 +6,7 @@
 @section('content')
 <div class="container">
     <div class="page-header">
-        <h1><span class="glyphicon glyphicon-picture"></span> 旅行 <small>Travel</small></h1>
+        <h1><span class="glyphicon glyphicon-camera"></span> 旅行 <small>Travel</small></h1>
     </div>
 
     <nav>

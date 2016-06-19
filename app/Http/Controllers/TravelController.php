@@ -63,13 +63,12 @@ class TravelController extends Controller
             $detail = $this->travel->where('slug', $slug)->firstOrFail();
             $detail->content = Markdown::convertToHtml($detail->content);
             $destinationInfo = $this->destination->where('id', $detail->destination_id)->first(['id', 'destination', 'slug']);
-            $relation = $this->travel->where('destination_id', $destinationInfo['id'])
-                ->where('id', '<>', $detail->id)->get();
+            $latest = $this->travel->where('destination_id', $destinationInfo['id'])->latest('begin_date')->take(10)->get(); //10篇同目的地的最新游记
             return [
                 'destinationList' => $destinationList,
                 'destinationInfo' => $destinationInfo,
                 'detail' => $detail,
-                'relation' => $relation,
+                'latest' => $latest,
             ];
         });
 
