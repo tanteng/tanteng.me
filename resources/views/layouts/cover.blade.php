@@ -9,7 +9,7 @@
     <meta name="description" content="@yield('description')">
     <link href="//cdn.tanteng.me" rel="dns-prefetch">
     <link href="//cdn.tanteng.me/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdn.tanteng.me/assets/styles/cover.css" rel="stylesheet">
+    <link href="//cdn.tanteng.me/assets/styles/cover.css?version={{ config('version.ts') }}" rel="stylesheet">
     <link rel="icon" href="/favicon.ico">
     <link rel="canonical" href="http://www.tanteng.me/" />
 </head>
