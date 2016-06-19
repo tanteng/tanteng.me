@@ -39,26 +39,13 @@
             </main>
         </div>
 
-        @if($latest)
+        @if($travelList)
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="aside">
                     <h3 class="title">{{ $destinationInfo->destination }}游记</h3>
                     <section class="latest">
-                        @foreach($latest as $item)
-                        <div class="media">
-                            <div class="media-left">
-                                <a href="{{ $item->url }}">
-                                    <img class="media-object" src="{{ $item->cover_image }}" alt="{{ $item->title }}" width="80" height="80">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <a href="{{ $item->url }}"><h4 class="media-heading">{{ $item->title }}</h4></a>
-                                <p>{{ $item->begin_date->diffForHumans() }}</p>
-                                {{ $item->description }}<a href="{{ $item->url }}">[查看全文]</a>
-                            </div>
-                        </div>
-                        @endforeach
+                        @include('travel.lists')
                     </section>
                     <a type="button" class="btn btn-primary btn-sm btn-block margin-top15" href="{{ route('travel.destination',$destinationInfo->slug) }}">更多</a>
                 </div>

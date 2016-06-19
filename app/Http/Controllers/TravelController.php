@@ -29,10 +29,10 @@ class TravelController extends Controller
     {
         $data = Cache::remember('travel.index', self::CACHE_TIME, function () {
             $destinationList = $this->destination->getList();
-            $latestTravels = $this->travel->latest('begin_date')->take(8)->get();
+            $travelList = $this->travel->latest('begin_date')->take(8)->get();
             return [
                 'destinationList' => $destinationList,
-                'latestTravels' => $latestTravels,
+                'travelList' => $travelList,
             ];
         });
         return view('travel.index', $data);
@@ -42,14 +42,14 @@ class TravelController extends Controller
     public function latest()
     {
         $data = Cache::remember('travel.latest', self::CACHE_TIME, function () {
-            $latests = $this->travel->latest('begin_date')->paginate(20);
+            $travelList = $this->travel->latest('begin_date')->paginate(20);
             return [
-                'latest' => $latests,
+                'travelList' => $travelList,
             ];
         });
-        $latest = $data['latest'];
+        $travelList = $data['travelList'];
         $seoSuffix = '_tanteng.me';
-        return view('travel.latest', compact('latest', 'seoSuffix'));
+        return view('travel.latest', compact('travelList', 'seoSuffix'));
     }
 
     //目的地游记列表
@@ -60,18 +60,18 @@ class TravelController extends Controller
             if (!$destinationInfo['id']) {
                 abort(404);
             }
-            $list = $this->travel->travelList($destinationInfo['id']);
+            $travelList = $this->travel->travelList($destinationInfo['id']);
             return [
-                'lists' => $list,
+                'travelList' => $travelList,
                 'destinationInfo' => $destinationInfo,
             ];
         });
 
-        $lists = $data['lists'];
+        $travelList = $data['travelList'];
         $destinationInfo = $data['destinationInfo'];
 
         $seoSuffix = "_tanteng.me";
-        return view('travel.destination', compact('lists', 'destinationInfo', 'seoSuffix'));
+        return view('travel.destination', compact('travelList', 'destinationInfo', 'seoSuffix'));
     }
 
     //游记详情
@@ -83,22 +83,22 @@ class TravelController extends Controller
             $detail = $this->travel->where('slug', $slug)->firstOrFail();
             $detail->content = Markdown::convertToHtml($detail->content);
             $destinationInfo = $this->destination->where('id', $detail->destination_id)->first(['id', 'destination', 'slug']);
-            $latest = $this->travel->where('destination_id', $destinationInfo['id'])->where('id', '<>', $detail->id)->latest('begin_date')->take(5)->get(); //10篇同目的地的最新游记
-            $latest = !$latest->isEmpty() ? $latest : '';
+            $travelList = $this->travel->where('destination_id', $destinationInfo['id'])->where('id', '<>', $detail->id)->latest('begin_date')->take(5)->get(); //10篇同目的地的最新游记
+            $travelList = !$travelList->isEmpty() ? $travelList : '';
             return [
                 'destinationList' => $destinationList,
                 'destinationInfo' => $destinationInfo,
                 'detail' => $detail,
-                'latest' => $latest,
+                'travelList' => $travelList,
             ];
         });
 
         $destinationList = $data['destinationList'];
         $destinationInfo = $data['destinationInfo'];
         $detail = $data['detail'];
-        $latest = $data['latest'];
+        $travelList = $data['travelList'];
         $seoSuffix = "_{$destinationInfo->destination}游记_tanteng.me";
 
-        return view('travel.detail', compact('detail', 'destinationList', 'destinationInfo', 'latest', 'seoSuffix'));
+        return view('travel.detail', compact('detail', 'destinationList', 'destinationInfo', 'travelList', 'seoSuffix'));
     }
 }
