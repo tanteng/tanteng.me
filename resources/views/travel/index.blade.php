@@ -11,17 +11,44 @@
         </div>
 
         <div class="row">
-            @foreach($lists as $list)
-                <div class="col-sm-6 col-md-4">
-                    <div class="thumbnail">
-                        <a href="{{ $list->url }}"><img class="img-responsive" src="{{ $list->cover_image }}" alt="{{ $list->destination }}"></a>
-                        <div class="caption">
-                            <h3><a href="{{ route('travel.destination', [$list->slug]) }}">{{ $list->destination }}</a><span class="pull-right badge">{{ $list->total }}篇</span></h3>
-                            <p><a href="{{ $list->url }}">{{ str_limit($list->description, 122) }}</a></p>
-                        </div>
+            <div class="col-md-12">
+                <h3>目的地</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            @foreach($destinationList as $list)
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <a href="{{ $list->url }}"><img class="img-responsive" src="{{ $list->cover_image }}" alt="{{ $list->destination }}"></a>
+                    <div class="caption">
+                        <h3><a href="{{ route('travel.destination', [$list->slug]) }}">{{ $list->destination }}</a><span class="pull-right badge">{{ $list->total }}篇</span></h3>
+                        <p><a href="{{ $list->url }}">{{ str_limit($list->description, 122) }}</a></p>
                     </div>
                 </div>
+            </div>
             @endforeach
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>最新游记</h3>
+                @foreach($latestTravels as $item)
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="{{ $item->url }}">
+                                <img class="media-object" src="{{ $item->cover_image }}" alt="{{ $item->title }}" width="80" height="80">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <a href="{{ $item->url }}"><h4 class="media-heading">{{ $item->title }}</h4></a>
+                            <p>{{ $item->begin_date->diffForHumans() }}</p>
+                            {{ $item->description }}<a href="{{ $item->url }}">[查看全文]</a>
+                        </div>
+                    </div>
+                @endforeach
+                <a type="button" class="btn btn-primary btn-sm btn-block margin-top15" href="{{ route('travel.latest') }}">更多</a>
+            </div>
         </div>
 
         <div class="row">

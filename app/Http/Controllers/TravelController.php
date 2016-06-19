@@ -11,11 +11,12 @@ namespace App\Http\Controllers;
 use App\Models\Destination;
 use App\Models\Travel;
 use GrahamCampbell\Markdown\Facades\Markdown;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 
 class TravelController extends Controller
 {
+    const CACHE_TIME = 30; //缓存时间，分钟
+
     public function __construct(Destination $destination, Travel $travel)
     {
         $this->destination = $destination;
@@ -23,19 +24,38 @@ class TravelController extends Controller
         view()->share(['navFlag' => 'travel']);
     }
 
-    //旅行栏目首页，列出所有目的地，链接指向目的地最新游记
+    //旅行栏目首页，最新游记和目的地
     public function index()
     {
-        $lists = Cache::remember('travel.destination.lists', 20, function () {
-            return $this->destination->getList();
+        $data = Cache::remember('travel.index', self::CACHE_TIME, function () {
+            $destinationList = $this->destination->getList();
+            $latestTravels = $this->travel->latest('begin_date')->take(8)->get();
+            return [
+                'destinationList' => $destinationList,
+                'latestTravels' => $latestTravels,
+            ];
         });
-        return view('travel.index', compact('lists'));
+        return view('travel.index', $data);
+    }
+
+    //全部游记
+    public function latest()
+    {
+        $data = Cache::remember('travel.latest', self::CACHE_TIME, function () {
+            $latests = $this->travel->latest('begin_date')->paginate(20);
+            return [
+                'latest' => $latests,
+            ];
+        });
+        $latest = $data['latest'];
+        $seoSuffix = '_tanteng.me';
+        return view('travel.latest', compact('latest', 'seoSuffix'));
     }
 
     //目的地游记列表
     public function travelList($destinationSlug)
     {
-        $data = Cache::remember("travel.destination.list.{$destinationSlug}", 30, function () use ($destinationSlug) {
+        $data = Cache::remember("travel.destination.list.{$destinationSlug}", self::CACHE_TIME, function () use ($destinationSlug) {
             $destinationInfo = $this->destination->where('slug', $destinationSlug)->first(['id', 'destination', 'seo_title', 'description', 'slug']);
             if (!$destinationInfo['id']) {
                 abort(404);
@@ -58,7 +78,7 @@ class TravelController extends Controller
     public function travelDetail($slug)
     {
         //缓存DB数据
-        $data = Cache::remember("travel.detail.{$slug}", 30, function () use ($slug) {
+        $data = Cache::remember("travel.detail.{$slug}", self::CACHE_TIME, function () use ($slug) {
             $destinationList = $this->destination->getList();
             $detail = $this->travel->where('slug', $slug)->firstOrFail();
             $detail->content = Markdown::convertToHtml($detail->content);
