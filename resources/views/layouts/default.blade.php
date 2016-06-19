@@ -16,7 +16,6 @@
     <link rel="icon" href="/favicon.ico">
     @if(isset($canonical))<link rel="canonical" href="{{ $canonical }}" />@endif
     @yield('head')
-
 </head>
 <body>
 

@@ -63,7 +63,8 @@ class TravelController extends Controller
             $detail = $this->travel->where('slug', $slug)->firstOrFail();
             $detail->content = Markdown::convertToHtml($detail->content);
             $destinationInfo = $this->destination->where('id', $detail->destination_id)->first(['id', 'destination', 'slug']);
-            $latest = $this->travel->where('destination_id', $destinationInfo['id'])->latest('begin_date')->take(10)->get(); //10篇同目的地的最新游记
+            $latest = $this->travel->where('destination_id', $destinationInfo['id'])->where('id', '<>', $detail->id)->latest('begin_date')->take(5)->get(); //10篇同目的地的最新游记
+            $latest = !$latest->isEmpty() ? $latest : '';
             return [
                 'destinationList' => $destinationList,
                 'destinationInfo' => $destinationInfo,
@@ -75,8 +76,9 @@ class TravelController extends Controller
         $destinationList = $data['destinationList'];
         $destinationInfo = $data['destinationInfo'];
         $detail = $data['detail'];
+        $latest = $data['latest'];
         $seoSuffix = "_{$destinationInfo->destination}游记_tanteng.me";
 
-        return view('travel.detail', compact('detail', 'destinationList', 'destinationInfo', 'seoSuffix'));
+        return view('travel.detail', compact('detail', 'destinationList', 'destinationInfo', 'latest', 'seoSuffix'));
     }
 }

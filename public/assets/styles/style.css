@@ -1,7 +1,4 @@
 
-.sns  {
-}
-
 .sns_size {
     display: inline-block;
     width: 30px;
@@ -28,6 +25,10 @@
     margin-top: 15px;
 }
 
+.margin-top30 {
+    margin-top: 30px;
+}
+
 .captcha {
     margin-top: 10px;
 }
@@ -36,83 +37,56 @@
     padding: 30px 0;
 }
 
-.pace {
-    -webkit-pointer-events: none;
-    pointer-events: none;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-}
-
-.pace-inactive {
-    display: none;
-}
-
-.pace .pace-progress {
-    background: #29d;
-    position: fixed;
-    z-index: 2000;
-    top: 0;
-    right: 100%;
-    width: 100%;
-    height: 2px;
-}
-
-.es-filter {
-    background-color: #fafafa;
-    border-radius: 4px;
-    margin-bottom: 30px;
-    position: relative;
-}
-.es-filter .nav-sort > li {
-    float: left;
-}
-.es-filter .nav-sort > li > a.active {
-    background-color: #337ab7;
-    color: #fff;
-}
-.es-filter .nav-sort > li > a {
-    color: #616161;
-    height: 40px;
-    padding: 10px 15px;
-    transition: all 0.3s ease 0s;
-}
-
 .post {
     margin-bottom: 35px;
+}
+
+.post-meta {
+    margin: 10px auto;
 }
 
 .post .post-content {
     margin: 30px 0;
 }
+
+.post-content p {
+    line-height: 1.7em;
+    margin-bottom: 1.3em;
+    color: #666666;
+}
+
+.post-content .text-center {
+    margin-top: -22px;
+}
+
+.post-content h1, .post-content h2, .post-content h3, .post-content h4 {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.3em;
+}
+
 .post-content {
     color: #444443;
     font: 400 18px/1.62 "Georgia","Xin Gothic","Hiragino Sans GB","Droid Sans Fallback","Microsoft YaHei",sans-serif;
 }
 
-.widget {
-    margin-bottom: 35px;
-}
-
-.widget .tag-cloud a {
+.aside .tag-cloud a {
     border: 1px solid #ebebeb;
     color: #959595;
     display: inline-block;
     line-height: 1.5em;
     margin: 0 7px 7px 0;
-    padding: 2px 7px;
+    padding: 5px 10px;
     transition: all 0.2s ease 0s;
 }
 
-.widget .tag-cloud a:hover {
+.aside .tag-cloud a:hover {
     background: #337ab7 none repeat scroll 0 0;
     border: 1px solid #337ab7;
     color: #ffffff;
     text-decoration: none;
 }
 
-.widget .title::after {
+.aside .title::after {
     background: #337ab7 none repeat scroll 0 0;
     bottom: -1px;
     content: "";
@@ -122,7 +96,7 @@
     width: 90px;
 }
 
-.widget .title {
+.aside .title {
     border-bottom: 1px solid #ebebeb;
     margin-bottom: 21px;
     margin-top: 0;
