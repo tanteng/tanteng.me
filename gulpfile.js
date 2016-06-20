@@ -17,12 +17,12 @@ elixir.config.sourcemaps = false;
 elixir(function (mix) {
     mix
         .styles([
-            'style.css',
-            '../../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css'
+            '../../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css',
+            'style.css'
         ], 'public/dist/css/style.css')
         .styles([
-            'cover.css',
-            '../../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css'
+            '../../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css',
+            'cover.css'
         ], 'public/dist/css/cover.css')
         .scripts([
             'vendor/bower_components/jquery/dist/jquery.js',
