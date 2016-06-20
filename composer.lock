@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "23af0114e7d4373323c5efe4be460788",
-    "content-hash": "6ba731a9a3b08fc24e97425ca4781d82",
+    "hash": "2a9a40bbd13a9ebd785d239a1b0d2b7d",
+    "content-hash": "c2ba79dfd5944a3def6dbb1e5ed0bce5",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -1057,16 +1057,16 @@
         },
         {
             "name": "jgrossi/corcel",
-            "version": "v1.0.7",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jgrossi/corcel.git",
-                "reference": "3ba8a6b8c5bfd8f9f0c1e337b9795dcedb68e623"
+                "reference": "5550f9e5968259ecb0e96fb23c6a8df89dd9904b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/jgrossi/corcel/3ba8a6b8c5bfd8f9f0c1e337b9795dcedb68e623.zip",
-                "reference": "3ba8a6b8c5bfd8f9f0c1e337b9795dcedb68e623",
+                "url": "https://packagist.phpcomposer.com/files/jgrossi/corcel/5550f9e5968259ecb0e96fb23c6a8df89dd9904b.zip",
+                "reference": "5550f9e5968259ecb0e96fb23c6a8df89dd9904b",
                 "shasum": ""
             },
             "require": {
@@ -1074,7 +1074,8 @@
                 "illuminate/contracts": ">=5.0.0",
                 "illuminate/database": ">=5.0.0",
                 "illuminate/support": ">=5.0.0",
-                "php": ">=5.4.0"
+                "php": ">=5.4.0",
+                "thunderer/shortcode": "^0.6.2"
             },
             "replace": {
                 "juniorgrossi/corcel": "self.version"
@@ -1104,20 +1105,20 @@
             ],
             "description": "Use WordPress backend with any PHP framework",
             "homepage": "http://github.com/jgrossi/corcel",
-            "time": "2016-05-07 15:07:59"
+            "time": "2016-06-01 18:52:10"
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.32",
+            "version": "v5.2.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "f688217113f70b01d0e127da9035195415812bef"
+                "reference": "d2b6b0fe32fab610d356c22e74a6ffd101b0f513"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/laravel/framework/f688217113f70b01d0e127da9035195415812bef.zip",
-                "reference": "f688217113f70b01d0e127da9035195415812bef",
+                "url": "https://packagist.phpcomposer.com/files/laravel/framework/d2b6b0fe32fab610d356c22e74a6ffd101b0f513.zip",
+                "reference": "d2b6b0fe32fab610d356c22e74a6ffd101b0f513",
                 "shasum": ""
             },
             "require": {
@@ -1233,20 +1234,20 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-05-17 13:24:40"
+            "time": "2016-05-30 17:42:01"
         },
         {
             "name": "league/commonmark",
-            "version": "0.13.2",
+            "version": "0.13.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "35ac362082ca983a8123df2ee2cdfcf456ab6295"
+                "reference": "35816f39eb2498484fbb7b1495633a976ee1a8de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/thephpleague/commonmark/35ac362082ca983a8123df2ee2cdfcf456ab6295.zip",
-                "reference": "35ac362082ca983a8123df2ee2cdfcf456ab6295",
+                "url": "https://packagist.phpcomposer.com/files/thephpleague/commonmark/35816f39eb2498484fbb7b1495633a976ee1a8de.zip",
+                "reference": "35816f39eb2498484fbb7b1495633a976ee1a8de",
                 "shasum": ""
             },
             "require": {
@@ -1257,6 +1258,7 @@
                 "colinodell/commonmark-php": "*"
             },
             "require-dev": {
+                "cebe/markdown": "~1.0",
                 "erusev/parsedown": "~1.0",
                 "jgm/commonmark": "0.25",
                 "michelf/php-markdown": "~1.4",
@@ -1301,7 +1303,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2016-03-27 19:10:13"
+            "time": "2016-05-21 18:41:30"
         },
         {
             "name": "league/flysystem",
@@ -1762,23 +1764,23 @@
         },
         {
             "name": "predis/predis",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nrk/predis.git",
-                "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04"
+                "reference": "9ead747663bb1b1ae017dfa0d152aca87792b42f"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/nrk/predis/84060b9034d756b4d79641667d7f9efe1aeb8e04.zip",
-                "reference": "84060b9034d756b4d79641667d7f9efe1aeb8e04",
+                "url": "https://packagist.phpcomposer.com/files/nrk/predis/9ead747663bb1b1ae017dfa0d152aca87792b42f.zip",
+                "reference": "9ead747663bb1b1ae017dfa0d152aca87792b42f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "phpunit/phpunit": "~4.8"
             },
             "suggest": {
                 "ext-curl": "Allows access to Webdis when paired with phpiredis",
@@ -1790,7 +1792,7 @@
                     "Predis\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.orghttps://packagist.orghttps://packagist.org/downloads/",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1801,14 +1803,14 @@
                     "homepage": "http://clorophilla.net"
                 }
             ],
-            "description": "Flexible and feature-complete PHP client library for Redis",
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
             "homepage": "http://github.com/nrk/predis",
             "keywords": [
                 "nosql",
                 "predis",
                 "redis"
             ],
-            "time": "2015-07-30 18:34:15"
+            "time": "2016-05-30 15:25:52"
         },
         {
             "name": "psr/http-message",
@@ -2075,16 +2077,16 @@
         },
         {
             "name": "symfony/class-loader",
-            "version": "v3.0.6",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/class-loader.git",
-                "reference": "cbb7e6a9c0213a0cffa5d9065ee8214ca4e83877"
+                "reference": "6ebc60f69a6df4b3cf5ad6f260ba4edf5957ea05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/symfony/class-loader/cbb7e6a9c0213a0cffa5d9065ee8214ca4e83877.zip",
-                "reference": "cbb7e6a9c0213a0cffa5d9065ee8214ca4e83877",
+                "url": "https://packagist.phpcomposer.com/files/symfony/class-loader/6ebc60f69a6df4b3cf5ad6f260ba4edf5957ea05.zip",
+                "reference": "6ebc60f69a6df4b3cf5ad6f260ba4edf5957ea05",
                 "shasum": ""
             },
             "require": {
@@ -2100,7 +2102,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -2127,7 +2129,7 @@
             ],
             "description": "Symfony ClassLoader Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-30 10:41:14"
+            "time": "2016-03-30 10:41:47"
         },
         {
             "name": "symfony/console",
@@ -2248,16 +2250,16 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.0.6",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "807dde98589f9b2b00624dca326740380d78dbbc"
+                "reference": "0343b2cedd0edb26cdc791212a8eb645c406018b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/symfony/event-dispatcher/807dde98589f9b2b00624dca326740380d78dbbc.zip",
-                "reference": "807dde98589f9b2b00624dca326740380d78dbbc",
+                "url": "https://packagist.phpcomposer.com/files/symfony/event-dispatcher/0343b2cedd0edb26cdc791212a8eb645c406018b.zip",
+                "reference": "0343b2cedd0edb26cdc791212a8eb645c406018b",
                 "shasum": ""
             },
             "require": {
@@ -2277,7 +2279,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -2304,7 +2306,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2016-05-05 06:56:13"
+            "time": "2016-04-12 18:27:47"
         },
         {
             "name": "symfony/finder",
@@ -2909,6 +2911,58 @@
             "time": "2016-04-25 11:17:47"
         },
         {
+            "name": "thunderer/shortcode",
+            "version": "v0.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thunderer/Shortcode.git",
+                "reference": "8f915c0b5269b4235342e78ffa28daee96b3b2a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/thunderer/Shortcode/8f915c0b5269b4235342e78ffa28daee96b3b2a4.zip",
+                "reference": "8f915c0b5269b4235342e78ffa28daee96b3b2a4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.1|^5.0"
+            },
+            "suggest": {
+                "ext-dom": "if you want to use XML serializer",
+                "ext-json": "if you want to use JSON serializer",
+                "symfony/yaml": "if you want to use YAML serializer"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Thunder\\Shortcode\\": "src/",
+                    "Thunder\\Shortcode\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tomasz Kowalczyk",
+                    "email": "tomasz@kowalczyk.cc"
+                }
+            ],
+            "description": "Advanced shortcode (BBCode) parser and engine for PHP",
+            "keywords": [
+                "bbcode",
+                "engine",
+                "library",
+                "parser",
+                "shortcode"
+            ],
+            "time": "2016-04-25 21:22:52"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v2.2.1",
             "source": {
@@ -3228,7 +3282,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v5.2.31",
+            "version": "v5.2.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -3273,16 +3327,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v5.2.31",
+            "version": "v5.2.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "f7b875b4ec04890a892d7889a334b5d0a91bda86"
+                "reference": "6fe633078a4ae1915f391d87e5c95092fbadf2b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/illuminate/console/f7b875b4ec04890a892d7889a334b5d0a91bda86.zip",
-                "reference": "f7b875b4ec04890a892d7889a334b5d0a91bda86",
+                "url": "https://packagist.phpcomposer.com/files/illuminate/console/6fe633078a4ae1915f391d87e5c95092fbadf2b0.zip",
+                "reference": "6fe633078a4ae1915f391d87e5c95092fbadf2b0",
                 "shasum": ""
             },
             "require": {
@@ -3320,11 +3374,11 @@
             ],
             "description": "The Illuminate Console package.",
             "homepage": "http://laravel.com",
-            "time": "2016-04-19 19:11:52"
+            "time": "2016-05-16 13:24:33"
         },
         {
             "name": "illuminate/container",
-            "version": "v5.2.31",
+            "version": "v5.2.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -3367,7 +3421,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.2.31",
+            "version": "v5.2.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -3409,16 +3463,16 @@
         },
         {
             "name": "illuminate/database",
-            "version": "v5.2.31",
+            "version": "v5.2.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "becc003759a0b028a237a8c5d2aeb550077d42fd"
+                "reference": "5fbd370c687b5f428357982883eadf9fa33cf9a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/illuminate/database/becc003759a0b028a237a8c5d2aeb550077d42fd.zip",
-                "reference": "becc003759a0b028a237a8c5d2aeb550077d42fd",
+                "url": "https://packagist.phpcomposer.com/files/illuminate/database/5fbd370c687b5f428357982883eadf9fa33cf9a1.zip",
+                "reference": "5fbd370c687b5f428357982883eadf9fa33cf9a1",
                 "shasum": ""
             },
             "require": {
@@ -3465,11 +3519,11 @@
                 "orm",
                 "sql"
             ],
-            "time": "2016-04-27 12:59:09"
+            "time": "2016-05-15 17:43:26"
         },
         {
             "name": "illuminate/events",
-            "version": "v5.2.31",
+            "version": "v5.2.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -3514,16 +3568,16 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v5.2.31",
+            "version": "v5.2.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "d525dc659f24e943dc1d0fecc713825039ec2f67"
+                "reference": "b1d1a5380376f09af93d563861fe6d631ddcc7b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/illuminate/filesystem/d525dc659f24e943dc1d0fecc713825039ec2f67.zip",
-                "reference": "d525dc659f24e943dc1d0fecc713825039ec2f67",
+                "url": "https://packagist.phpcomposer.com/files/illuminate/filesystem/b1d1a5380376f09af93d563861fe6d631ddcc7b4.zip",
+                "reference": "b1d1a5380376f09af93d563861fe6d631ddcc7b4",
                 "shasum": ""
             },
             "require": {
@@ -3560,11 +3614,11 @@
             ],
             "description": "The Illuminate Filesystem package.",
             "homepage": "http://laravel.com",
-            "time": "2016-04-11 13:54:32"
+            "time": "2016-05-15 17:29:00"
         },
         {
             "name": "illuminate/hashing",
-            "version": "v5.2.31",
+            "version": "v5.2.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/hashing.git",
@@ -3608,16 +3662,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v5.2.31",
+            "version": "v5.2.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "cb5b004610baabe6b4bf532e6e4ff9eaca5eb25b"
+                "reference": "61329ea409362fdae167fdca1125f46c997ce689"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/illuminate/support/cb5b004610baabe6b4bf532e6e4ff9eaca5eb25b.zip",
-                "reference": "cb5b004610baabe6b4bf532e6e4ff9eaca5eb25b",
+                "url": "https://packagist.phpcomposer.com/files/illuminate/support/61329ea409362fdae167fdca1125f46c997ce689.zip",
+                "reference": "61329ea409362fdae167fdca1125f46c997ce689",
                 "shasum": ""
             },
             "require": {
@@ -3660,11 +3714,11 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "http://laravel.com",
-            "time": "2016-04-21 13:28:36"
+            "time": "2016-05-14 16:24:10"
         },
         {
             "name": "illuminate/view",
-            "version": "v5.2.31",
+            "version": "v5.2.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -3712,16 +3766,16 @@
         },
         {
             "name": "mockery/mockery",
-            "version": "0.9.4",
+            "version": "0.9.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "70bba85e4aabc9449626651f48b9018ede04f86b"
+                "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "http://packagist.phpcomposer.com/files/padraic/mockery/70bba85e4aabc9449626651f48b9018ede04f86b.zip",
-                "reference": "70bba85e4aabc9449626651f48b9018ede04f86b",
+                "url": "https://packagist.phpcomposer.com/files/padraic/mockery/4db079511a283e5aba1b3c2fb19037c645e70fc2.zip",
+                "reference": "4db079511a283e5aba1b3c2fb19037c645e70fc2",
                 "shasum": ""
             },
             "require": {
@@ -3773,7 +3827,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2015-04-02 19:54:00"
+            "time": "2016-05-22 21:52:33"
         },
         {
             "name": "phpspec/prophecy",
@@ -4690,16 +4744,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.6",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "0047c8366744a16de7516622c5b7355336afae96"
+                "reference": "eca51b7b65eb9be6af88ad7cc91685f1556f5c9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/symfony/yaml/0047c8366744a16de7516622c5b7355336afae96.zip",
-                "reference": "0047c8366744a16de7516622c5b7355336afae96",
+                "url": "https://packagist.phpcomposer.com/files/symfony/yaml/eca51b7b65eb9be6af88ad7cc91685f1556f5c9a.zip",
+                "reference": "eca51b7b65eb9be6af88ad7cc91685f1556f5c9a",
                 "shasum": ""
             },
             "require": {
@@ -4708,7 +4762,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "3.1-dev"
                 }
             },
             "autoload": {
@@ -4735,7 +4789,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-04 07:55:57"
+            "time": "2016-05-26 21:46:24"
         }
     ],
     "aliases": [],
