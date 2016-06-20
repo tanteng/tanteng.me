@@ -9,19 +9,20 @@
     <meta name="description" content="@yield('description')">
     @yield('meta')
     <link href="//cdn.tanteng.me" rel="dns-prefetch">
-    <link href="//cdn.tanteng.me{{ elixir('dist/css/style.css') }}" rel="stylesheet">
-    <script src="//cdn.tanteng.me/dist/js/all.js"></script>
+    <link href="{{ elixir('dist/css/style.css') }}" rel="stylesheet">
+    <script src="/dist/js/all.js"></script>
     <link rel="icon" href="/favicon.ico">
-    @if(isset($canonical))<link rel="canonical" href="{{ $canonical }}" />@endif
+    @if(isset($canonical))
+        <link rel="canonical" href="{{ $canonical }}"/>@endif
     @yield('head')
 </head>
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="top:0;">
+<nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#navbar" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -36,13 +37,12 @@
                 <li @if($navFlag == 'blog')class="active" @endif><a href="{{ route('index.blog') }}">Blog</a></li>
                 <li @if($navFlag == 'resume')class="active" @endif><a href="{{ route('index.resume') }}">Resume</a></li>
                 <li @if($navFlag == 'travel')class="active" @endif><a href="{{ route('index.travel') }}">Travel</a></li>
-                <li @if($navFlag == 'contact')class="active" @endif><a href="{{ route('index.contact') }}">Contact</a></li>
+                <li @if($navFlag == 'contact')class="active" @endif><a href="{{ route('index.contact') }}">Contact</a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-
-<div class="marquee"></div>
 
 @yield('content')
 
@@ -61,15 +61,25 @@
             <li><span class="label label-info">Bootstrap 3</span></li>
             <li><span class="label label-info">WordPress</span></li>
         </ul>
-        <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a> 鄂ICP备14007278号</p>
+        <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a>
+            鄂ICP备14007278号</p>
     </div>
 </footer>
 
 @yield('js')
+<script>
+    (function () {
+        $.scrollUp({
+            animation: 'fade',
+            scrollText: '回到顶部'
+        });
+        $('.pill-switch').addClass('active');
+    })(jQuery)
+</script>
 
 <script>
     var _hmt = _hmt || [];
-    (function() {
+    (function () {
         var hm = document.createElement("script");
         hm.src = "//hm.baidu.com/hm.js?12046b0c748f019bd63e97845d980e33";
         var s = document.getElementsByTagName("script")[0];
