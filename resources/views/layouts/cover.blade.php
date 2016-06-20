@@ -8,8 +8,7 @@
     <meta name="applicable-device" content="pc,mobile">
     <meta name="description" content="@yield('description')">
     <link href="//cdn.tanteng.me" rel="dns-prefetch">
-    <link href="//cdn.tanteng.me/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdn.tanteng.me/assets/styles/cover.css?version={{ config('version.ts') }}" rel="stylesheet">
+    <link href="//cdn.tanteng.me{{ elixir('dist/css/cover.css') }}" rel="stylesheet">
     <link rel="icon" href="/favicon.ico">
     <link rel="canonical" href="http://www.tanteng.me/" />
 </head>
@@ -17,8 +16,7 @@
 
 @yield('content')
 
-<script src="//cdn.tanteng.me/assets/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="//cdn.tanteng.me/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="//cdn.tanteng.me/dist/js/all.js"></script>
 <script>
     var _hmt = _hmt || [];
     (function() {

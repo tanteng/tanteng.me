@@ -20,12 +20,17 @@ elixir(function (mix) {
             'style.css',
             '../../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css'
         ], 'public/dist/css/style.css')
+        .styles([
+            'cover.css',
+            '../../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css'
+        ], 'public/dist/css/cover.css')
         .scripts([
             'vendor/bower_components/jquery/dist/jquery.js',
             'vendor/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'
         ], 'public/dist/js/all.js', './')
         .version([
-            'public/dist/css/style.css'
+            'public/dist/css/style.css',
+            'public/dist/css/cover.css'
         ])
         .copy('vendor/bower_components/bootstrap/fonts/', 'public/build/dist/fonts/');
 });
