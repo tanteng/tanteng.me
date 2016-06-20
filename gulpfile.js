@@ -1,5 +1,8 @@
 var elixir = require('laravel-elixir');
 
+elixir.config.production = true;
+elixir.config.sourcemaps = false;
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -11,6 +14,13 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
-    mix.sass('app.scss');
+elixir(function (mix) {
+    mix
+        .styles([
+            'style.css'
+        ], 'public/dist/css')
+        .version([
+            'public/dist/css/all.css'
+        ])
+        .copy('vendor/bower_components/font-awesome/fonts/', 'public/fonts/');
 });

@@ -4,3 +4,6 @@
 /node_modules
 /public/assets/bower_components
 .idea/
+public/build/
+public/dist/
+public/fonts/
