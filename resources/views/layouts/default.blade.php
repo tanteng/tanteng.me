@@ -9,11 +9,8 @@
     <meta name="description" content="@yield('description')">
     @yield('meta')
     <link href="//cdn.tanteng.me" rel="dns-prefetch">
-    <link href="//cdn.tanteng.me/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdn.tanteng.me/assets/styles/style.css?version={{ config('version.ts') }}" rel="stylesheet">
-    <link href="//cdn.tanteng.me{{ elixir('dist/css/all.css') }}" rel="stylesheet">
-    <script src="//cdn.tanteng.me/assets/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="//cdn.tanteng.me/assets/bootstrap/js/bootstrap.min.js"></script>
+    <link href="//cdn.tanteng.me{{ elixir('dist/css/style.css') }}" rel="stylesheet">
+    <script src="//cdn.tanteng.me{{ asset('dist/js/all.js') }}"></script>
     <link rel="icon" href="/favicon.ico">
     @if(isset($canonical))<link rel="canonical" href="{{ $canonical }}" />@endif
     @yield('head')

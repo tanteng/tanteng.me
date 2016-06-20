@@ -17,10 +17,15 @@ elixir.config.sourcemaps = false;
 elixir(function (mix) {
     mix
         .styles([
-            'style.css'
-        ], 'public/dist/css')
+            'style.css',
+            '../../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css'
+        ], 'public/dist/css/style.css')
+        .scripts([
+            'vendor/bower_components/jquery/dist/jquery.js',
+            'vendor/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js'
+        ], 'public/dist/js/all.js', './')
         .version([
-            'public/dist/css/all.css'
+            'public/dist/css/style.css'
         ])
-        .copy('vendor/bower_components/font-awesome/fonts/', 'public/fonts/');
+        .copy('vendor/bower_components/bootstrap/fonts/', 'public/build/dist/fonts/');
 });
