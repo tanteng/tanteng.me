@@ -10,7 +10,7 @@
     @yield('meta')
     <link href="//cdn.tanteng.me" rel="dns-prefetch">
     <link href="//cdn.tanteng.me{{ elixir('dist/css/style.css') }}" rel="stylesheet">
-    <script src="//cdn.tanteng.me/dist/js/all.js') }}"></script>
+    <script src="//cdn.tanteng.me/dist/js/all.js"></script>
     <link rel="icon" href="/favicon.ico">
     @if(isset($canonical))<link rel="canonical" href="{{ $canonical }}" />@endif
     @yield('head')
