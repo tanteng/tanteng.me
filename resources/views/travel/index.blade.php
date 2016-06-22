@@ -11,8 +11,8 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12">
-                <h3>目的地</h3>
+            <div class="col-md-12 aside">
+                <h3 class="title">目的地</h3>
             </div>
         </div>
 
@@ -31,16 +31,18 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12">
-                <h3>最新游记</h3>
+            <div class="col-md-12 aside">
+                <h3 class="title">最新游记</h3>
                 @include('travel.lists')
-                <a type="button" class="btn btn-primary btn-sm btn-block margin-top15" href="{{ route('travel.latest') }}">更多</a>
+                <p class="center-block" style="width: 60px;"><a type="button" class="btn btn-default margin-top15" href="{{ route('travel.latest') }}">更多</a></p>
             </div>
         </div>
 
+        <div style="margin-top:16px;"></div>
+
         <div class="row">
-            <div class="col-md-12">
-                <h3>Code</h3>
+            <div class="col-md-12 aside">
+                <h3 class="title">Coding</h3>
                 <p>如果你是一名Developer，或者学习Laravel框架，可以参考“Travel”相关代码，Github仓库：</p>
                 <ul>
                     <li><a href="https://github.com/tanteng/tanteng.me/blob/master/app/Http/routes.php" target="_blank"><code>routes.php</code>路由</a></li>

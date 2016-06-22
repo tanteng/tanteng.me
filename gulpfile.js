@@ -27,6 +27,7 @@ elixir(function (mix) {
         ], 'public/dist/css/cover.css')
         .scripts([
             'vendor/bower_components/jquery/dist/jquery.js',
+            'vendor/bower_components/autosize/jquery.autosize.min.js',
             'vendor/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
             'vendor/bower_components/scrollup/dist/jquery.scrollUp.js'
         ], 'public/dist/js/all.js', './')

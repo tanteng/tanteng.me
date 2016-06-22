@@ -8,7 +8,8 @@
         <div class="media-body">
             <a href="{{ $item->url }}"><h4 class="media-heading">{{ $item->title }}</h4></a>
             <p>{{ $item->begin_date->diffForHumans() }}</p>
-            {{ $item->description }}<a href="{{ $item->url }}">[查看全文]</a>
+            {{ $item->description }}
+            <p><a type="button" class="btn btn-default btn-sm" href="{{ $item->url }}">查看全文</a></p>
         </div>
     </div>
 @endforeach
