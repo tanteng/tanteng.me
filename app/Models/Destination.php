@@ -29,7 +29,7 @@ class Destination extends Model
 
     public function getList()
     {
-        $list = $this->latest('latest')->take(9)->get();
+        $list = $this->latest('latest')->take(12)->get();
         return $list;
     }
 

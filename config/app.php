@@ -39,7 +39,11 @@ return [
     |
     */
 
-    'url' => 'http://localhost',
+    'url' => 'http://www.tanteng.me',
+
+    'cdn_open' => env('CND',0),
+
+    'cdn' => '//cdn.tanteng.me',
 
     /*
     |--------------------------------------------------------------------------

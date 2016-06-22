@@ -10,31 +10,37 @@
             </h1>
         </div>
 
-        <div class="row">
-            <div class="col-md-12 aside">
-                <h3 class="title">目的地</h3>
-            </div>
-        </div>
 
         <div class="row">
-            @foreach($destinationList as $list)
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail">
-                    <a href="{{ $list->url }}"><img class="img-responsive" src="{{ $list->cover_image }}" alt="{{ $list->destination }}"></a>
-                    <div class="caption">
-                        <h3><a href="{{ route('travel.destination', [$list->slug]) }}">{{ $list->destination }}</a><span class="pull-right badge">{{ $list->total }}篇</span></h3>
-                        <p><a href="{{ $list->url }}">{{ str_limit($list->description, 122) }}</a></p>
+            <div class="col-md-12">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#destination" aria-controls="destination" role="tab" data-toggle="tab">目的地</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">最新游记</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active margin-top15" id="destination">
+                        @foreach($destinationList as $list)
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                    <a href="{{ $list->url }}"><img class="img-responsive" src="{{ $list->cover_image }}" alt="{{ $list->destination }}"></a>
+                                    <div class="caption">
+                                        <h3><a href="{{ route('travel.destination', [$list->slug]) }}">{{ $list->destination }}</a><span class="pull-right badge">{{ $list->total }}篇</span></h3>
+                                        <p><a href="{{ $list->url }}">{{ str_limit($list->description, 122) }}</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane margin-top15" id="profile">
+                        @include('travel.lists')
+                        <p class="center-block" style="width: 60px;"><a type="button" class="btn btn-default margin-top15" href="{{ route('travel.latest') }}">更多</a></p>
                     </div>
                 </div>
-            </div>
-            @endforeach
-        </div>
 
-        <div class="row">
-            <div class="col-md-12 aside">
-                <h3 class="title">最新游记</h3>
-                @include('travel.lists')
-                <p class="center-block" style="width: 60px;"><a type="button" class="btn btn-default margin-top15" href="{{ route('travel.latest') }}">更多</a></p>
             </div>
         </div>
 

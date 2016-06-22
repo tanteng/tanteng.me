@@ -29,7 +29,7 @@ class TravelController extends Controller
     {
         $data = Cache::remember('travel.index', self::CACHE_TIME, function () {
             $destinationList = $this->destination->getList();
-            $travelList = $this->travel->latest('begin_date')->take(8)->get();
+            $travelList = $this->travel->latest('begin_date')->take(12)->get();
             return [
                 'destinationList' => $destinationList,
                 'travelList' => $travelList,
