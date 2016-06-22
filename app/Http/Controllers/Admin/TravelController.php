@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Events\Travel\TravelsWasUpdated;
 use App\Models\Destination;
 use App\Models\Travel;
 use Illuminate\Http\Request;
@@ -50,7 +51,17 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
-        $create = $this->travel->create($request->all());
+        $data['title'] = $request->input('title');
+        $data['seo_title'] = $request->input('seo_title');
+        $data['destination_id'] = $request->input('destination_id');
+        $data['slug'] = str_slug($request->input('slug'));
+        $data['description'] = $request->input('description');
+        $data['cover_image'] = $request->input('cover_image');
+        $data['begin_date'] = $request->input('begin_date');
+        $data['end_date'] = $request->input('end_date');
+        $data['content'] = $request->input('content');
+        $data['score'] = $request->input('score');
+        $create = $this->travel->create($data);
         if ($create) {
             return redirect()->back();
         }
@@ -103,6 +114,8 @@ class TravelController extends Controller
 
         Cache::pull("travel.detail.{$data['slug']}");
         $this->travel->where('id', $id)->update($data);
+        //更新游记触达事件
+        event(new TravelsWasUpdated($data));
         return redirect()->back();
     }
 
