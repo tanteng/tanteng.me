@@ -41,7 +41,7 @@ return [
 
     'url' => 'http://www.tanteng.me',
 
-    'cdn_open' => env('CND_OPEN', false),
+    'cdn_open' => env('CDN_OPEN', false),
 
     'cdn' => '//cdn.tanteng.me',
 
