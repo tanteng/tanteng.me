@@ -23,7 +23,7 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active margin-top15" id="destination">
                         @foreach($destinationList as $list)
-                            <div class="col-sm-6 col-md-4">
+                            <div class="col-sm-6 col-md-4 box">
                                 <div class="thumbnail">
                                     <a href="{{ $list->url }}"><img class="img-responsive" src="{{ $list->cover_image }}" alt="{{ $list->destination }}"></a>
                                     <div class="caption">
