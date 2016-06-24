@@ -17,6 +17,9 @@ class TravelController extends Controller
 {
     const CACHE_TIME = 30; //缓存时间，分钟
 
+    private $destination; //目的地Model
+    private $travel; //游记Model
+
     public function __construct(Destination $destination, Travel $travel)
     {
         $this->destination = $destination;

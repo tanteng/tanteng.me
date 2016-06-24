@@ -21,7 +21,7 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active margin-top15" id="destination">
+                    <div role="tabpanel" class="tab-pane fade active margin-top15" id="destination">
                         @foreach($destinationList as $list)
                             <div class="col-sm-6 col-md-4 box">
                                 <div class="thumbnail">
@@ -35,7 +35,7 @@
                         @endforeach
                     </div>
 
-                    <div role="tabpanel" class="tab-pane margin-top15" id="profile">
+                    <div role="tabpanel" class="tab-pane fade margin-top15" id="profile">
                         @include('travel.lists')
                         <p class="center-block" style="width: 60px;"><a type="button" class="btn btn-default margin-top15" href="{{ route('travel.latest') }}">更多</a></p>
                     </div>
