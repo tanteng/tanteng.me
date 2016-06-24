@@ -44,7 +44,7 @@
                                     <input class="form-control" type="text" name="description" id="description" value="{{ $detail->description }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="img_cover">封面图片</label>
+                                    <label for="cover_image">封面图片</label>
                                     <input class="form-control" type="text" name="cover_image" id="cover_image" value="{{ $detail->cover_image }}">
                                 </div>
                                 <div class="form-group">
@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="content">正文</label>
-                                    <textarea class="form-control" rows="10" cols="40" name="content" id="content">{{ $detail->content }}</textarea>
+                                    <textarea class="form-control detail" rows="10" cols="40" name="content" id="content">{{ $detail->content }}</textarea>
                                 </div>
                                 <div class="form-group">
                                     <label for="score">排序</label>
@@ -74,4 +74,12 @@
     </div>
     <!-- /.row -->
 </div>
+@endsection
+
+@section('js')
+    <script type="text/javascript">
+        (function(){
+            $('.detail').autosize();
+        })(jQuery)
+    </script>
 @endsection

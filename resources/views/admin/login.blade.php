@@ -5,10 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>登陆后台管理系统 - tanteng.me</title>
-    <link href="/assets/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
-    <link href="/assets/admin/dist/css/sb-admin-2.css" rel="stylesheet">
-    <link href="/assets/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/admin/dist/css/all.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -48,10 +45,7 @@
         </div>
     </div>
 </div>
-<script src="/assets/bower_components/jquery/dist/jquery.min.js"></script>
-<script src="/assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="/assets/bower_components/metisMenu/dist/metisMenu.min.js"></script>
-<script src="/assets/admin/dist/js/sb-admin-2.js"></script>
+<script src="/admin/dist/js/all.js"></script>
 <script>
     $(".btn").click(function(){
         $("#loginForm").submit();
