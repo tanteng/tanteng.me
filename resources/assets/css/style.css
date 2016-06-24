@@ -117,7 +117,36 @@
     max-width: 100%;
 }
 
+.text-xs-center {
+    text-align: center !important;
+}
 
+.btn2 {
+    border-width: 1px;
+    border-radius: 2rem;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.1538;
+    padding: 1.05rem 2rem 1.35rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out 0s;
+    vertical-align: middle;
+    white-space: nowrap;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.btn-secondary-outline {
+    background-color: #f8f8f8;
+    background-image: none;
+    border-color: #ebcafb;
+}
+
+.m-b-1 {
+    margin-bottom: 1rem !important;
+}
 
 @media (min-width: 768px) {
     .footer {
