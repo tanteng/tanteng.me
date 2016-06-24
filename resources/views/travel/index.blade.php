@@ -37,9 +37,6 @@
 
                     <div role="tabpanel" class="tab-pane fade margin-top15" id="profile">
                         @include('travel.lists')
-                        <div class="text-xs-center">
-                            <a role="button" href="{{ route('travel.latest') }}" class="btn2 btn-secondary-outline m-b-1"><span class="glyphicon glyphicon-pencil"></span>全部游记</a>
-                        </div>
                     </div>
                 </div>
 
