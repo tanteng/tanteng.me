@@ -2,8 +2,7 @@
 /storge
 .env
 /node_modules
-/public/assets/bower_components
 .idea/
+public/admin/
 public/build/
 public/dist/
-public/fonts/
