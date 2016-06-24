@@ -21,7 +21,7 @@
 
                 <!-- Tab panes -->
                 <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane fade active margin-top15" id="destination">
+                    <div role="tabpanel" class="tab-pane fade in active margin-top15" id="destination">
                         @foreach($destinationList as $list)
                             <div class="col-sm-6 col-md-4 box">
                                 <div class="thumbnail">
