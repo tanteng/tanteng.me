@@ -144,6 +144,11 @@
     border-color: #ebcafb;
 }
 
+.btn-secondary-outline a:hover {
+    text-decoration: none;
+    outline: 0 none;
+}
+
 .m-b-1 {
     margin-bottom: 1rem !important;
 }
