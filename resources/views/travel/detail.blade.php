@@ -70,7 +70,9 @@
 
 @section('js')
     <script type="text/javascript">
-        $(".post-content img").addClass('img-responsive center-block');
+        $image = $(".post-content img");
+        $image.parent('p').addClass('img-width');
+        $image.addClass('img-responsive center-block');
     </script>
 @endsection
 
