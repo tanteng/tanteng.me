@@ -9,6 +9,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Destination;
 use App\Models\Options;
 use App\Models\Travel;
 use Illuminate\Http\Request;
@@ -47,7 +48,8 @@ class IndexController extends Controller
     public function sitemap()
     {
         $travels = Travel::all();
-        $data = compact('travels');
+        $destinations = Destination::all();
+        $data = compact('travels', 'destinations');
         $sitemap = view('index.sitemap', $data);
         return Response($sitemap, '200')->header('Content-Type', 'text/xml');
     }
