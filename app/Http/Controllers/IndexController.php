@@ -10,7 +10,9 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Options;
+use App\Models\Travel;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
@@ -36,6 +38,18 @@ class IndexController extends Controller
     {
         $navFlag = 'contact';
         return view('index.contact', compact('navFlag'));
+    }
+
+    /**
+     * 网站sitemap地图
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function sitemap()
+    {
+        $travels = Travel::all();
+        $data = compact('travels');
+        $sitemap = view('index.sitemap', $data);
+        return Response($sitemap, '200')->header('Content-Type', 'text/xml');
     }
 
     //Contact页面提交留言
