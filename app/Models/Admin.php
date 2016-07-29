@@ -9,8 +9,6 @@ class Admin extends Authenticatable
 {
     use EntrustUserTrait;
 
-    use EntrustUserTrait;
-
     /**
      * The attributes that are mass assignable.
      *

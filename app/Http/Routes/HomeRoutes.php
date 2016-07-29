@@ -25,7 +25,7 @@ class HomeRoutes
             $router->get('/travel/latest', ['as' => 'travel.latest', 'uses' => 'TravelController@latest']);
             $router->get('/travel/{destination}/list', ['as' => 'travel.destination', 'uses' => 'TravelController@travelList']);
             $router->get('/travel/{slug}', ['uses' => 'TravelController@travelDetail']);
-            $router->get('/sitemap.xml', ['uses' => 'IndexController@sitemap']);
+            $router->get('/sitemap.xml', ['as' => 'index.sitemap', 'uses' => 'IndexController@sitemap']);
         });
     }
 }

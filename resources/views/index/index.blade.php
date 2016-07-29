@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="mastfoot">
-                    <p>鄂ICP备14007278号</p>
+                    <p>鄂ICP备14007278号 <a href="{{ route('index.sitemap') }}">Sitemap</a></p>
                 </div>
             </div>
 

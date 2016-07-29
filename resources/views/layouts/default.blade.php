@@ -61,7 +61,7 @@
             <li><span class="label label-info">WordPress</span></li>
         </ul>
         <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a>
-            鄂ICP备14007278号 Page loaded in:{{ round(microtime(true) - LARAVEL_START, 5) }}s</p>
+            鄂ICP备14007278号 <a href="{{ route('index.sitemap') }}">Sitemap</a> Page loaded in:{{ round(microtime(true) - LARAVEL_START, 5) }}s</p>
     </div>
 </footer>
 
