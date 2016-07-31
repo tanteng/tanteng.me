@@ -90,7 +90,7 @@ class TravelController extends Controller
             if (!$destinationInfo['id']) {
                 abort(404);
             }
-            $travelList = $this->travel->travelList($destinationInfo['id']);
+            $travelList = $destinationInfo->travel; //定义了一对多关系,就是这么方便
             return [
                 'travelList' => $travelList,
                 'destinationInfo' => $destinationInfo,
