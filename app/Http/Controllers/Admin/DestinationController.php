@@ -17,7 +17,7 @@ class DestinationController extends Controller
         $this->middleware('auth:admin');
         $this->destination = $destination;
         $this->travel = $travel;
-        $this->allDestination = $this->destination->getAllDestination();
+        $this->allDestination = $this->destination->all();
     }
 
     /**

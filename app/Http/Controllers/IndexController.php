@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: tanteng
- * Date: 16/3/29
- * Time: 21:48
- */
 
 namespace App\Http\Controllers;
 
@@ -13,7 +7,6 @@ use App\Models\Destination;
 use App\Models\Options;
 use App\Models\Travel;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 

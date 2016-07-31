@@ -15,11 +15,28 @@ use Illuminate\Support\Facades\Cache;
 
 class TravelController extends Controller
 {
-    const CACHE_TIME = 30; //缓存时间，分钟
+    /**
+     * 缓存时间
+     */
+    const CACHE_TIME = 30;
 
-    private $destination; //目的地Model
-    private $travel; //游记Model
+    /**
+     * 目的地模型
+     * @var Destination
+     */
+    private $destination;
 
+    /**
+     * 游记模型
+     * @var Travel
+     */
+    private $travel;
+
+    /**
+     * 构造函数注入
+     * @param Destination $destination
+     * @param Travel $travel
+     */
     public function __construct(Destination $destination, Travel $travel)
     {
         $this->destination = $destination;
@@ -27,11 +44,14 @@ class TravelController extends Controller
         view()->share(['navFlag' => 'travel']);
     }
 
-    //旅行栏目首页，最新游记和目的地
+    /**
+     * 游记首页
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $data = Cache::remember('travel.index', self::CACHE_TIME, function () {
-            $destinationList = $this->destination->getList();
+            $destinationList = $this->destination->getList(12);
             $travelList = $this->travel->latest('begin_date')->take(12)->get();
             return [
                 'destinationList' => $destinationList,
@@ -41,7 +61,10 @@ class TravelController extends Controller
         return view('travel.index', $data);
     }
 
-    //全部游记
+    /**
+     * 全部游记
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function latest()
     {
         $data = Cache::remember('travel.latest', self::CACHE_TIME, function () {
@@ -55,7 +78,11 @@ class TravelController extends Controller
         return view('travel.latest', compact('travelList', 'seoSuffix'));
     }
 
-    //目的地游记列表
+    /**
+     * 目的地游记列表
+     * @param $destinationSlug string
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function travelList($destinationSlug)
     {
         $data = Cache::remember("travel.destination.list.{$destinationSlug}", self::CACHE_TIME, function () use ($destinationSlug) {
@@ -77,12 +104,15 @@ class TravelController extends Controller
         return view('travel.destination', compact('travelList', 'destinationInfo', 'seoSuffix'));
     }
 
-    //游记详情
+    /**
+     * 游记详情
+     * @param $slug string
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function travelDetail($slug)
     {
-        //缓存DB数据
         $data = Cache::remember("travel.detail.{$slug}", self::CACHE_TIME, function () use ($slug) {
-            $destinationList = $this->destination->getList();
+            $destinationList = $this->destination->getList(12);
             $detail = $this->travel->where('slug', $slug)->firstOrFail();
             $detail->content = Markdown::convertToHtml($detail->content);
             $destinationInfo = $detail->destination;

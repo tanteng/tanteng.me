@@ -6,8 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Destination extends Model
 {
+    /**
+     * 目的地表
+     * @var string
+     */
     protected $table = "travel_destination";
 
+    /**
+     * 批量赋值字段
+     * @var array
+     */
     protected $fillable = [
         'destination',
         'title',
@@ -21,43 +29,51 @@ class Destination extends Model
         'like'
     ];
 
+    /**
+     * 自定义字段
+     * @var array
+     */
     protected $appends = [
         'url',
         'first_travel_url',
         'total',
     ];
 
-    public function getList()
+    /**
+     * 目的地列表
+     * @param $nums
+     * @return mixed
+     */
+    public function getList($nums)
     {
-        $list = $this->latest('latest')->take(12)->get();
+        $list = $this->latest('latest')->take($nums)->get();
         return $list;
     }
 
-    public function getAllDestination()
-    {
-        return $this->all();
-    }
-
+    /**
+     * 定义目的地-游记的一对多关系
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function travel()
     {
         return $this->hasMany('App\Models\Travel', 'destination_id');
     }
 
-    //目的地首页url
+    /**
+     * 目的地url
+     * @return string
+     */
     public function getUrlAttribute()
     {
         return route('index.travel') . '/' . $this->slug . '/list';
     }
 
+    /**
+     * 目的地游记数
+     * @return mixed
+     */
     public function getTotalAttribute()
     {
         return $this->travel()->count();
-    }
-
-    //目的地slug
-    public function getDestinationSlugById($destinationId)
-    {
-        $result = $this->find($destinationId, ['slug']);
-        return $result['slug'];
     }
 }
