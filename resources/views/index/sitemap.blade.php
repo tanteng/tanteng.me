@@ -25,6 +25,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>http://www.tanteng.me/travel</loc>
+        <lastmod>2016-07-29T11:46:52+00:00</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>http://www.tanteng.me/travel/latest</loc>
         <lastmod>2016-07-29T11:46:52+00:00</lastmod>
         <changefreq>weekly</changefreq>

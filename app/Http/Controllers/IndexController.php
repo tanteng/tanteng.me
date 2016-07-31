@@ -41,14 +41,21 @@ class IndexController extends Controller
         return view('index.contact', compact('navFlag'));
     }
 
+
     /**
-     * 网站sitemap地图
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * 生成sitemap地图
+     * @return \Illuminate\Http\Response
      */
     public function sitemap()
     {
-        $travels = Travel::all();
-        $destinations = Destination::all();
+        $data = Cache::remember('sitemap', 30, function () {
+            return [
+                'travels' => Travel::all(),
+                'destinations' => Destination::all()
+            ];
+        });
+        $travels = $data['travels'];
+        $destinations = $data['destinations'];
         $data = compact('travels', 'destinations');
         $sitemap = view('index.sitemap', $data);
         return Response($sitemap, '200')->header('Content-Type', 'text/xml');
