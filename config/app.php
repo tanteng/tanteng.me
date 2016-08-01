@@ -164,6 +164,7 @@ return [
         zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
@@ -211,6 +212,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Captcha'   => Mews\Captcha\Facades\Captcha::class,
         'Markdown'  => GrahamCampbell\Markdown\Facades\Markdown::class,
+        'Debugbar'  => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
