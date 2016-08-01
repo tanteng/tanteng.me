@@ -53,9 +53,11 @@ class TravelController extends Controller
         $data = Cache::remember('travel.index', self::CACHE_TIME, function () {
             $destinationList = $this->destination->getList(12);
             $travelList = $this->travel->latest('begin_date')->take(12)->get();
+            $travelNums = $this->travel->getTravelNumsGroupByDestination();
             return [
                 'destinationList' => $destinationList,
                 'travelList' => $travelList,
+                'travelNums' => $travelNums
             ];
         });
         return view('travel.index', $data);

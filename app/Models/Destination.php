@@ -56,7 +56,7 @@ class Destination extends Model
      */
     public function travel()
     {
-        return $this->hasMany('App\Models\Travel', 'destination_id');
+        return $this->hasMany(Travel::class, 'destination_id');
     }
 
     /**
@@ -66,14 +66,5 @@ class Destination extends Model
     public function getUrlAttribute()
     {
         return route('index.travel') . '/' . $this->slug . '/list';
-    }
-
-    /**
-     * 目的地游记数
-     * @return mixed
-     */
-    public function getTotalAttribute()
-    {
-        return $this->travel()->count();
     }
 }
