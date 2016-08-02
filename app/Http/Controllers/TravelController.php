@@ -92,7 +92,7 @@ class TravelController extends Controller
             if (!$destinationInfo['id']) {
                 abort(404);
             }
-            $travelList = $destinationInfo->travel()->orderBy('begin_date', 'date')->get(); //定义了一对多关系,就是这么方便
+            $travelList = $destinationInfo->travel()->orderBy('begin_date', 'desc')->get(); //定义了一对多关系,就是这么方便
             return [
                 'travelList' => $travelList,
                 'destinationInfo' => $destinationInfo,
