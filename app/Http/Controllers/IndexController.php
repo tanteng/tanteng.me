@@ -6,7 +6,6 @@ namespace App\Http\Controllers;
 use App\Models\Destination;
 use App\Models\Options;
 use App\Models\Travel;
-use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ConnectException;
 use Illuminate\Http\Request;
@@ -64,7 +63,7 @@ class IndexController extends Controller
      */
     public function commitsHistory()
     {
-        $navFlag = 'home';
+        $navFlag = '';
         return view('index.commits', compact('navFlag'));
     }
 
@@ -82,7 +81,9 @@ class IndexController extends Controller
         $query['client_id'] = Config::get('github.client_id');
         $query['client_secret'] = Config::get('github.client_secret');
         try {
-            $result = $client->get($uri, $query)->getBody()->getContents();
+            $result = Cache::store('redis')->remember('git.commit.history', 60, function () use ($client, $uri, $query) {
+                return $client->get($uri, $query)->getBody()->getContents();
+            });
         } catch (ConnectException $e) {
             return json_encode(['result' => 1001, 'msg' => '请求超时！', 'data' => $e->getMessage()]);
         }

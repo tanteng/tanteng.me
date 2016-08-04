@@ -52,4 +52,10 @@
         <priority>0.8</priority>
     </url>
     @endforeach
+    <url>
+        <loc>http://www.tanteng.me/commits</loc>
+        <lastmod>{{ date('c') }}</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
 </urlset>
