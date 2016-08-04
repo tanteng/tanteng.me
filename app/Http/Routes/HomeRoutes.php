@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: xl
- * Date: 2016/7/4
- * Time: 18:07
- */
+
 namespace App\Http\Routes;
 
 use Illuminate\Contracts\Routing\Registrar;
@@ -25,6 +20,8 @@ class HomeRoutes
             $router->get('/travel/latest', ['as' => 'travel.latest', 'uses' => 'TravelController@latest']);
             $router->get('/travel/{destination}/list', ['as' => 'travel.destination', 'uses' => 'TravelController@travelList']);
             $router->get('/travel/{slug}', ['uses' => 'TravelController@travelDetail']);
+            $router->get('/commits', ['as' => 'git.commits', 'uses' => 'IndexController@commitsHistory']);
+            $router->post('/gitHistory', ['as' => 'git.history', 'uses' => 'IndexController@gitCommitHistory']);
             $router->get('/sitemap.xml', ['as' => 'index.sitemap', 'uses' => 'IndexController@sitemap']);
         });
     }

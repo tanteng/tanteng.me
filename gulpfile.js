@@ -18,6 +18,7 @@ elixir(function (mix) {
     mix
         .styles([
             '../../../vendor/bower_components/bootstrap/dist/css/bootstrap.min.css',
+            '../../../vendor/bower_components/font-awesome/css/font-awesome.css',
             'style.css',
             'pill.css'
         ], 'public/dist/css/style.css')
@@ -51,5 +52,6 @@ elixir(function (mix) {
             'public/dist/js/all.js'
         ])
         .copy('vendor/bower_components/bootstrap/fonts/', 'public/build/dist/fonts/')
-        .copy('vendor/bower_components/font-awesome/fonts/','public/admin/dist/fonts/');
+        .copy('vendor/bower_components/font-awesome/fonts/','public/admin/dist/fonts/')
+        .copy('vendor/bower_components/font-awesome/fonts/','public/build/dist/fonts/');
 });

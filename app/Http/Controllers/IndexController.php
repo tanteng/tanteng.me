@@ -6,8 +6,12 @@ namespace App\Http\Controllers;
 use App\Models\Destination;
 use App\Models\Options;
 use App\Models\Travel;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ConnectException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
@@ -52,6 +56,46 @@ class IndexController extends Controller
         $data = compact('travels', 'destinations');
         $sitemap = view('index.sitemap', $data);
         return Response($sitemap, '200')->header('Content-Type', 'text/xml');
+    }
+
+    /**
+     * github提交历史
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function commitsHistory()
+    {
+        $navFlag = 'home';
+        return view('index.commits', compact('navFlag'));
+    }
+
+    /**
+     * Github上提交版本历史
+     * @method POST
+     * @return string
+     */
+    public function gitCommitHistory()
+    {
+        $client = new Client([
+            'base_uri' => 'https://api.github.com/',
+        ]);
+        $uri = 'repos/tanteng/tanteng.me/commits';
+        $query['client_id'] = Config::get('github.client_id');
+        $query['client_secret'] = Config::get('github.client_secret');
+        try {
+            $result = $client->get($uri, $query)->getBody()->getContents();
+        } catch (ConnectException $e) {
+            return json_encode(['result' => 1001, 'msg' => '请求超时！', 'data' => $e->getMessage()]);
+        }
+
+        $result = json_decode($result, true);
+        $commitHistory = [];
+        foreach ($result as $item) {
+            $commitHistory[] = [
+                'message' => $item['commit']['message'],
+                'datetime' => date('Y-m-d H:i:s', strtotime($item['commit']['committer']['date']))
+            ];
+        }
+        return json_encode(['result' => 0, 'msg' => '请求成功！', 'data' => $commitHistory]);
     }
 
     //Contact页面提交留言
