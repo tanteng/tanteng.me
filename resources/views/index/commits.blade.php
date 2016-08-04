@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title', '更新版本历史记录 - tanteng.me')
-@section('description', '网站代码托管于Github上，本地开发提交到github，服务器端也用git拉取，本页面通过github api获取提交的版本历史记录。')
+@section('description', '网站代码托管于 Github 上，本地开发测试完 git push 提交到 Github，服务器端用 git pull 拉取，本页面通过 Github API 请求提交的版本历史记录并展示。')
 @section('content')
     <div class="container">
         <div class="page-header">
