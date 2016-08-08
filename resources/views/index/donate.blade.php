@@ -35,41 +35,41 @@
 
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="1yuan">
-                        <div class="row" style="width: 600px;">
-                            <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-4">
                                 <img src="{{ cdn('/dist/image/wechat-pay-1yuan.jpg') }}" width="320" height="422">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <img src="{{ cdn('/dist/image/alipay-1yuan.jpg') }}" width="320" height="422">
                             </div>
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="2yuan">
-                        <div class="row" style="width: 600px;">
-                            <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-4">
                                 <img src="{{ cdn('/dist/image/wechat-pay-2yuan.jpg') }}" width="320" height="422">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <img src="{{ cdn('/dist/image/alipay-2yuan.jpg') }}" width="320" height="422">
                             </div>
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="10yuan">
-                        <div class="row" style="width: 600px;">
-                            <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-4">
                                 <img src="{{ cdn('/dist/image/wechat-pay-10yuan.jpg') }}" width="320" height="422">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <img src="{{ cdn('/dist/image/alipay-10yuan.jpg') }}" width="320" height="422">
                             </div>
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="50yuan">
-                        <div class="row" style="width: 600px;">
-                            <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-4">
                                 <img src="{{ cdn('/dist/image/wechat-pay-50yuan.jpg') }}" width="320" height="422">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <img src="{{ cdn('/dist/image/alipay-50yuan.jpg') }}" width="320" height="422">
                             </div>
                         </div>
