@@ -132,4 +132,14 @@ class IndexController extends Controller
 
         return redirect()->back()->with(['info' => '发布失败！']);
     }
+
+    /**
+     * 捐赠页面
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function donate()
+    {
+        $navFlag = '';
+        return view('index.donate', compact('navFlag'));
+    }
 }

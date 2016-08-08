@@ -5,7 +5,16 @@
 @section('content')
     <div class="container">
         <div class="page-header">
-            <h1><span class="glyphicon glyphicon-cloud-upload"></span> 版本<small>Commit</small></h1>
+            <h1><span class="glyphicon glyphicon-cloud-upload"></span> 版本 <small>Commit</small></h1>
+        </div>
+
+        <div class="row">
+            <nav class="col-md-12">
+                <ol class="breadcrumb">
+                    <li><a href="{{ route('home') }}">Home</a></li>
+                    <li><a href="{{ route('git.commits') }}">版本</a></li>
+                </ol>
+            </nav>
         </div>
 
         <div class="row">
