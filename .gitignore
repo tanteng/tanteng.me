@@ -5,4 +5,7 @@
 .idea/
 public/admin/
 public/build/
+public/dist/css
+public/dist/js
+
 
