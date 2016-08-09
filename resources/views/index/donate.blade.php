@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title', '捐赠 - tanteng.me')
-@section('description', '目前网站运行在阿里云主机上，如果你喜欢本站，请我喝杯咖啡吧！欢迎选择小额捐赠表示支持，感谢大家~！')
+@section('description', '如果你喜欢本站，可以小额捐赠哦！')
 @section('content')
     <div class="container">
         <div class="page-header">
@@ -19,7 +19,7 @@
 
         <div class="row">
             <div class="col-md-12">
-                <p>目前网站运行在阿里云主机上，如果你喜欢本站，请我喝杯咖啡吧！欢迎选择小额捐赠表示支持，感谢大家~！</p>
+                <p>如果你喜欢本站，可以小额捐赠哦！</p>
                 <p>Github:<a href="https://github.com/tanteng/tanteng.me">https://github.com/tanteng/tanteng.me</a></p>
             </div>
         </div>
@@ -36,42 +36,34 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="1yuan">
                         <div class="row">
-                            <div class="col-md-4">
-                                <img src="{{ cdn('/dist/image/wechat-pay-1yuan.jpg') }}" width="320" height="422">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="{{ cdn('/dist/image/alipay-1yuan.jpg') }}" width="320" height="422">
-                            </div>
+                            <img src="{{ cdn('/dist/image/wechat-pay-1yuan.jpg') }}" class="img-responsive">
+                        </div>
+                        <div class="row">
+                            <img src="{{ cdn('/dist/image/zhifubao-1yuan.jpg') }}" class="img-responsive">
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="2yuan">
                         <div class="row">
-                            <div class="col-md-4">
-                                <img src="{{ cdn('/dist/image/wechat-pay-2yuan.jpg') }}" width="320" height="422">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="{{ cdn('/dist/image/alipay-2yuan.jpg') }}" width="320" height="422">
-                            </div>
+                            <img src="{{ cdn('/dist/image/wechat-pay-2yuan.jpg') }}">
+                        </div>
+                        <div class="row">
+                            <img src="{{ cdn('/dist/image/zhifubao-2yuan.jpg') }}">
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="10yuan">
                         <div class="row">
-                            <div class="col-md-4">
-                                <img src="{{ cdn('/dist/image/wechat-pay-10yuan.jpg') }}" width="320" height="422">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="{{ cdn('/dist/image/alipay-10yuan.jpg') }}" width="320" height="422">
-                            </div>
+                            <img src="{{ cdn('/dist/image/wechat-pay-10yuan.jpg') }}">
+                        </div>
+                        <div class="row">
+                            <img src="{{ cdn('/dist/image/zhifubao-10yuan.jpg') }}">
                         </div>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="50yuan">
                         <div class="row">
-                            <div class="col-md-4">
-                                <img src="{{ cdn('/dist/image/wechat-pay-50yuan.jpg') }}" width="320" height="422">
-                            </div>
-                            <div class="col-md-4">
-                                <img src="{{ cdn('/dist/image/alipay-50yuan.jpg') }}" width="320" height="422">
-                            </div>
+                            <img src="{{ cdn('/dist/image/wechat-pay-50yuan.jpg') }}">
+                        </div>
+                        <div class="row">
+                            <img src="{{ cdn('/dist/image/zhifubao-50yuan.jpg') }}">
                         </div>
                     </div>
                 </div>
