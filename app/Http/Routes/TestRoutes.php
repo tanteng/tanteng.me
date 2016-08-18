@@ -14,10 +14,7 @@ class TestRoutes
     public function map(Registrar $router)
     {
         $router->group(['prefix' => 'test'], function ($router) {
-            $router->get('/redis', ['uses' => 'TestController@testRedis']);
-            $router->get('/memcache', ['uses' => 'TestController@testMemcache']);
-            $router->any('/testCurl', ['uses' => 'TestController@testCurl']);
-            $router->get('/preg', ['uses' => 'TestController@preg']);
+            $router->get('/', ['uses' => 'TestController@test']);
         });
     }
 }
