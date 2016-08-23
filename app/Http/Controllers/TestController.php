@@ -10,6 +10,6 @@ class TestController extends Controller
 
     public function testCopy()
     {
-        //提交在分支上提交的修改，此时主分支上也有了新的提交，两个分支都在前进
+        //rebase
     }
 }
