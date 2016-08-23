@@ -5,6 +5,6 @@ class TestController extends Controller
 {
     public function test()
     {
-        //测试rebase，提交一次修改
+        //测试rebase，再提交一次修改
     }
 }
