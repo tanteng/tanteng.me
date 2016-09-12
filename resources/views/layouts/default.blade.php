@@ -8,7 +8,7 @@
     <meta name="applicable-device" content="pc,mobile">
     <meta name="description" content="@yield('description')">
     @yield('meta')
-    <link href="//cdn.tanteng.me" rel="dns-prefetch">
+    <link href="//oddgb63aa.qnssl.com" rel="dns-prefetch">
     <link href="{{ cdn(elixir('dist/css/style.css')) }}" rel="stylesheet">
     <script src="{{ cdn(elixir('dist/js/all.js')) }}"></script>
     <link rel="icon" href="/favicon.ico">

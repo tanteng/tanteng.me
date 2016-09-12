@@ -38,7 +38,7 @@
             <div class="inner cover">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        <img class="img-circle" src="http://cdn.tanteng.me/assets/images/avatar.jpg" alt="avatar" width="140" height="140">
+                        <img class="img-circle" src="{{ cdn('/assets/images/avatar.jpg') }}" alt="avatar" width="140" height="140">
                         <h2>谈腾</h2>
                         <p>{{ $introduce }}</p>
                         <p><a class="btn btn-default" href="/resume" role="button">更多</a></p>

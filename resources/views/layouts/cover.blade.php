@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="applicable-device" content="pc,mobile">
     <meta name="description" content="@yield('description')">
-    <link href="//cdn.tanteng.me" rel="dns-prefetch">
+    <link href="//oddgb63aa.qnssl.com" rel="dns-prefetch">
     <link href="{{ cdn(elixir('dist/css/cover.css')) }}" rel="stylesheet">
     <link rel="icon" href="/favicon.ico">
     <link rel="canonical" href="http://www.tanteng.me/" />
