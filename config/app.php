@@ -43,7 +43,7 @@ return [
 
     'cdn_open' => env('CDN_OPEN', false),
 
-    'cdn' => '//cdn.tanteng.me',
+    'cdn' => '//oddgb63aa.qnssl.com',
 
     /*
     |--------------------------------------------------------------------------
