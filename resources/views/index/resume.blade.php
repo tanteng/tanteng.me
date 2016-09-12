@@ -95,7 +95,7 @@
             <p><a href="{{ route('index.travel') }}">旅行</a>，看书</p>
 
             <h3>博客</h3>
-            <p><a href="http://blog.tanteng.me" target="_blank">http://blog.tanteng.me</a></p>
+            <p><a href="https://blog.tanteng.me" target="_blank">https://blog.tanteng.me</a></p>
         </div>
     </div>
 </div>
