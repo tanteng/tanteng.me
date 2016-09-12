@@ -53,6 +53,7 @@
             <li><span class="label label-info">七牛云</span></li>
             <li><span class="label label-info">CentOS 7</span></li>
             <li><span class="label label-info">PHP 7</span></li>
+            <li><span class="label label-info">HTTPS</span></li>
             <li><span class="label label-info">Nginx 1.8</span></li>
             <li><span class="label label-info">MariaDB 10.1</span></li>
             <li><span class="label label-info">Redis 3.0</span></li>
