@@ -11,11 +11,11 @@
 
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
-            <p class="text-center"><img class="img-circle" src="http://oddgb63aa.qnssl.com/assets/images/avatar.jpg" alt="avatar" width="140" height="140"></p>
+            <p class="text-center"><img class="img-circle" src="https://oddgb63aa.qnssl.com/assets/images/avatar.jpg" alt="avatar" width="140" height="140"></p>
             <h2 class="text-center">谈腾</h2>
             <p class="text-center">PHP高级工程师 · 深圳迅雷网络</p>
             <p class="text-center">男 | 26岁 | 本科 | 3年工作经验 | 深圳</p>
-            <p class="text-center"><img src="http://oddgb63aa.qnssl.com/uploads/2016/05/contact.png" alt="联系方式"></p>
+            <p class="text-center"><img src="https://oddgb63aa.qnssl.com/uploads/2016/05/contact.png" alt="联系方式"></p>
         </div>
     </div>
 
@@ -26,7 +26,7 @@
 
             <h3>工作经历</h3>
             <h4>深圳迅雷网络技术有限公司</h4>
-            <p><img src="http://oddgb63aa.qnssl.com/assets/images/xunlei-logo.jpg" alt="迅雷网络" width="118" height="112"></p>
+            <p><img src="https://oddgb63aa.qnssl.com/assets/images/xunlei-logo.jpg" alt="迅雷网络" width="118" height="112"></p>
             <p>2016.4 —— 至今</p>
             <p>主要负责触达系统后台开发，会员活动开发，代码自动发布系统开发（包括推进团队使用 git 进行项目版本控制，制定 git 使用规范和开发测试流程），参与酒窝直播平台项目,还有快鸟相关需求开发等。</p>
             <h5>一、续费触达系统</h5>
@@ -38,7 +38,7 @@
             <p>为了更好的使用该系统，推广团队使用 git 进行版本控制，从 svn 转到 git，建立 git 仓库，制定 git 使用规范和开发的流程。</p>
 
             <h4>深圳卷皮网络科技有限公司</h4>
-            <p><img src="http://oddgb63aa.qnssl.com/assets/images/juanpi-logo.jpg" alt="卷皮网络" width="118" height="112"></p>
+            <p><img src="https://oddgb63aa.qnssl.com/assets/images/juanpi-logo.jpg" alt="卷皮网络" width="118" height="112"></p>
             <p>2015.3 —— 2016.4</p>
             <p>主要针对商家中心和财务系统相关的需求开发，负责或参与以下需求开发:</p>
             <ul>
@@ -69,7 +69,7 @@
             <h3>教育经历</h3>
             <div class="row">
                 <div class="col-md-1">
-                    <img class="img-rounded" src="http://oddgb63aa.qnssl.com/uploads/2016/04/wust.jpeg" alt="武汉科技大学" width="70" height="70">
+                    <img class="img-rounded" src="https://oddgb63aa.qnssl.com/uploads/2016/04/wust.jpeg" alt="武汉科技大学" width="70" height="70">
                 </div>
                 <div class="col-md-4">
                     <h4>武汉科技大学</h4>
