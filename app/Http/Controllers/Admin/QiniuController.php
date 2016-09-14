@@ -11,6 +11,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Attachment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Symfony\Component\HttpFoundation\File\Exception\UploadException;
 use zgldh\QiniuStorage\QiniuStorage;
 
@@ -20,13 +21,14 @@ class QiniuController extends Controller
     private $disk;
     private $allowedExts = ["gif", "jpeg", "jpg", "png", "txt", "pdf", "doc", "rtf", "docx", "xls", "xlsx"];
     const MAX_FILE_SIZE = 5 * 1024 * 1024; //5M
-    const CDN_DOMAIN = 'http://cdn.tanteng.me/';
+    static public $cdn;
 
     public function __construct(Attachment $attachment)
     {
         $this->attachment = $attachment;
         $this->disk = QiniuStorage::disk('qiniu');
         $this->middleware('auth:admin');
+        self::$cdn = Config::get('app.cdn');
     }
 
     //上传post请求
@@ -63,7 +65,7 @@ class QiniuController extends Controller
 
             $data = [
                 'key' => $key,
-                'url' => self::CDN_DOMAIN . $key,
+                'url' => self::$cdn . $key,
                 'type' => $file->getClientMimeType(),
                 'size' => $size,
             ];
