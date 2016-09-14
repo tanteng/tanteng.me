@@ -65,7 +65,7 @@ class QiniuController extends Controller
 
             $data = [
                 'key' => $key,
-                'url' => self::$cdn . $key,
+                'url' => secure_url(self::$cdn . '/' . $key),
                 'type' => $file->getClientMimeType(),
                 'size' => $size,
             ];
