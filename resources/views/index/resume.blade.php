@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <h3>自我简介</h3>
-            <p>从事 WEB 开发，主要语言 PHP，熟悉 Laravel, ThinkPHP, CodeIgniter 等框架，对现代化的 PHP 开发比较感兴趣，对MySQL，Redis，Memcache 数据库及缓存技术都有所实践，前端方面熟悉 jQuery, CSS 等基础。</p>
+            <p>从事 WEB 开发，主要语言 PHP，熟悉 Laravel, ThinkPHP, CodeIgniter 等框架，对现代化的 PHP 开发比较感兴趣，对 MySQL，Redis，Memcache 数据库及缓存技术都有所实践，前端方面熟悉 jQuery, CSS 等基础。</p>
 
             <h3>工作经历</h3>
             <h4>深圳迅雷网络技术有限公司</h4>
@@ -62,8 +62,8 @@
 
             <h4 class="margin-top15">武汉快游科技有限公司</h4>
             <ol>
-                <li>基于PHPCMS进行CMS系统的二次开发，软件下载站9553.com、单机游戏站99danji.com、页游门户等整站开发，包括前后台功能的开发。网站之前是asp+mssql，改成php+mysql，进行数据的转换，保证数据完整和正确，以及第三方接口的使用等。</li>
-                <li>基于ThinkPHP框架开发的一套广告联盟系统，该系统提供不同类型的广告给其他网站，帮助推广公司的游戏或者软件产品，按点击量、下载量等统计并支付推广费用，有完善的前台和后台系统。</li>
+                <li>基于 PHPCMS 进行 CMS 系统的二次开发，软件下载站 9553.com、单机游戏站 99danji.com、页游门户等整站开发，包括前后台功能的开发。网站之前是 asp+mssql，改成 php+mysql，进行数据的转换，保证数据完整和正确，以及第三方接口的使用等。</li>
+                <li>基于 ThinkPHP 框架开发的一套广告联盟系统，该系统提供不同类型的广告给其他网站，帮助推广公司的游戏或者软件产品，按点击量、下载量等统计并支付推广费用，有完善的前台和后台系统。</li>
             </ol>
 
             <h3>教育经历</h3>
@@ -88,7 +88,7 @@
                 <li><span class="label label-primary">jQuery</span></li>
                 <li><span class="label label-primary">CSS</span></li>
             </ul>
-            <p>计划学习的方向：深入学习Laravel框架和其中的概念，了解和学习服务器方面的部署，WEB集群，Redis集群等，负载均衡等，以及服务器端安全和性能优化方面的知识。</p>
+            <p>计划学习的方向：深入学习 Laravel 框架和其中的概念，了解和学习服务器方面的部署，WEB 集群，Redis 集群等，负载均衡等，以及服务器端安全和性能优化方面的知识。</p>
 
 
             <h3>个人爱好</h3>

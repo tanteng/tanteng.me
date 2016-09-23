@@ -45,6 +45,8 @@ return [
 
     'cdn' => '//oddgb63aa.qnssl.com',
 
+    'site_name' => 'tanteng.me',
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -159,6 +161,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\ComposerServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         zgldh\QiniuStorage\QiniuFilesystemServiceProvider::class,

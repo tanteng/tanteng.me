@@ -1,6 +1,6 @@
 @extends('layouts.cover')
 
-@section('title', 'tanteng.me')
+@section('title', $site_name)
 @section('description', 'Welcome to tanteng.me!')
 @section('content')
 <div class="site-wrapper">
@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="mastfoot">
-                    <p>鄂ICP备14007278号</p>
+                    <p>鄂ICP备14007278号 {{ $site_name }}</p>
                 </div>
             </div>
 

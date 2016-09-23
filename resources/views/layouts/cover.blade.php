@@ -10,7 +10,7 @@
     <link href="//oddgb63aa.qnssl.com" rel="dns-prefetch">
     <link href="{{ cdn(elixir('dist/css/cover.css')) }}" rel="stylesheet">
     <link rel="icon" href="/favicon.ico">
-    <link rel="canonical" href="http://www.tanteng.me/" />
+    <link rel="canonical" href="https://www.tanteng.me/" />
 </head>
 <body>
 
