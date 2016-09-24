@@ -168,13 +168,13 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-share-square-o  fa-fw"></i> 我的分享<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-folder fa-fw"></i> 内容管理<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/share"> 分享列表</a>
+                                <a href="/content"> 文章列表</a>
                             </li>
                             <li>
-                                <a href="/share/post-new"> 添加分享</a>
+                                <a href="/content/create"> 添加文章</a>
                             </li>
                         </ul>
                     </li>

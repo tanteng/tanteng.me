@@ -21,15 +21,11 @@ class AdminRoutes
             $router->get('/logout', 'Admin\AuthController@logout');
             $router->post('/upload', ['uses' => 'Admin\QiniuController@postUpload']);
             $router->get('/attachment', ['uses' => 'Admin\QiniuController@showList']);
-            $router->get('/tables', ['uses' => 'AdminController@tables']);
-            $router->get('/english', ['uses' => 'Admin\EnglishController@index']);
-            $router->get('/english/post-new', ['uses' => 'Admin\EnglishController@create']);
-            $router->post('/english/post-new', ['uses' => 'Admin\EnglishController@postNew']);
-            $router->get('/english/edit/{id}', ['uses' => 'Admin\EnglishController@edit']);
             $router->resource('travel', 'Admin\TravelController');
             $router->resource('destination', 'Admin\DestinationController');
             $router->get('/settings/cover', 'Admin\SettingsController@coverEdit');
             $router->post('/settings/cover', 'Admin\SettingsController@coverUpdate');
+            $router->resource('content', 'Admin\ContentController');
         });
     }
 }
