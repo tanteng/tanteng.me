@@ -16,7 +16,8 @@ class ContentController extends Controller
 
     public function index()
     {
-
+        $lists = Content::orderBy('id','desc')->paginate();
+        return view('admin.content.index', compact('lists'));
     }
 
     public function create()
