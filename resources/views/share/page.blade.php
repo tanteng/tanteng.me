@@ -1,6 +1,8 @@
 @extends('layouts.default')
 
 @section('title', $content['seo_title'] . '_技术分享_' . $site_name)
+@section('description', $content['description'])
+
 @section('content')
 <div class="container">
     <div class="page-header">
@@ -32,7 +34,7 @@
 
 @section('js')
     <script type="text/javascript">
-        $image = $(".post-content img");
+        $image = $(".content img");
         $image.parent('p').addClass('img-width');
         $image.addClass('img-responsive center-block');
     </script>

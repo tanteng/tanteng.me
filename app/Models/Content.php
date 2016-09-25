@@ -12,6 +12,7 @@ class Content extends Model
         'title',
         'seo_title',
         'slug',
+        'description',
         'class_id',
         'tag_id',
         'content',

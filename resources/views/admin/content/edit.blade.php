@@ -32,6 +32,10 @@
                                         <input class="form-control" name="slug" id="slug" value="{{ $content->slug }}">
                                     </div>
                                     <div class="form-group">
+                                        <label for="description">描述</label>
+                                        <textarea class="form-control" rows="3" cols="40" name="description" id="description">{{ $content->description }}</textarea>
+                                    </div>
+                                    <div class="form-group">
                                         <label for="class_id">分类</label>
                                         <select class="form-control" name="class_id" id="class_id">
                                             <option value="1" @if($content->class_id == 1) selected @endif>PHP技术分享</option>

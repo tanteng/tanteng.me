@@ -43,7 +43,8 @@ class ContentController extends Controller
     {
         $data['title'] = $request->get('title');
         $data['seo_title'] = $request->get('seo_title');
-        $data['slug'] = $request->get('slug');
+        $data['slug'] = str_slug($request->get('slug'));
+        $data['description'] = $request->get('description');
         $data['class_id'] = $request->get('class_id');
         $data['tag_id'] = $request->get('tag_id');
         $data['content'] = $request->get('content');
@@ -80,7 +81,8 @@ class ContentController extends Controller
         $content = Content::findOrFail($id);
         $data['title'] = $request->get('title');
         $data['seo_title'] = $request->get('seo_title');
-        $data['slug'] = $request->get('slug');
+        $data['slug'] = str_slug($request->get('slug'));
+        $data['description'] = $request->get('description');
         $data['class_id'] = $request->get('class_id');
         $data['tag_id'] = $request->get('tag_id');
         $data['content'] = $request->get('content');

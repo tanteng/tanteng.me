@@ -19,8 +19,9 @@ class CreatePostsTable extends Migration
             $table->integer('tag_id');
             $table->string('title');
             $table->string('seo_title');
+            $table->string('description');
             $table->string('type');
-            $table->string('content');
+            $table->longText('content');
             $table->string('thumbnail');
             $table->tinyInteger('status');
             $table->timestamps();
@@ -35,6 +36,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('posts');
     }
 }
