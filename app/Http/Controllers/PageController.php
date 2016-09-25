@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content as ContentModel;
+use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Support\Facades\Cache;
 
 class PageController extends Controller
 {
+    /**
+     * 缓存时间
+     */
+    const CACHE_TIME = 200;
+
     /**
      * 构造函数注入内容模型
      * PageController constructor.
@@ -24,7 +31,15 @@ class PageController extends Controller
     public function share($slug)
     {
         $navFlag = 'share';
-        $content = $this->content->getContent($slug);
+
+        $data = Cache::remember('com.tanteng.share.page.' . $slug, self::CACHE_TIME, function () use ($slug) {
+            $content = $this->content->getContent($slug);
+            $content->content = Markdown::convertToHtml($content->content);
+            return ['content' => $content];
+        });
+
+        $content = $data['content'];
+
         return view('share.page', compact('navFlag', 'content'));
     }
 }
