@@ -40,6 +40,6 @@ class PageController extends Controller
 
         $content = $data['content'];
 
-        return view('share.page', compact('navFlag', 'content'));
+        return view('content.page', compact('navFlag', 'content'));
     }
 }

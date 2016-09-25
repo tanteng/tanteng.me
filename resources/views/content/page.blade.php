@@ -6,8 +6,8 @@
 @section('content')
 <div class="container">
     <div class="page-header">
-        <h1><span class="glyphicon glyphicon-file"></span> 分享
-            <small>Share</small>
+        <h1><span class="glyphicon glyphicon-file"></span> 页面
+            <small>Page</small>
         </h1>
     </div>
 
@@ -16,7 +16,7 @@
             <section class="nav">
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a></li>
-                    <li class="active">分享</li>
+                    <li class="active">页面</li>
                 </ol>
             </section>
 
