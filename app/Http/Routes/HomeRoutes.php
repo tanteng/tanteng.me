@@ -24,6 +24,7 @@ class HomeRoutes
             $router->get('/commits', ['as' => 'git.commits', 'uses' => 'IndexController@commitsHistory']);
             $router->post('/gitHistory', ['as' => 'git.history', 'uses' => 'IndexController@gitCommitHistory']);
             $router->get('/sitemap.xml', ['as' => 'index.sitemap', 'uses' => 'IndexController@sitemap']);
+            $router->get('/download', ['uses' => 'IndexController@download']);
             $router->get('/donate', ['as' => 'donate', 'uses' => 'IndexController@donate']);
         });
     }

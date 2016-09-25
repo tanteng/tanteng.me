@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Response;
 
 class IndexController extends Controller
 {
@@ -131,6 +132,24 @@ class IndexController extends Controller
         }
 
         return redirect()->back()->with(['info' => '发布失败！']);
+    }
+
+    /**
+     * 下载文件
+     * @param Request $request
+     * @return mixed
+     */
+    public function download(Request $request)
+    {
+        $filename = $request->get('filename');
+        if (!$filename) {
+            abort(404);
+        }
+        $path = storage_path('download') . '/' . $filename;
+        if (!file_exists($path)) {
+            abort(404);
+        }
+        return Response::download($path);
     }
 
     /**
