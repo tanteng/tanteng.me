@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', $content['seo_title'] . '_技术分享_' . $site_name)
+@section('title', $content['seo_title'] . '_' . $site_name)
 @section('description', $content['description'])
 
 @section('content')

@@ -30,7 +30,7 @@
                         <td>{{ $list->seo_title }}</td>
                         <td>{{ $list->created_at }}</td>
                         <td>{{ $list->updated_at }}</td>
-                        <td><a href="{{ route('content.edit', $list->id) }}">编辑</a></td>
+                        <td><a href="{{ route('index.page', $list->slug) }}" target="_blank">查看</a> <a href="{{ route('content.edit', $list->id) }}">编辑</a></td>
                     </tr>
                 @endforeach
                 </tbody>

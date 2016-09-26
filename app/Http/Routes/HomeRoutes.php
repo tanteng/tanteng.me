@@ -13,7 +13,7 @@ class HomeRoutes
             $router->get('/', ['as' => 'home', 'uses' => 'IndexController@index']);
             $router->get('/blog', ['as' => 'index.blog', 'uses' => 'BlogController@index']);
             $router->get('/resume', ['as' => 'index.resume', 'uses' => 'IndexController@resume']);
-            $router->get('/page/{slug}', ['uses' => 'PageController@share']);
+            $router->get('/page/{slug}', ['as' => 'index.page', 'uses' => 'PageController@share']);
             $router->get('/post', ['name' => 'post.show', 'uses' => 'ArticleController@show']);
             $router->get('/contact', ['as' => 'index.contact', 'uses' => 'IndexController@contact']);
             $router->post('/contact/comment', ['uses' => 'IndexController@postComment']);
