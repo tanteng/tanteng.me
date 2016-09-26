@@ -21,6 +21,7 @@ class PageController extends Controller
     public function __construct(ContentModel $content)
     {
         $this->content = $content;
+        view()->share(['navFlag' => 'blog']);
     }
 
     /**
@@ -30,8 +31,6 @@ class PageController extends Controller
      */
     public function share($slug)
     {
-        $navFlag = 'share';
-
         $data = Cache::remember('com.tanteng.share.page.' . $slug, self::CACHE_TIME, function () use ($slug) {
             $content = $this->content->getContent($slug);
             $content->content = Markdown::convertToHtml($content->content);
@@ -40,6 +39,6 @@ class PageController extends Controller
 
         $content = $data['content'];
 
-        return view('content.page', compact('navFlag', 'content'));
+        return view('content.page', compact('content'));
     }
 }
