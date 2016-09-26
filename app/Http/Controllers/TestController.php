@@ -1,15 +1,14 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Jobs\MyQueue;
+use App\Jobs\MyQueue2;
+
 class TestController extends Controller
 {
-    public function test()
+    public function queue()
     {
-        //测试rebase，再提交一次修改
-    }
-
-    public function testCopy()
-    {
-        //rebase
+        $this->dispatch(new MyQueue(['name' => 'tanteng']));
+        dump('dispatch queue1.');
     }
 }

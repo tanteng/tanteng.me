@@ -15,6 +15,7 @@ class TestRoutes
     {
         $router->group(['prefix' => 'test'], function ($router) {
             $router->get('/', ['uses' => 'TestController@test']);
+            $router->get('/queue', ['uses' => 'TestController@queue']);
         });
     }
 }
