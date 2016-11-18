@@ -49,19 +49,16 @@ class MyTest extends Command
      */
     public function bubbleSort($array)
     {
-        info('bubble', $array);
         $length = count($array);
-        info('bubble', array('length' => $length));
         for ($i = 0; $i < $length; $i++) {
             for ($j = 0; $j < $length - 1 - $i; $j++) {
                 if ($array[$j] > $array[$j + 1]) {
                     $temp = $array[$j];
-                    $array[$j + 1] = $array[$j];
-                    $array[$j] = $temp;
+                    $array[$j] = $array[$j+1];
+                    $array[$j+1] = $temp;
                 }
             }
         }
-        info('bubble', array('result' => $array));
         return $array;
     }
 }
