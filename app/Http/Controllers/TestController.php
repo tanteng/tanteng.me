@@ -11,4 +11,10 @@ class TestController extends Controller
         $this->dispatch(new MyQueue(['name' => 'tanteng']));
         dump('dispatch queue1.');
     }
+
+    public function httpsTest()
+    {
+        $navFlag = 'home';
+        return view('index.httptest', compact('navFlag'));
+    }
 }
