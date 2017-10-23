@@ -1,19 +1,16 @@
 @extends('layouts.cover')
 
-@section('title', $site_name)
+@section('title', 'tanteng.me')
 @section('description', 'Welcome to tanteng.me!')
 @section('content')
 <div class="site-wrapper">
-
     <div class="site-wrapper-inner">
-
         <div class="cover-container">
             <div class="masthead clearfix inner">
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                                    data-target="#navbar" aria-expanded="false">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -38,20 +35,18 @@
             <div class="inner cover">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        <img class="img-circle" src="{{ cdn('/assets/images/avatar.jpg') }}" alt="avatar" width="140" height="140">
+                        <img class="img-circle" src="/assets/images/avatar.jpg" alt="avatar" width="140" height="140">
                         <h2>谈腾</h2>
-                        <p>{{ $introduce }}</p>
+                        <p>{{ $profile }}</p>
                         <p><a class="btn btn-default" href="/resume" role="button">更多</a></p>
                     </div>
                 </div>
 
                 <div class="mastfoot">
-                    <p>鄂ICP备14007278号 {{ $site_name }}</p>
+                    <p>鄂ICP备14007278号</p>
                 </div>
             </div>
-
         </div>
-
     </div>
 </div>
 @stop

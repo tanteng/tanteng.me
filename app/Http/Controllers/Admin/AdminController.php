@@ -2,24 +2,27 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
-use App\Models\Guestbook;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class AdminController extends Controller
+class AdminController extends BaseController
 {
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
     public function __construct()
     {
         $this->middleware('auth:admin');
+        $this->middleware('role:admin', ['except' => 'logout']);
     }
 
+    /**
+     * 后台管理首页
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
-        $guestbook = Guestbook::latest()->paginate(50);
-        return view('admin.index', compact('guestbook'));
-    }
-
-    public function tables()
-    {
-        return view('admin.tables');
+        return view('admin.index');
     }
 }

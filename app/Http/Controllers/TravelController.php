@@ -10,15 +10,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Destination;
 use App\Models\Travel;
-use GrahamCampbell\Markdown\Facades\Markdown;
-use Illuminate\Support\Facades\Cache;
+use Cache;
 
 class TravelController extends Controller
 {
     /**
      * 缓存时间
      */
-    const CACHE_TIME = 30;
+    const CACHE_TIME = 300;
 
     /**
      * 目的地模型
@@ -51,13 +50,13 @@ class TravelController extends Controller
     public function index()
     {
         $data = Cache::remember('travel.index', self::CACHE_TIME, function () {
-            $destinationList = $this->destination->getList(12);
-            $travelList = $this->travel->latest('begin_date')->take(12)->get();
+            $destinationList = $this->destination->getList();
+            $travelList = $this->travel->latestTravel(12);
             $travelNums = $this->travel->getTravelNumsGroupByDestination();
             return [
                 'destinationList' => $destinationList,
-                'travelList' => $travelList,
-                'travelNums' => $travelNums
+                'travelList'      => $travelList,
+                'travelNums'      => $travelNums
             ];
         });
         return view('travel.index', $data);
@@ -87,20 +86,8 @@ class TravelController extends Controller
      */
     public function travelList($destinationSlug)
     {
-        $data = Cache::remember("travel.destination.list.{$destinationSlug}", self::CACHE_TIME, function () use ($destinationSlug) {
-            $destinationInfo = $this->destination->where('slug', $destinationSlug)->first(['id', 'destination', 'seo_title', 'description', 'slug']);
-            if (!$destinationInfo['id']) {
-                abort(404);
-            }
-            $travelList = $destinationInfo->travel()->orderBy('begin_date', 'desc')->get(); //定义了一对多关系,就是这么方便
-            return [
-                'travelList' => $travelList,
-                'destinationInfo' => $destinationInfo,
-            ];
-        });
-
-        $travelList = $data['travelList'];
-        $destinationInfo = $data['destinationInfo'];
+        $destinationInfo = $this->destination->getDestinationBySlug($destinationSlug);
+        $travelList = $this->travel->travelListByDestinationId($destinationInfo['id']);
 
         $seoSuffix = "_tanteng.me";
         return view('travel.destination', compact('travelList', 'destinationInfo', 'seoSuffix'));
@@ -113,27 +100,14 @@ class TravelController extends Controller
      */
     public function travelDetail($slug)
     {
-        $data = Cache::remember("travel.detail.{$slug}", self::CACHE_TIME, function () use ($slug) {
-            $destinationList = $this->destination->getList(12);
-            $detail = $this->travel->where('slug', $slug)->firstOrFail();
-            $detail->content = Markdown::convertToHtml($detail->content);
-            $destinationInfo = $detail->destination;
-            $travelList = $this->travel->where('destination_id', $destinationInfo['id'])->where('id', '<>', $detail->id)->latest('begin_date')->take(5)->get(); //10篇同目的地的最新游记
-            $travelList = !$travelList->isEmpty() ? $travelList : '';
-            return [
-                'destinationList' => $destinationList,
-                'destinationInfo' => $destinationInfo,
-                'detail' => $detail,
-                'travelList' => $travelList,
-            ];
-        });
+        $destinationList = $this->destination->getList(); //目的地列表
+        $detail = $this->travel->detailInfo($slug); //游记内容
+        $destinationInfo = $destinationList[$detail['destination_id']]; //对应目的地信息
+        $destinationCount = $this->travel->getTravelNumsGroupByDestination(); //目的地和游记数量
+        $travelList = $this->travel->travelListById($detail['id'], $detail['destination_id'], 5); //更多游记
 
-        $destinationList = $data['destinationList'];
-        $destinationInfo = $data['destinationInfo'];
-        $detail = $data['detail'];
-        $travelList = $data['travelList'];
-        $seoSuffix = "_{$destinationInfo->destination}游记_tanteng.me";
+        $seoSuffix = "_{$destinationInfo['destination']}游记_tanteng.me";
 
-        return view('travel.detail', compact('detail', 'destinationList', 'destinationInfo', 'travelList', 'seoSuffix'));
+        return view('travel.detail', compact('detail', 'destinationList', 'destinationInfo', 'destinationCount', 'travelList', 'seoSuffix'));
     }
 }

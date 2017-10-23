@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Events\Travel\TravelsWasUpdated;
 use App\Models\Destination;
 use App\Models\Travel;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Cache;
-
-class TravelController extends Controller
+class TravelController extends AdminController
 {
-    public function __construct(Destination $destination, Travel $travel)
+    /**
+     * 旅游目的地
+     * @var \Illuminate\Support\Collection
+     */
+    private $destinationList;
+
+    public function __construct()
     {
-        $this->middleware('auth:admin');
-        $this->destination = $destination;
-        $this->travel = $travel;
-        $this->allDestination = $this->destination->all();
+        parent::__construct();
+        $this->destinationList = Destination::orderBy('id', 'asc')->pluck('destination', 'id');
     }
 
     /**
@@ -28,8 +27,12 @@ class TravelController extends Controller
      */
     public function index()
     {
-        $lists = $this->travel->latest('id')->paginate(20);
-        return view('admin.travel.index', compact('lists'));
+        $destinationList = $this->destinationList;
+        $travels = Travel::orderBy('begin_date', 'desc')->paginate(20);
+        $count = [
+            'all' => Travel::count(),
+        ];
+        return view('admin.travel.list', compact('travels', 'destinationList', 'count'));
     }
 
     /**
@@ -39,8 +42,8 @@ class TravelController extends Controller
      */
     public function create()
     {
-        $destination = $this->allDestination;
-        return view('admin.travel.create', compact('destination'));
+        $destinationList = $this->destinationList;
+        return view('admin.travel.add', compact('destinationList'));
     }
 
     /**
@@ -51,21 +54,24 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
-        $data['title'] = $request->input('title');
-        $data['seo_title'] = $request->input('seo_title');
-        $data['destination_id'] = $request->input('destination_id');
-        $data['slug'] = str_slug($request->input('slug'));
-        $data['description'] = $request->input('description');
-        $data['cover_image'] = $request->input('cover_image');
-        $data['begin_date'] = $request->input('begin_date');
-        $data['end_date'] = $request->input('end_date');
-        $data['content'] = $request->input('content');
-        $data['score'] = $request->input('score');
-        $create = $this->travel->create($data);
-        if ($create) {
-            return redirect()->back();
-        }
-        return false;
+        $request->merge(['slug' => str_slug($request->slug)]);
+        Travel::create($request->all());
+
+        $this->updateLatest($request->destination_id);
+
+        return redirect()->route('travel.index')->with('info', '添加成功!');
+    }
+
+    /**
+     * 更新目的地最新游记时间
+     * @param $destinationId
+     * @return bool
+     */
+    private function updateLatest($destinationId)
+    {
+        $latestDate = Travel::where('destination_id', $destinationId)->orderBy('end_date', 'desc')->first(['end_date']);
+        Destination::where('id', $destinationId)->update(['latest' => $latestDate->end_date]);
+        return true;
     }
 
     /**
@@ -87,9 +93,9 @@ class TravelController extends Controller
      */
     public function edit($id)
     {
-        $detail = $this->travel->findOrFail($id);
-        $destination = $this->destination->latest('id')->lists('destination', 'id');
-        return view('admin.travel.edit', compact('id', 'detail', 'destination'));
+        $destinationList = $this->destinationList;
+        $travel = Travel::findOrFail($id);
+        return view('admin.travel.edit', compact('travel', 'destinationList'));
     }
 
     /**
@@ -101,22 +107,12 @@ class TravelController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data['title'] = $request->input('title');
-        $data['seo_title'] = $request->input('seo_title');
-        $data['destination_id'] = $request->input('destination_id');
-        $data['slug'] = str_slug($request->input('slug'));
-        $data['description'] = $request->input('description');
-        $data['cover_image'] = $request->input('cover_image');
-        $data['begin_date'] = $request->input('begin_date');
-        $data['end_date'] = $request->input('end_date');
-        $data['content'] = $request->input('content');
-        $data['score'] = $request->input('score');
+        $request->merge(['slug' => str_slug($request->slug)]);
+        Travel::where('id', $id)->update($request->except(['_token', '_method']));
 
-        Cache::pull("travel.detail.{$data['slug']}");
-        $this->travel->where('id', $id)->update($data);
-        //更新游记触达事件
-        event(new TravelsWasUpdated($data));
-        return redirect()->back();
+        $this->updateLatest($request->destination_id);
+
+        return redirect()->route('travel.index')->with('info', '编辑成功!');
     }
 
     /**
@@ -127,6 +123,11 @@ class TravelController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $travel = Travel::findOrFail($id);
+        $result = $travel->delete();
+        if ($result) {
+            return response()->json(['result' => 0, 'msg' => '删除成功!', 'data' => []]);
+        }
+        return response()->json(['result' => 1001, 'msg' => '删除失败!', 'data' => []]);
     }
 }

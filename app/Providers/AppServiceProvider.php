@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,8 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //设置语言
-        Carbon::setLocale('zh');
+        \Carbon\Carbon::setLocale('zh'); //设置Carbon为中文
     }
 
     /**

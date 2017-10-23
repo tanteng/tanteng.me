@@ -3,7 +3,7 @@
     <head>
         <title>Be right back.</title>
 
-        <link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600&subset=latin,latin-ext' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
         <style>
             html, body {
@@ -17,7 +17,7 @@
                 color: #B0BEC5;
                 display: table;
                 font-weight: 100;
-                font-family: 'Lato';
+                font-family: 'Lato', sans-serif;
             }
 
             .container {

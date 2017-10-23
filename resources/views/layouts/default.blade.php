@@ -9,10 +9,11 @@
     <meta name="description" content="@yield('description')">
     @yield('meta')
     <link href="//oddgb63aa.qnssl.com" rel="dns-prefetch">
-    <link href="{{ cdn(elixir('dist/css/style.css')) }}" rel="stylesheet">
-    <script src="{{ cdn(elixir('dist/js/all.js')) }}"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ cdn(elixir('css/style.css')) }}" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="icon" href="/favicon.ico">
-    @if(isset($canonical))<link rel="canonical" href="{{ $canonical }}"/>@endif
     @yield('head')
 </head>
 <body>
@@ -20,8 +21,7 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -47,26 +47,26 @@
 
 <footer class="footer">
     <div class="container">
-        <p>Powered By:</p>
         <ul class="list-inline">
             <li><span class="label label-info">阿里云</span></li>
             <li><span class="label label-info">七牛云</span></li>
-            <li><span class="label label-info">CentOS 7</span></li>
+            <li><span class="label label-info">CentOS</span></li>
             <li><span class="label label-info">PHP 7</span></li>
             <li><span class="label label-info">HTTPS</span></li>
-            <li><span class="label label-info">Nginx 1.8</span></li>
-            <li><span class="label label-info">MariaDB 10.1</span></li>
-            <li><span class="label label-info">Redis 3.0</span></li>
-            <li><span class="label label-info">Laravel 5.2</span></li>
-            <li><span class="label label-info">Bootstrap 3</span></li>
+            <li><span class="label label-info">Nginx</span></li>
+            <li><span class="label label-info">MariaDB</span></li>
+            <li><span class="label label-info">Redis</span></li>
+            <li><span class="label label-info">Laravel 5.3</span></li>
+            <li><span class="label label-info">Bootstrap</span></li>
+            <li><span class="label label-info">Gulp</span></li>
             <li><span class="label label-info">WordPress</span></li>
         </ul>
-        <p><a href="mailto:tanteng@tanteng.me"><span class="glyphicon glyphicon-envelope"></span> tanteng@tanteng.me</a>
-            鄂ICP备14007278号 Page loaded in:{{ round(microtime(true) - LARAVEL_START, 5) }}s <a href="{{ route('git.commits') }}">版本历史</a></p>
+        <p>鄂ICP备14007278号</p>
     </div>
 </footer>
 
 @yield('js')
+<script src="{{ cdn(elixir('js/all.js')) }}"></script>
 <script>
     (function () {
         $.scrollUp({
@@ -75,16 +75,16 @@
         });
         $('.pill-switch').addClass('active');
     })(jQuery)
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?12046b0c748f019bd63e97845d980e33";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+
 </script>
 
-<script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "//hm.baidu.com/hm.js?a9ca60799a83235805e501810a3f895c";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
 </body>
 </html>

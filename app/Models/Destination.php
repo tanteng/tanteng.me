@@ -3,7 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Cache;
 
+/**
+ * Class Destination
+ * @mixin \Eloquent
+ * @package App\Models
+ */
 class Destination extends Model
 {
     /**
@@ -12,10 +18,6 @@ class Destination extends Model
      */
     protected $table = "travel_destination";
 
-    /**
-     * 批量赋值字段
-     * @var array
-     */
     protected $fillable = [
         'destination',
         'title',
@@ -29,14 +31,8 @@ class Destination extends Model
         'like'
     ];
 
-    /**
-     * 自定义字段
-     * @var array
-     */
     protected $appends = [
         'url',
-        'first_travel_url',
-        'total',
     ];
 
     /**
@@ -44,10 +40,18 @@ class Destination extends Model
      * @param $nums
      * @return mixed
      */
-    public function getList($nums)
+    public function getList()
     {
-        $list = $this->latest('latest')->take($nums)->get();
-        return $list;
+        $data = Cache::remember('destination.list', 600, function () {
+            $cache = [];
+            $list = $this->latest('latest')->get();
+            foreach ($list as $item) {
+                $cache[$item['id']] = $item->toArray();
+            }
+            return $cache;
+        });
+
+        return $data;
     }
 
     /**
@@ -57,6 +61,19 @@ class Destination extends Model
     public function travel()
     {
         return $this->hasMany(Travel::class, 'destination_id');
+    }
+
+    /**
+     * 根据slug获取目的地
+     * @param $slug
+     * @return mixed
+     */
+    public function getDestinationBySlug($slug)
+    {
+        $destination = Cache::remember('destination.slug.info.' . $slug, 600, function () use ($slug) {
+            return self::where('slug', $slug)->firstOrFail()->toArray();
+        });
+        return $destination;
     }
 
     /**

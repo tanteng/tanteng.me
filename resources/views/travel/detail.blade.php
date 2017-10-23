@@ -1,8 +1,21 @@
 @extends('layouts.default')
 
-@section('title'){{ $detail->seo_title }}{{ $seoSuffix }}@endsection
-@section('description'){{ $detail->description }}@endsection
-@section('meta')<meta name="author" content="谈腾">
+@section('title'){{ $detail['seo_title'] }}{{ $seoSuffix }}@endsection
+@section('description'){{ $detail['description'] }}@endsection
+@section('meta')
+    <meta name="author" content="谈腾">
+@endsection
+
+@section('head')
+    <style type="text/css">
+        .post-content img {
+            margin-top: 10px;
+        }
+
+        .center-block, .img-responsive {
+            display: inline;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -18,7 +31,7 @@
                 <ol class="breadcrumb">
                     <li><a href="{{ route('home') }}">Home</a></li>
                     <li><a href="{{ route('index.travel') }}">Travel</a></li>
-                    <li class="active"><a href="{{ route('travel.destination', [$destinationInfo->slug]) }}">{{ $destinationInfo->destination }}</a></li>
+                    <li class="active"><a href="{{ route('travel.destination', [$destinationInfo['slug']]) }}">{{ $destinationInfo['destination'] }}</a></li>
                 </ol>
             </nav>
         </div>
@@ -27,13 +40,13 @@
             <main class="col-md-10 col-md-offset-1">
                 <article class="main-content">
                     <header>
-                        <h1>{{ $detail->title }}</h1>
+                        <h1>{{ $detail['title'] }}</h1>
                         <section class="post-meta">
-                            <time title="{{ $detail->begin_date->format('Y-m-d') }}" datetime="{{ $detail->begin_date }}" class="post-date"><span class="glyphicon glyphicon-calendar"></span> {{ $detail->begin_date->format('Y-m-d') }}</time>
+                            <time title="{{ $detail['show_date'] }}" datetime="{{ $detail['show_date'] }}" class="post-date"><span class="glyphicon glyphicon-calendar"></span> {{ $detail['show_date'] }}</time>
                         </section>
                     </header>
                     <section class="post-content">
-                        {!! $detail->content !!}
+                        {!! $detail['content'] !!}
                     </section>
                 </article>
             </main>
@@ -43,11 +56,11 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="aside">
-                    <h3 class="title">{{ $destinationInfo->destination }}游记</h3>
+                    <h3 class="title">{{ $destinationInfo['destination'] }}游记</h3>
                     <section class="latest">
                         @include('travel.lists')
                     </section>
-                    <a type="button" class="btn btn-primary btn-sm btn-block margin-top15" href="{{ route('travel.destination',$destinationInfo->slug) }}">更多</a>
+                    <a type="button" class="btn btn-primary btn-sm btn-block margin-top15" href="{{ route('travel.destination',$destinationInfo['slug']) }}">更多</a>
                 </div>
             </div>
         </div>
@@ -58,9 +71,11 @@
                 <div class="destination aside">
                     <h3 class="title">目的地</h3>
                     <div class="content tag-cloud">
-                        @foreach($destinationList as $item)
-                            <a href="{{ route('travel.destination', [$item->slug]) }}">{{ $item->destination }}</a>
-                        @endforeach
+                        <ul class="nav nav-pills" role="tablist">
+                            @foreach($destinationList as $item)
+                            <li role="presentation"{{ $item['id'] == $detail['destination_id'] ? ' class=active' : '' }}><a href="{{ $item['url'] }}">{{ $item['destination'] }} <span class="badge">{{ isset($destinationCount[$item['id']]) ? $destinationCount[$item['id']] : 0 }}</span></a></li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -70,9 +85,7 @@
 
 @section('js')
     <script type="text/javascript">
-        $image = $(".post-content img");
-        $image.parent('p').addClass('img-width');
-        $image.addClass('img-responsive center-block');
+        $(".post-content img").addClass("img-responsive center-block");
     </script>
 @endsection
 

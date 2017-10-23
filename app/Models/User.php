@@ -2,11 +2,18 @@
 
 namespace App\Models;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
 
+/**
+ * Class User
+ * @mixin \Eloquent
+ * @package App\Models
+ */
 class User extends Authenticatable
 {
+    use Notifiable;
     use EntrustUserTrait;
 
     /**
@@ -19,7 +26,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes excluded from the model's JSON form.
+     * The attributes that should be hidden for arrays.
      *
      * @var array
      */

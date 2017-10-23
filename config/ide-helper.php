@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return array(
 
@@ -13,6 +13,17 @@ return array(
 
     'filename'  => '_ide_helper',
     'format'    => 'php',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Fluent helpers
+    |--------------------------------------------------------------------------
+    |
+    | Set to true to generate commonly used Fluent methods
+    |
+    */
+
+    'include_fluent' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -71,7 +82,7 @@ return array(
             'emergency' => 'Monolog\Logger::addEmergency',
         )
     ),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Interface implementations
@@ -81,7 +92,7 @@ return array(
     | are detected by the helpers, others can be listed below.
     |
     */
-    
+
     'interfaces' => array(
 
     ),
@@ -116,4 +127,42 @@ return array(
 
     ),
 
+    /*
+     |--------------------------------------------------------------------------
+     | Support for camel cased models
+     |--------------------------------------------------------------------------
+     |
+     | There are some Laravel packages (such as Eloquence) that allow for accessing
+     | Eloquent model properties via camel case, instead of snake case.
+     |
+     | Enabling this option will support these packages by saving all model
+     | properties as camel case, instead of snake case.
+     |
+     | For example, normally you would see this:
+     |
+     |  * @property \Carbon\Carbon $created_at
+     |  * @property \Carbon\Carbon $updated_at
+     |
+     | With this enabled, the properties will be this:
+     |
+     |  * @property \Carbon\Carbon $createdAt
+     |  * @property \Carbon\Carbon $updatedAt
+     |
+     | Note, it is currently an all-or-nothing option.
+     |
+     */
+    'model_camel_case_properties' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Property Casts
+    |--------------------------------------------------------------------------
+    |
+    | Cast the given "real type" to the given "type".
+    |
+    */
+   'type_overrides' => array(
+        'integer' => 'int',
+        'boolean' => 'bool',
+   ),
 );

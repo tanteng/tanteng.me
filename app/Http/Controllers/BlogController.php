@@ -2,25 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Models\Wp;
-use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\URL;
+use App\Models\WpPost;
+use Cache;
 
 class BlogController extends Controller
 {
-    private $indexPostsKey = 'com.tanteng.me.index.blog.posts';
+    private $blogPostsKey = 'blog.index.lists';
 
+    /**
+     * Blog页面
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $navFlag = 'blog';
-
-        $newPosts = Cache::store('redis')->remember($this->indexPostsKey, 30, function () {
+        $newPosts = Cache::remember($this->blogPostsKey, 30, function () {
             $articles = [];
-            $list = Wp::type('post')->status('publish')->orderBy('post_date', 'desc')->take(17)->get();
+            $list = WpPost::type('post')->status('publish')->orderBy('post_date', 'desc')->take(17)->get();
             foreach ($list as $item) {
                 $articles[] = [
                     'url' => $item->url,
@@ -30,6 +28,6 @@ class BlogController extends Controller
             }
             return $articles;
         });
-        return View('index/blog', compact('newPosts', 'navFlag'));
+        return view('index/blog', compact('newPosts', 'navFlag'));
     }
 }
