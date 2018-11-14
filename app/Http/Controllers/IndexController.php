@@ -54,24 +54,24 @@ class IndexController extends Controller
     {
         $messages = [
             'nickname.required' => '请填写你的名字！',
-            'content.required'  => '请填写要发布的内容！',
-            'captcha.required'  => '请填写验证码，以证明你不是机器人！',
-            'captcha.captcha'   => '验证码错误！',
+            'content.required' => '请填写要发布的内容！',
+            'captcha.required' => '请填写验证码，以证明你不是机器人！',
+            'captcha.captcha' => '验证码错误！',
         ];
 
         if ($request->method() == 'POST') {
             $this->validate($request, [
                 'nickname' => 'required',
-                'content'  => 'required',
-                'captcha'  => 'required|captcha',
+                'content' => 'required',
+                'captcha' => 'required|captcha',
             ], $messages);
 
             $result = DB::table('guestbook')->insert([
-                'nickname'   => $request['nickname'],
-                'website'    => $request['website'],
-                'content'    => $request['content'],
-                'ip'         => $request->getClientIp(),
-                'is_audit'   => 0,
+                'nickname' => $request['nickname'],
+                'website' => $request['website'],
+                'content' => $request['content'],
+                'ip' => $request->getClientIp(),
+                'is_audit' => 0,
                 'created_at' => date('Y-m-d H:i:s'),
             ]);
 
@@ -91,7 +91,7 @@ class IndexController extends Controller
     {
         $data = Cache::remember('sitemap', 300, function () {
             return [
-                'travels'      => Travel::all(),
+                'travels' => Travel::all(),
                 'destinations' => Destination::all()
             ];
         });

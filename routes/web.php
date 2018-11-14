@@ -27,3 +27,5 @@ Route::get('/travel/{slug}', ['uses' => 'TravelController@travelDetail']);
 Route::get('/sitemap.xml', ['as' => 'index.sitemap', 'uses' => 'IndexController@sitemap']);
 Route::get('/page/{slug?}', ['uses' => 'SingleController@index']);
 
+Route::get('test/testVod', 'VodController@testVod');
+Route::get('test/getkey', 'VodController@getkey');
