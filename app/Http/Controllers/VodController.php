@@ -19,9 +19,7 @@ class VodController extends Controller
     {
         $fileId = $request->get('fileId');
 
-        $vodEncrpytService = app(VodEncryptService::class);
-
-        $processFile = $vodEncrpytService->ProcessFile([
+        $result = $this->vodEncryptService->ProcessFile([
             'fileId' => $fileId,
             'transcode.definition.0' => 220,
             'transcode.definition.1' => 230, //可以定义多个码率，生成不同的清晰度视频
@@ -29,9 +27,9 @@ class VodController extends Controller
             'notifyMode' => 'Finish', //当任务流全部执行完成，才发起一次事件通知
         ]);
 
-        dump($processFile);
-        dump($vodEncrpytService->module->getLastRequest());
-        dump($vodEncrpytService->module->getLastResponse());
+        dump($result);
+        dump($this->vodEncryptService->module->getLastRequest());
+        dump($this->vodEncryptService->module->getLastResponse());
     }
 
     public function getkey(Request $request)
@@ -42,9 +40,8 @@ class VodController extends Controller
             'edkList.0' => $edk,
         ]);
 
-        if (isset($result['codeDesc']) && $result['codeDesc'] == 'Success') {
-            return $result['data']['keyList'][0]['dk'];
-        }
-        return '';
+        dump($result);
+        dump($this->vodEncryptService->module->getLastRequest());
+        dump($this->vodEncryptService->module->getLastResponse());
     }
 }
